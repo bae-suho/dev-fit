@@ -45,9 +45,9 @@ export function ResultPage() {
       <Background />
       <Header />
 
-      <main className="max-w-6xl mx-auto p-6 pt-28 z-10 relative">
+      <main className="max-w-6xl mx-auto p-6 z-10 relative">
         {/* Summary Section */}
-        <section className="min-h-[85vh] flex flex-col justify-center">
+        <section className="min-h-screen flex flex-col justify-center items-center w-full">
           <div className="text-center mb-10 w-full max-w-3xl mx-auto">
             <StatusBadge
               status={isComplete ? 'complete' : 'analyzing'}
@@ -61,7 +61,7 @@ export function ResultPage() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 w-full">
             <div className="md:col-span-4">
               <ProfileCard type="company" profile={result.company} isAnalyzing={true} />
             </div>
