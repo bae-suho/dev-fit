@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { ChevronDown, Layers, ExternalLink, Download } from "lucide-react";
 import { Background, Header } from "@/components/common";
@@ -16,16 +16,16 @@ import {
 import { useAnalysis } from "@/context/AnalysisContext";
 import { saveToHistory } from "@/utils/history";
 import { mockResult } from "@/data/mockResult";
-import type { HistoryItem, AnalysisResult } from "@/types";
+import { transformFullApiResponse } from "@/utils/transformApiResponse";
+import type { HistoryItem, AnalysisResult, FullApiResponse } from "@/types";
 
-// 백엔드 API 연동 시 사용
-// import { transformApiResponse } from "@/utils/transformApiResponse";
-// import type { ApiAnalysisResponse } from "@/types";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "";
 
 export function ResultPage() {
   const location = useLocation();
-  const { analysisData, analysisResult } = useAnalysis();
+  const { analysisData, analysisResult, setAnalysisResult, resultKey, isAnalyzing } = useAnalysis();
   const savedRef = useRef(false);
+  const pollingRef = useRef(false);
 
   // 히스토리에서 온 경우 확인
   const historyItem = (location.state as { historyItem?: HistoryItem })?.historyItem;
@@ -34,6 +34,8 @@ export function ResultPage() {
   const [analysisPercent, setAnalysisPercent] = useState(isFromHistory ? 100 : 0);
   const [isComplete, setIsComplete] = useState(isFromHistory);
   const [showDetail, setShowDetail] = useState(isFromHistory);
+  const [error, setError] = useState<string | null>(null);
+  const [statusMessage, setStatusMessage] = useState("분석 준비 중...");
 
   // 결과 데이터 결정: 히스토리 > context > mockResult (fallback)
   const result: AnalysisResult = isFromHistory
@@ -41,10 +43,77 @@ export function ResultPage() {
     : (analysisResult ?? mockResult);
   const jobPostingUrl = isFromHistory ? historyItem.url : analysisData?.url;
 
+  // Long Polling으로 분석 상태 확인
+  const pollStatus = useCallback(async () => {
+    if (!resultKey || !API_BASE_URL || pollingRef.current) return;
+
+    pollingRef.current = true;
+
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/api/analyze/status/${resultKey}?timeout=15`
+      );
+
+      const data = await response.json();
+      console.log("상태 확인 응답:", data);
+
+      if (response.status === 202) {
+        // 진행 중
+        setAnalysisPercent(data.progress || 0);
+        setStatusMessage(data.message || "분석 중...");
+        pollingRef.current = false;
+        // 다시 polling
+        setTimeout(pollStatus, 1000);
+      } else if (response.status === 200 && data.status === "completed") {
+        // 완료
+        setAnalysisPercent(100);
+        setStatusMessage("분석 완료!");
+
+        // API 응답에서 결과 데이터 추출
+        const apiResponse: FullApiResponse = {
+          schema_version: data.schema_version || "1.0",
+          meta: data.meta || {
+            generated_at: new Date().toISOString(),
+            scoring_version: "1.0",
+            notes: "",
+          },
+          company_analysis: data.company_analysis,
+          candidate_analysis: data.candidate_analysis,
+          culture_fit_result: data.culture_fit_result,
+        };
+
+        const transformedResult = transformFullApiResponse(apiResponse);
+        setAnalysisResult(transformedResult);
+
+        setTimeout(() => {
+          setIsComplete(true);
+          setTimeout(() => setShowDetail(true), 1200);
+        }, 500);
+      } else if (data.status === "failed") {
+        // 실패
+        setError(data.message || "분석에 실패했습니다.");
+        pollingRef.current = false;
+      }
+    } catch (err) {
+      console.error("상태 확인 오류:", err);
+      pollingRef.current = false;
+      // 네트워크 오류 시 재시도
+      setTimeout(pollStatus, 3000);
+    }
+  }, [resultKey, setAnalysisResult]);
+
+  // API 연동 또는 mock 모드
   useEffect(() => {
     // 히스토리에서 온 경우 이미 초기값으로 설정됨
     if (isFromHistory) return;
 
+    // API가 설정되어 있고 resultKey가 있으면 Long Polling 시작
+    if (API_BASE_URL && resultKey && isAnalyzing) {
+      pollStatus();
+      return;
+    }
+
+    // API 미설정 시 mock 모드 (기존 로직)
     const interval = setInterval(() => {
       setAnalysisPercent((prev) => {
         const next = prev + Math.floor(Math.random() * 5) + 1;
@@ -61,7 +130,7 @@ export function ResultPage() {
     }, 120);
 
     return () => clearInterval(interval);
-  }, [isFromHistory]);
+  }, [isFromHistory, resultKey, isAnalyzing, pollStatus]);
 
   // 분석 완료 시 히스토리에 저장
   useEffect(() => {
@@ -86,9 +155,21 @@ export function ResultPage() {
         <section className="min-h-[calc(100vh-8rem)] flex flex-col items-center w-full pt-6 pb-10">
           <div className="text-center mb-10 w-full max-w-3xl mx-auto">
             <StatusBadge
-              status={isComplete ? "complete" : "analyzing"}
+              status={error ? "error" : isComplete ? "complete" : "analyzing"}
               percent={analysisPercent}
             />
+
+            {/* 에러 표시 */}
+            {error && (
+              <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+                {error}
+              </div>
+            )}
+
+            {/* 분석 중 상태 메시지 */}
+            {!isComplete && !error && API_BASE_URL && resultKey && (
+              <p className="mt-2 text-sm text-text-tertiary">{statusMessage}</p>
+            )}
 
             <MatchScoreBar
               score={result.matchScore}

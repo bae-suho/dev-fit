@@ -69,7 +69,23 @@ export function HomePage() {
           )
         );
 
-        // 4. result_key 저장 후 결과 페이지로 이동
+        // 4. 분석 시작 요청
+        const startResponse = await fetch(
+          `${API_BASE_URL}/api/analyze/start/${result_key}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+
+        if (!startResponse.ok) {
+          const errorData = await startResponse.json().catch(() => ({}));
+          throw new Error(errorData.detail || "분석 시작 요청 실패");
+        }
+
+        console.log("분석 시작됨:", await startResponse.json());
+
+        // 5. result_key 저장 후 결과 페이지로 이동
         setResultKey(result_key);
         navigate("/result");
       } catch (err) {

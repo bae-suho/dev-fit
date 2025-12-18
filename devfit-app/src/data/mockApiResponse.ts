@@ -11,6 +11,6 @@ export const mockApiResponse: FullApiResponse = {
     notes: mockCompareAnalysis.meta.notes,
   },
   company_analysis: mockCompanyAnalysis as FullApiResponse["company_analysis"],
-  candidate_analysis: mockUserAnalysis as FullApiResponse["candidate_analysis"],
+  candidate_analysis: mockUserAnalysis as unknown as FullApiResponse["candidate_analysis"],
   culture_fit_result: mockCompareAnalysis as unknown as FullApiResponse["culture_fit_result"],
 };
