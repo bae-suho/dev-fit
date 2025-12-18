@@ -1,7 +1,7 @@
 import type { FullApiResponse } from "@/types";
-import mockCompanyAnalysis from "./mockCompanyAnalysis.json";
-import mockUserAnalysis from "./mockUserAnalysis.json";
-import mockCompareAnalysis from "./mockCompareAnalysis.json";
+import mockCompanyAnalysis from "./mockCompany2.json";
+import mockUserAnalysis from "./mockUser2.json";
+import mockCompareAnalysis from "./mockMatching2.json";
 
 export const mockApiResponse: FullApiResponse = {
   schema_version: "1.0",

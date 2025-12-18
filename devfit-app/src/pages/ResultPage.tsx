@@ -151,7 +151,7 @@ export function ResultPage() {
                   총 적합도 점수
                 </span>
                 <span className="font-bold text-lg text-toss-blue">
-                  {result.matchScore}/100
+                  {Math.round(result.matchScore)}/100
                 </span>
               </div>
             </div>

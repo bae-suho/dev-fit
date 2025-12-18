@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.1",
+  "profile_keywords": {
+    "work_style_keywords": [
+      "reproducibility",
+      "documentation",
+      "stable operation",
+      "problem-solving focus",
+      "data-centric",
+      "end-to-end ML flow",
+      "systematic approach",
+      "careful execution",
+      "explainability"
+    ],
+    "collaboration_keywords": [
+      "PR workflow",
+      "code review (receiver)",
+      "documented collaboration",
+      "team communication",
+      "Notion",
+      "README",
+      "incorporating feedback"
+    ],
+    "execution_keywords": [
+      "baseline implementation",
+      "incremental improvement",
+      "experiment logging",
+      "error analysis",
+      "data preprocessing",
+      "model training",
+      "performance evaluation",
+      "inference API",
+      "simple monitoring",
+      "structured approach",
+      "data quality"
+    ],
+    "growth_keywords": [
+      "fundamental focus",
+      "official documentation",
+      "concept validation",
+      "small projects",
+      "gradual growth",
+      "onboarding",
+      "mentoring",
+      "self-directed learning",
+      "feedback receptiveness"
+    ],
+    "ownership_keywords": [
+      "problem definition involvement",
+      "operational awareness",
+      "explainability",
+      "thorough understanding",
+      "end-to-end responsibility",
+      "contributing stably"
+    ],
+    "work_expectation_keywords": [
+      "stable growth",
+      "clear role definition",
+      "stable processes",
+      "onboarding system",
+      "mentoring system",
+      "non-high-risk environment",
+      "team contribution"
+    ],
+    "summary_keywords": [
+      "ML pipeline",
+      "reproducibility",
+      "documentation",
+      "stable operations",
+      "data quality",
+      "entry-level ML engineer",
+      "statistics background",
+      "PyTorch",
+      "FastAPI"
+    ]
+  },
+  "profile_meta": {
+    "profile_id": "unknown",
+    "candidate_name": "박서연 (Park Seo-yeon)",
+    "primary_role": "ml",
+    "target_role": "AI Engineer (ML Engineer)",
+    "seniority": "entry",
+    "years_experience": "unknown",
+    "source_docs": [
+      {
+        "doc_id": "portfolio",
+        "filename": "Portfolio – P1 박서연 (Park Seo-yeon).pdf",
+        "provided_at": "unknown"
+      },
+      {
+        "doc_id": "resume",
+        "filename": "이력서 – P1 박서연 (Park Seo-yeon).pdf",
+        "provided_at": "unknown"
+      },
+      {
+        "doc_id": "essay",
+        "filename": "자기소개서 – P1 박서연 (Park Seo-yeon).pdf",
+        "provided_at": "unknown"
+      }
+    ]
+  },
+  "user_info_fields": {
+    "basic_profile": {
+      "summary": "Entry-level AI/ML Engineer with a background in Statistics and Computer Science basics. Focuses on understanding the end-to-end ML pipeline, data quality, reproducibility, stable operations, and documented collaboration. Prefers a structured learning environment and gradual growth over rapid adoption of new technologies. Aims to gain experience operating a model from start to finish and contribute stably to a team.",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P1.1"
+          ],
+          "quote": "본 포트폴리오는 **“모델 하나를 끝까지 운영해 본 경험을 만들자”**는 목표 아래 진행한 프로젝트와 학습 기록을 정리한 자료입니다."
+        },
+        {
+          "doc_id": "resume",
+          "line_refs": [
+            "P2-P1.경력 요약"
+          ],
+          "quote": "통계학 전공 기반의 신입 AI 엔지니어로, 모델 성능 자체보다 데이터 흐름과 재현 가능한 실험, 안정적인 운영 환경에서의 점진적 성장을 지향합니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.저는 “빠르게 성장하는 사람”보다는, 망하지 않는 환경에서 오래 성장하는 사람이 되고 싶습니다."
+          ],
+          "quote": "저는 “빠르게 성장하는 사람”보다는, 망하지 않는 환경에서 오래 성장하는 사람이 되고 싶습니다."
+        }
+      ]
+    },
+    "technical_capability": {
+      "stack": {
+        "languages": [
+          "Python",
+          "SQL"
+        ],
+        "frameworks": [
+          "PyTorch",
+          "scikit-learn",
+          "FastAPI"
+        ],
+        "data": [
+          "pandas",
+          "numpy",
+          "MLflow"
+        ],
+        "infra_cloud": [
+          "AWS EC2",
+          "AWS S3",
+          "Docker"
+        ],
+        "ops_tools": [
+          "Git",
+          "GitHub"
+        ]
+      },
+      "ops_deploy_experience": "yes",
+      "scale_traffic_platform_mentioned": "no",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P2.4"
+          ],
+          "quote": "Language: Python, ML/DL: PyTorch, scikit-learn, Data: pandas, numpy, Experiment: MLflow (기초 사용), Serving: FastAPI 기반 추론 API 구성"
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P2.5"
+          ],
+          "quote": "FastAPI로 간단한 추론 API를 구성하며, “학습된 모델이 실제로 어떻게 호출되고 사용되는지”를 직접 경험할 수 있었습니다."
+        },
+        {
+          "doc_id": "resume",
+          "line_refs": [
+            "P2-P1.기술 스택"
+          ],
+          "quote": "Infra/Tools: AWS EC2·S3 실습 수준, Git/GitHub, Docker 기본 사용"
+        }
+      ]
+    },
+    "project_behavior_data": {
+      "projects": [
+        {
+          "name": "고객 문의 분류 및 요약 모델",
+          "timeframe": "unknown",
+          "context_problem": "Customer service data contains many repetitive and similar inquiries. Automatic classification can shorten consultation time and improve work efficiency.",
+          "responsibility_scope": "Data cleaning and preprocessing pipeline configuration, baseline model implementation and performance comparison, PyTorch-based classification model training, F1-score/Accuracy based performance evaluation, error case classification and analysis table creation, experiment results documentation (Notion, README), FastAPI-based inference API configuration.",
+          "technical_decisions": [
+            "Implementation of baseline model (scikit-learn) followed by PyTorch-based model for gradual improvement.",
+            "Utilized F1-score and Accuracy for performance evaluation.",
+            "Configured FastAPI for inference API."
+          ],
+          "outcomes_metrics": [
+            {
+              "metric": "F1-score",
+              "before": "baseline",
+              "after": "약 12%p 개선",
+              "notes": "Compared to baseline model."
+            }
+          ],
+          "evidence": [
+            {
+              "doc_id": "portfolio",
+              "line_refs": [
+                "P1-P2.1",
+                "P1-P2.2",
+                "P1-P2.3",
+                "P1-P2.4",
+                "P1-P2.5"
+              ],
+              "quote": "고객센터 데이터에는 반복적이고 유사한 문의가 다수 포함되어 있으며, 이를 자동 분류할 수 있다면 상담 처리 시간 단축과 업무 효율 개선이 가능하다고 판단했습니다. 본 프로젝트는 텍스트 분류 모델을 실제 서비스 흐름에 가깝게 구성해보는 것을 목표로 진행되었습니다. ... 담당 역할: 데이터 정제 및 전처리 파이프라인 구성, Baseline 모델 구현 및 성능 비교, PyTorch 기반 분류 모델 학습, F1-score, Accuracy 기반 성능 평가, 에러 케이스 분류 및 분석 표 작성, 실험 결과 문서화 (Notion, README). ... 결과 및 인사이트: Baseline 대비 F1-score 약 12%p 개선"
+            },
+            {
+              "doc_id": "resume",
+              "line_refs": [
+                "P2-P1.프로젝트"
+              ],
+              "quote": "문제 정의: 고객 문의 자동 분류를 통한 상담 처리 효율 개선, 역할: 데이터 전처리, baseline 모델 구현, 실험 로그 관리, 기술: Python, pandas, scikit-learn, PyTorch, 결과: baseline 대비 F1-score 약 12%p 개선, 에러 케이스 분석 표 작성, 운영 경험: FastAPI 기반 추론 API 구성, 로그 기반 간단한 모니터링 적용"
+            }
+          ]
+        },
+        {
+          "name": "시계열 데이터 이상 탐지 미니 프로젝트",
+          "timeframe": "unknown",
+          "context_problem": "In real-world environments, data is not always clean. The project focused on data quality management and validation by practicing advanced detection of data anomaly signals.",
+          "responsibility_scope": "Compared statistical methods with simple machine learning techniques, clearly defined anomaly criteria in documentation, and specified model application scope and limitations.",
+          "technical_decisions": [
+            "Comparison of statistical methods and simple machine learning techniques for anomaly detection."
+          ],
+          "outcomes_metrics": [],
+          "evidence": [
+            {
+              "doc_id": "portfolio",
+              "line_refs": [
+                "P1-P3.1",
+                "P1-P3.2",
+                "P1-P3.3"
+              ],
+              "quote": "두 번째 프로젝트에서는 모델 성능보다는 데이터 품질 관리와 검증 관점에 초점을 맞추었습니다. 실무 환경에서는 항상 데이터가 깨끗하게 들어오지 않는다는 점을 고려하여, 이상 탐지를 통해 데이터 이상 신호를 사전에 감지하는 흐름을 실습했습니다. ... 접근 방식: 통계적 방법과 간단한 머신러닝 기법 비교, 이상치 정의 기준을 문서로 명확히 정리, 모델 적용 범위와 한계점 명시."
+            },
+            {
+              "doc_id": "resume",
+              "line_refs": [
+                "P2-P2.시계열 데이터 이상 탐지 미니 프로젝트"
+              ],
+              "quote": "데이터 품질 이상 탐지를 목표로 통계적 방법과 간단한 ML 모델 비교, 학습/평가 과정과 한계점을 README로 문서화하여 재현 가능성 확보"
+            }
+          ]
+        }
+      ]
+    },
+    "collaboration_experience": {
+      "summary": "Participated in team projects using PR-based workflows, actively received and incorporated code review feedback, and emphasized documenting experiment results and decisions in Notion/README for clear team communication and understanding, particularly explaining implementation choices and their limitations.",
+      "code_review_participation": "yes",
+      "documentation_communication": "high",
+      "cross_functional_collaboration": "unknown",
+      "conflict_coordination_experience": "not_mentioned",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P4.4"
+          ],
+          "quote": "팀 프로젝트에서는 주로 다음과 같은 방식으로 협업했습니다. • PR 기반 작업 흐름 경험 • 코드 리뷰는 주로 “받는 입장”으로 참여하며 수정 사항 반영 • 실험 결과 및 의사결정을 README 또는 Notion 문서로 정리"
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P4.4"
+          ],
+          "quote": "특히 리뷰 과정에서 “왜 이렇게 구현했는지”를 설명하는 문서의 중요성을 체감했고, 이후부터는 코드와 함께 의도와 한계를 함께 기록하려 노력했습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.협업 경험에서는 주로 PR 기반 작업 흐름에 참여하며 코드 리뷰를 받는 입장이었습니다."
+          ],
+          "quote": "협업 경험에서는 주로 PR 기반 작업 흐름에 참여하며 코드 리뷰를 받는 입장이었습니다."
+        }
+      ]
+    },
+    "growth_tendency": {
+      "summary": "Exhibits a self-directed and structured growth orientation, preferring to build a strong foundation through official documentation, lectures, and small projects for concept validation. Values feedback from code reviews and continuously works to improve understanding and explainability, aiming for gradual and stable growth in a supportive, structured environment with clear roles and mentoring.",
+      "learning_mode": "self_directed",
+      "new_tech_adoption": "low",
+      "feedback_receptiveness": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P5.5"
+          ],
+          "quote": "저는 무작정 최신 기술을 빠르게 따라가기보다는, 문서와 강의를 기반으로 기본기를 차근히 쌓는 학습 방식을 선호합니다. • 공식 문서 및 강의 중심 학습 • 작은 단위의 프로젝트를 통해 개념 검증 • 한 번 만든 결과물을 다시 실행하며 재현성 점검"
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P4.4"
+          ],
+          "quote": "리뷰 과정에서 “왜 이렇게 구현했는지”를 설명하는 문서의 중요성을 체감했고, 이후부터는 코드와 함께 의도와 한계를 함께 기록하려 노력했습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.특히 신입 AI 엔지니어로서 역할이 불명확한 팀보다는, 온보딩과 멘토링 체계가 갖춰진 조직에서 단계적으로 성장하고 싶습니다."
+          ],
+          "quote": "특히 신입 AI 엔지니어로서 역할이 불명확한 팀보다는, 온보딩과 멘토링 체계가 갖춰진 조직에서 단계적으로 성장하고 싶습니다."
+        }
+      ]
+    },
+    "work_environment_signals": {
+      "summary": "Seeks a stable, structured environment with clear role definitions, robust onboarding, and mentoring systems. Prefers gradual and steady growth over high-risk research or rapid adoption of new tech. Values the opportunity to understand the full ML system flow and to contribute stably to a team, emphasizing thoroughness and explainability in their work.",
+      "work_mode_preference": "unknown",
+      "work_life_balance_vs_immersion": "balanced",
+      "pace_intensity_preference": "stable",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P5.5"
+          ],
+          "quote": "첫 회사에서는 하이리스크 연구 환경보다는, 명확한 역할 정의와 온보딩 체계가 있는 팀에서 ML 시스템의 전반적인 흐름을 이해하며 성장하고 싶습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.저는 “빠르게 성장하는 사람”보다는, 망하지 않는 환경에서 오래 성장하는 사람이 되고 싶습니다."
+          ],
+          "quote": "저는 “빠르게 성장하는 사람”보다는, 망하지 않는 환경에서 오래 성장하는 사람이 되고 싶습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.저는 무작정 최신 모델이나 트렌드를 따라가기보다는, 공식 문서와 강의를 기반으로 개념을 이해하고 작은 프로젝트를 통해 검증하는 방식을 선호합니다."
+          ],
+          "quote": "저는 무작정 최신 모델이나 트렌드를 따라가기보다는, 공식 문서와 강의를 기반으로 개념을 이해하고 작은 프로젝트를 통해 검증하는 방식을 선호합니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.저는 빠르게 많은 것을 시도하는 사람은 아닐 수 있습니다. 하지만 한 번 맡은 일은 끝까지 이해하고, 다시 설명할 수 있을 때까지 정리하려 노력합니다."
+          ],
+          "quote": "저는 빠르게 많은 것을 시도하는 사람은 아닐 수 있습니다. 하지만 한 번 맡은 일은 끝까지 이해하고, 다시 설명할 수 있을 때까지 정리하려 노력합니다."
+        }
+      ]
+    },
+    "verification_needed_areas": {
+      "missing_or_unmentioned": [
+        "Specific timeframe for projects",
+        "Detailed technical decisions (e.g., choice of specific model architectures within PyTorch)",
+        "Experience with conflict resolution or coordinating with cross-functional teams",
+        "Work mode preference (remote/hybrid/onsite)",
+        "Specific salary expectations"
+      ],
+      "needs_followup_questions": [
+        "Can you elaborate on the 'data quality issues' in Project 01 and how they were addressed?",
+        "What were some of the 'simple machine learning techniques' compared in Project 02?",
+        "How do you ensure 'reproducibility' in your experiments beyond logging results and documenting?",
+        "Can you provide an example of 'documenting clear criteria and hypotheses before automation' from your experience?"
+      ]
+    }
+  },
+  "scoring_axes": {
+    "scoring_policy": {
+      "scale": "0-4",
+      "meaning": {
+        "0": "no explicit signal",
+        "1": "weak/indirect mention",
+        "2": "some evidence (limited scope)",
+        "3": "clear evidence (multiple instances or concrete responsibilities)",
+        "4": "strong evidence (clear ownership + concrete outcomes/metrics where applicable)"
+      },
+      "unknown_handling": "If evidence is missing, score must be 0 and confidence must be low."
+    },
+    "technical_fit_user": {
+      "score": 3,
+      "summary": "Possesses a foundational understanding of the ML pipeline from data preprocessing to serving, with hands-on experience in Python, PyTorch, scikit-learn, and FastAPI. Demonstrated ability to implement baseline models, train advanced models, perform evaluations, and set up basic inference APIs. Exposed to basic cloud/infra tools like AWS EC2/S3 and Docker.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P2.4",
+            "P1-P2.5"
+          ],
+          "quote": "Language: Python, ML/DL: PyTorch, scikit-learn, Data: pandas, numpy, Experiment: MLflow (기초 사용), Serving: FastAPI 기반 추론 API 구성... FastAPI로 간단한 추론 API를 구성하며, “학습된 모델이 실제로 어떻게 호출되고 사용되는지”를 직접 경험할 수 있었습니다."
+        },
+        {
+          "doc_id": "resume",
+          "line_refs": [
+            "P2-P1.기술 스택"
+          ],
+          "quote": "Infra/Tools: AWS EC2·S3 실습 수준, Git/GitHub, Docker 기본 사용"
+        },
+        {
+          "doc_id": "resume",
+          "line_refs": [
+            "P2-P1.경력 요약"
+          ],
+          "quote": "데이터 전처리부터 모델 학습, 간단한 서빙까지의 기본적인 ML 파이프라인을 경험했으며"
+        }
+      ],
+      "subsignals": {
+        "languages_frameworks_depth": 3,
+        "infra_cloud_exposure": 2,
+        "ops_deploy_monitoring_exposure": 3,
+        "scale_platform_exposure": 0
+      }
+    },
+    "execution_style_user": {
+      "score": 3,
+      "summary": "Emphasizes a stable and reproducible approach to project execution, prioritizing a clear understanding of the end-to-end ML flow, data quality, and operational considerations over just model performance. Progresses from baselines to improvements, focuses on error analysis, and values clear problem definition.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P1.1"
+          ],
+          "quote": "데이터 → 학습 → 평가 → 서빙 → 개선으로 이어지는 흐름을 이해하고 재현 가능한 형태로 정리하는 것을 가장 중요하게 생각해 왔습니다. ... 동일한 실험을 다시 실행하면 같은 결과를 얻을 수 있는가?"
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P2.2",
+            "P1-P2.5"
+          ],
+          "quote": "초기에는 단순한 baseline 모델(scikit-learn 기반)을 먼저 구현하고, 이후 PyTorch 기반 모델로 점진적으로 개선하는 방식을 택했습니다. ... 단순 성능 수치보다 에러 유형을 분류해보는 과정이 이후 개선 방향 설정에 더 유의미하다는 점을 학습"
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.인턴 경험 이후 진행한 개인 및 팀 프로젝트에서도 저는 항상 재현성과 문서화를 기준으로 작업했습니다."
+          ],
+          "quote": "인턴 경험 이후 진행한 개인 및 팀 프로젝트에서도 저는 항상 재현성과 문서화를 기준으로 작업했습니다."
+        }
+      ],
+      "subsignals": {
+        "speed_vs_stability": "stability",
+        "prototype_vs_structure": "structure",
+        "business_impact_vs_tech_quality": "balanced"
+      }
+    },
+    "collaboration_style_user": {
+      "score": 3,
+      "summary": "Actively engages in PR-based workflows, receptively incorporates feedback from code reviews, and strongly values documentation (Notion, README) for clear communication and shared understanding within a team, especially explaining implementation choices and their limitations.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P4.4"
+          ],
+          "quote": "PR 기반 작업 흐름 경험 ... 코드 리뷰는 주로 “받는 입장”으로 참여하며 수정 사항 반영 ... 실험 결과 및 의사결정을 README 또는 Notion 문서로 정리 ... 특히 리뷰 과정에서 “왜 이렇게 구현했는지”를 설명하는 문서의 중요성을 체감했고, 이후부터는 코드와 함께 의도와 한계를 함께 기록하려 노력했습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.협업 경험에서는 주로 PR 기반 작업 흐름에 참여하며 코드 리뷰를 받는 입장이었습니다."
+          ],
+          "quote": "협업 경험에서는 주로 PR 기반 작업 흐름에 참여하며 코드 리뷰를 받는 입장이었습니다."
+        }
+      ],
+      "subsignals": {
+        "code_review": 3,
+        "documentation": 4,
+        "cross_functional": 0
+      }
+    },
+    "ownership_user": {
+      "score": 3,
+      "summary": "Demonstrates a strong sense of ownership over the entire ML lifecycle, from problem definition (understanding 'why' a model exists) to considering its operational use and potential issues. Emphasizes thorough understanding, explainability of results, and documenting the full context of projects, with a goal of contributing stably to the team.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P1.1"
+          ],
+          "quote": "이 모델은 어떤 문제를 해결하기 위해 존재하는가? ... 서비스 환경에서 이 모델은 어떻게 사용되고, 언제 문제가 생길 수 있는가?"
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P2.1"
+          ],
+          "quote": "본 프로젝트는 텍스트 분류 모델을 실제 서비스 흐름에 가깝게 구성해보는 것을 목표로 진행되었습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.이 과정은 제가 AI 엔지니어로서 “모델만 아는 사람”이 아니라, 운영까지 고려하는 사람이 되고 싶다는 방향성을 더욱 분명하게 만들어 주었습니다."
+          ],
+          "quote": "이 과정은 제가 AI 엔지니어로서 “모델만 아는 사람”이 아니라, 운영까지 고려하는 사람이 되고 싶다는 방향성을 더욱 분명하게 만들어 주었습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.저는 빠르게 많은 것을 시도하는 사람은 아닐 수 있습니다. 하지만 한 번 맡은 일은 끝까지 이해하고, 다시 설명할 수 있을 때까지 정리하려 노력합니다."
+          ],
+          "quote": "저는 빠르게 많은 것을 시도하는 사람은 아닐 수 있습니다. 하지만 한 번 맡은 일은 끝까지 이해하고, 다시 설명할 수 있을 때까지 정리하려 노력합니다."
+        }
+      ],
+      "subsignals": {
+        "problem_definition_involvement": 3,
+        "decision_making": 2,
+        "role_self_positioning": "owner"
+      }
+    },
+    "growth_orientation_user": {
+      "score": 3,
+      "summary": "Exhibits a self-directed and structured growth orientation, preferring to build a strong foundation through official documentation, lectures, and small projects for concept validation. Values feedback from code reviews and continuously works to improve understanding and explainability, aiming for gradual and stable growth in a supportive, structured environment with clear roles and mentoring.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P5.5"
+          ],
+          "quote": "저는 무작정 최신 기술을 빠르게 따라가기보다는, 문서와 강의를 기반으로 기본기를 차근히 쌓는 학습 방식을 선호합니다. • 공식 문서 및 강의 중심 학습 • 작은 단위의 프로젝트를 통해 개념 검증 • 한 번 만든 결과물을 다시 실행하며 재현성 점검"
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P4.4"
+          ],
+          "quote": "리뷰 과정에서 “왜 이렇게 구현했는지”를 설명하는 문서의 중요성을 체감했고, 이후부터는 코드와 함께 의도와 한계를 함께 기록하려 노력했습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.특히 신입 AI 엔지니어로서 역할이 불명확한 팀보다는, 온보딩과 멘토링 체계가 갖춰진 조직에서 단계적으로 성장하고 싶습니다."
+          ],
+          "quote": "특히 신입 AI 엔지니어로서 역할이 불명확한 팀보다는, 온보딩과 멘토링 체계가 갖춰진 조직에서 단계적으로 성장하고 싶습니다."
+        }
+      ],
+      "subsignals": {
+        "new_tech_adoption": 2,
+        "self_directed_learning": 3,
+        "feedback_loop": 3
+      }
+    },
+    "work_expectation_user": {
+      "score": 3,
+      "summary": "Seeks a stable, structured environment with clear role definitions, robust onboarding, and mentoring systems. Prefers gradual and steady growth over high-risk research or rapid adoption of new tech. Values the opportunity to understand the full ML system flow and to contribute stably to a team, emphasizing thoroughness and explainability in their work.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P5.5"
+          ],
+          "quote": "첫 회사에서는 하이리스크 연구 환경보다는, 명확한 역할 정의와 온보딩 체계가 있는 팀에서 ML 시스템의 전반적인 흐름을 이해하며 성장하고 싶습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": [
+            "P1-P6.6"
+          ],
+          "quote": "팀에 안정적으로 기여할 수 있는 AI 엔지니어로 성장해 나가고자 합니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.저는 “빠르게 성장하는 사람”보다는, 망하지 않는 환경에서 오래 성장하는 사람이 되고 싶습니다."
+          ],
+          "quote": "저는 “빠르게 성장하는 사람”보다는, 망하지 않는 환경에서 오래 성장하는 사람이 되고 싶습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": [
+            "P3-P1.무작정 최신 모델이나 트렌드를 따라가기보다는, 공식 문서와 강의를 기반으로 개념을 이해하고 작은 프로젝트를 통해 검증하는 방식을 선호합니다."
+          ],
+          "quote": "무작정 최신 모델이나 트렌드를 따라가기보다는, 공식 문서와 강의를 기반으로 개념을 이해하고 작은 프로젝트를 통해 검증하는 방식을 선호합니다."
+        }
+      ],
+      "subsignals": {
+        "pace_intensity_preference": 3,
+        "wlb_vs_immersion_preference": 3,
+        "responsibility_density_signals": 3
+      }
+    }
+  },
+  "extraction_quality": {
+    "unknown_policy_applied": "yes",
+    "notes": "Timeframe for projects, cross-functional collaboration, and work mode preference were not explicitly stated and thus marked as 'unknown' or 'not_mentioned'. The interpretation of 'balanced' for WLB vs. Immersion and responsibility density is inferred from the candidate's stated preference for stable growth, clear roles, and non-high-risk environments."
+  },
+  "_source": {
+    "type": "local_pdfs",
+    "files": [
+      "Portfolio – P1 박서연 (Park Seo-yeon).pdf",
+      "이력서 – P1 박서연 (Park Seo-yeon).pdf",
+      "자기소개서 – P1 박서연 (Park Seo-yeon).pdf"
+    ]
+  }
+}

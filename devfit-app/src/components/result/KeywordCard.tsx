@@ -31,7 +31,7 @@ export function KeywordCard({ keywords }: KeywordCardProps) {
   return (
     <div className="bg-white rounded-2xl p-5 toss-shadow">
       <h4 className="text-text-primary font-bold text-sm mb-4 flex items-center gap-2">
-        <Tags className="w-4 h-4 text-toss-green" /> 핵심 역량 매칭
+        <Tags className="w-4 h-4 text-toss-green" /> 기술 스택 매칭
       </h4>
       <div className="flex flex-wrap gap-2">
         {visibleKeywords.map((keyword) => {

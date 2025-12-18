@@ -1,0 +1,738 @@
+{
+  "schema_version": "1.1",
+  "profile_meta": {
+    "company_name": "토스커뮤니티",
+    "industry_domain_label": "핀테크",
+    "company_stage_label": "unknown",
+    "industry": "핀테크",
+    "primary_domain": "https://toss.im",
+    "analyzed_scope": "company",
+    "analyzed_date": "2024-07-30",
+    "source_docs": [
+      {
+        "doc_id": "job_posting",
+        "filename": "Server Developer 채용공고",
+        "url": "https://toss.im/career/job-detail?job_id=4071141003"
+      },
+      {
+        "doc_id": "official_site_culture",
+        "filename": "토스커뮤니티 문화",
+        "url": "https://toss.im/career/culture"
+      },
+      {
+        "doc_id": "official_site_careers",
+        "filename": "토스커뮤니티 채용",
+        "url": "https://toss.im/career/community/toss"
+      }
+    ]
+  },
+  "company_info_fields": {
+    "basic_profile": {
+      "summary": "토스커뮤니티는 간편하고 안전한 금융 서비스를 넘어선 다양한 서비스를 만들며, 일에 깊이 몰입하고 성장하는 즐거움을 추구합니다. 탁월한 동료들과 함께 기존의 틀을 깨는 혁신적인 조직 문화를 지향합니다.",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L5"
+          ],
+          "quote": "간편하면서도 안전한, 금융을 넘어선 서비스를 만들어요."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L7",
+            "L110"
+          ],
+          "quote": "토스커뮤니티에 모인 사람들은 일에 몰입하는 즐거움과 성장의 기쁨을 느끼며, 새로운 역사를 만들고 있습니다. ... 토스커뮤니티는 완전히 새로운 조직 문화를 지향합니다."
+        }
+      ]
+    },
+    "culture_keywords_overview": {
+      "culture_keywords": [
+        "몰입",
+        "Direct Responsible Individual",
+        "Freedom & Responsibility",
+        "Radical Transparency",
+        "Courage to Fail Fast",
+        "Mission over Individual",
+        "Learn Proactively",
+        "Radical Candor",
+        "High Performance Culture",
+        "Question Every Assumption",
+        "Focus on Impact",
+        "Move with Urgency",
+        "Go the Extra-mile"
+      ],
+      "culture_summary_keywords": [
+        "몰입",
+        "자율과 책임",
+        "투명성",
+        "빠른 실패",
+        "최종 의사결정권 (DRI)",
+        "성과 중심",
+        "솔직한 피드백",
+        "주도적 학습",
+        "근원적 질문",
+        "신속함"
+      ],
+      "evidence": [
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L3",
+            "L12",
+            "L16",
+            "L20",
+            "L24",
+            "L49",
+            "L53",
+            "L57",
+            "L61",
+            "L115",
+            "L119",
+            "L123",
+            "L127"
+          ],
+          "quote": "이 몰입의 경험을 일에서 느낀다면 어떨까요? ... Direct Responsible Individual ... Freedom & Responsibility ... Radical Transparency ... Courage to Fail Fast ... Mission over Individual ... Learn Proactively ... Radical Candor ... High Performance Culture ... Question Every Assumption ... Focus on Impact ... Move with Urgency ... Go the Extra-mile"
+        }
+      ]
+    },
+    "technical_environment": {
+      "stack": {
+        "languages": [
+          "Java",
+          "Kotlin"
+        ],
+        "frameworks": [
+          "Spring Framework"
+        ],
+        "data": [],
+        "infra_cloud": [
+          "마이크로서비스 아키텍처",
+          "분산 시스템",
+          "이벤트 기반 아키텍처",
+          "고가용성 설계"
+        ],
+        "ops_tools": []
+      },
+      "ops_deploy_experience_required_or_mentioned": "yes",
+      "scale_traffic_platform_mentioned": "yes",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L40",
+            "L47",
+            "L48",
+            "L49",
+            "L68",
+            "L75",
+            "L76",
+            "L81",
+            "L104",
+            "L106"
+          ],
+          "quote": "안정성과 확장성을 고려하여 마이크로서비스 아키텍처로 전환하고... 지속적으로 증가하는 결제 요청량과 다양한 요구사항을 쉽게 구현할 수 있도록 확장성과 유연성이 높은 시스템을 만들어요. ... 수십배의 트래픽이 순간적으로 발생해도 무너지지 않는 시스템을 만들어요. ... 수많은 거래건을, 수백가지 요구사항으로 계산해도 빠르게, 오차없이 계산이 가능한 정산 시스템을 만들어요. ... 대용량 트래픽을 빠르고 안정적으로 처리할 수 있도록 튼튼하고 안전한 시스템을 개발해요. ... 분산 시스템, 이벤트 기반 아키텍처, 고가용성 설계 등의 경험을 통해 기술적인 성장을 경험할 수 있어요. ... 확장성과 장기 유지보수성을 전제로, 오랫동안 안정적으로 운영될 구조와 방식을 고민하고, 성장 가능한 구조를 함께 만들어가요. ... 트렌디한 기술을 활용하여 서비스가 안정적으로 운영될 수 있도록 하며... 토스 증권에서는 서버 개발 환경으로 Java/Kotlin, Spring Framework를 주로 사용하고 있어요. ... 배포하기 쉬운 구조, 운영하기 쉬운 구조, 안정성을 위한 구조, 성능 개선을 위한 구조에 대해서 고민하고 실행에 옮겨요."
+        }
+      ]
+    },
+    "role_and_hiring_signals": {
+      "hiring_summary": "Server Developer 포지션은 토스커뮤니티의 7개 계열사(토스, 토스인슈어런스, 토스페이먼츠, 토스뱅크, 토스플레이스, 토스인컴, 토스증권)에서 Product, Platform, Productivity 등 다양한 Chapter로 나뉘어 채용되며, 입사 후 개인의 역량과 커리어 방향에 따라 Chapter 변경이 가능합니다. 정규직 채용이며 원격 근무가 가능합니다.",
+      "open_roles_mentioned": [
+        "Server Developer",
+        "Account Manager",
+        "Ads Policy & Operations Manager",
+        "Barista",
+        "Biz Legal Team Leader",
+        "Brand Design, Director",
+        "Business Operations Team Leader",
+        "Client Solutions Manager",
+        "Cloud Engineer",
+        "Communications Manager"
+      ],
+      "employment_type": "full_time",
+      "location": "unknown",
+      "remote_hybrid_onsite": "hybrid",
+      "required_experience": "신입/경력 무관 (토스페이먼츠의 경우 3년 이하/3년 이상 옵션이 있음). 개발 관련 문제 해결 경험 및 레거시 코드 리팩토링 경험을 추천함.",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L3",
+            "L10",
+            "L17",
+            "L45",
+            "L52",
+            "L53",
+            "L54"
+          ],
+          "quote": "Server Developer ... 7개 계열사·23개의 포지션이 열려 있어요 ... 토스의 Server Developer는 Product, Platform, Productivity 세 개의 Chapter로 나뉘어 일합니다. ... 입사 후 개인의 역량과 커리어 방향에 따라 Chapter를 변경할 수 있으니, 지원 단계에서는 현재의 경력과 잘 맞는 Chapter로 지원해 주세요. ... 3년 이하 ... 3년 이상 ... 개발과 관련한 문제 상황을 개선하거나 해결해 보신 사항을 최대한 구체적으로 작성해 주세요. ... 레거시 코드를 리팩토링 해보신 경험이 있다면 좋아요. ... 기술자로서 비즈니스의 문제를 해결했던 경험과 그 과정에서 활용하셨던 기술적 장점이 드러나는 사례를 자세히 적어주시면 좋아요."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L163",
+            "L176"
+          ],
+          "quote": "유연한 출퇴근 시간 원격 근무 가능 별도 승인 없는 자율 휴가 ... 자율 출퇴근제 당신의 업무 스타일에 따라 직접 근무 시간 및 장소(출근 또는 원격 등)를 자유롭게 조정할 수 있습니다."
+        },
+        {
+          "doc_id": "official_site_careers",
+          "line_refs": [
+            "L270",
+            "L274",
+            "L275",
+            "L276",
+            "L277",
+            "L278",
+            "L279",
+            "L280",
+            "L281",
+            "L282",
+            "L283"
+          ],
+          "quote": "정규직 ... Account Manager ... Account Manager [FacePay] ... Ads Policy & Operations Manager ... Barista ... Biz Legal Team Leader ... Brand Design, Director ... Business Operations Team Leader ... Client Solutions Manager ... Cloud Engineer ... Communications Manager"
+        }
+      ]
+    },
+    "execution_culture_signals": {
+      "summary": "비즈니스 임팩트를 위한 빠른 성장을 이끌고, 신속한 속도로 시도하며 실패를 두려워하지 않는 용기를 강조합니다. 동시에 안정성과 확장성을 고려한 견고한 아키텍처 설계와 운영에 대해서도 고민하고 실행합니다.",
+      "speed_vs_stability": "speed",
+      "prototype_vs_structure": "balanced",
+      "business_impact_vs_tech_quality": "business_impact",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L25",
+            "L36",
+            "L40",
+            "L47",
+            "L48",
+            "L67",
+            "L68",
+            "L76",
+            "L106"
+          ],
+          "quote": "기술을 통해 비즈니스의 빠른 성장을 이끄는 역할을 합니다. ... 신규 기능을 빠르게 적용·검증하며 서비스를 발전시켜 나가고 있어요. ... 안정성과 확장성을 고려하여 마이크로서비스 아키텍처로 전환하고... 지속적으로 증가하는 결제 요청량과 다양한 요구사항을 쉽게 구현할 수 있도록 확장성과 유연성이 높은 시스템을 만들어요. ... 수십배의 트래픽이 순간적으로 발생해도 무너지지 않는 시스템을 만들어요. ... 빠르고 유연하며, 확장이 용이한 시스템을 개발해요. ... 대용량 트래픽을 빠르고 안정적으로 처리할 수 있도록 튼튼하고 안전한 시스템을 개발해요. ... 확장성과 장기 유지보수성을 전제로, 오랫동안 안정적으로 운영될 구조와 방식을 고민하고, 성장 가능한 구조를 함께 만들어가요. ... 전체적인 관점에서 좋은 아키텍처에 대한 고민을 하고 개선해 나가요. 배포하기 쉬운 구조, 운영하기 쉬운 구조, 안정성을 위한 구조, 성능 개선을 위한 구조에 대해서 고민하고 실행에 옮겨요."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L24",
+            "L25",
+            "L119",
+            "L123"
+          ],
+          "quote": "Courage to Fail Fast 용기 있는 빠른 실패를 통해 성장합니다. ... 더 빨리 실패를 선언하고, 그 실패에서 배운 러닝을 통해 다음을 향해 용기 있게 나아가는 것에 언제나 박수를 쳐줍니다. ... Focus on Impact 가장 큰 임팩트를 만들 수 있는 일에 집중합니다. ... Move with Urgency 신속한 속도로 움직입니다. 느리게 움직여서 기회를 잃는 것보다 신속한 속도로 시도하고 실패하는 것이 언제나 나은 선택입니다."
+        }
+      ]
+    },
+    "collaboration_culture_signals": {
+      "summary": "제품 중심의 교차 기능 팀(사일로/스쿼드)에서 높은 자율성과 책임감을 가지고 협업하며, 모든 정보가 투명하게 공개되고 동료 간 솔직한 피드백을 통해 최고의 결과물을 만들어냅니다. 코드 리뷰와 스터디를 통한 횡적 협업도 강조됩니다.",
+      "code_review_culture": "mentioned",
+      "documentation_culture": "not_mentioned",
+      "cross_functional_collaboration": "mentioned",
+      "decision_making_process": "bottom_up",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L26",
+            "L27",
+            "L36",
+            "L61",
+            "L62",
+            "L91",
+            "L101"
+          ],
+          "quote": "팀/사일로(Silo)에 소속되어, 마치 작은 스타트업처럼 높은 자율성과 책임을 가지고 일해요. 하나의 사일로는 6~8명의 구성원(프로덕트 오너, 디자이너, 개발자, 데이터 분석가 등)으로 이루어져 있고, 제품을 중심으로 의사결정이 이뤄져요. ... 개발자 뿐만 아니라 보안팀, 인프라팀 및 현업 담당자와 긴밀하게 협업하며... Server Developer (Product)는 토스뱅크의 메이커 조직인 스쿼드(Squad)에 속해있어요. Product Owner/Product Designer/Data Analyst 등 제품을 기획/개발하는데 몰두하는 서로 다른 직군의 멤버들이 직군이 하나의 스쿼드를 이루어 작은 스타트업처럼 자율성을 갖고 일하고 있어요. ... 제품을 만드는 조직인 사일로(Silo)는 프로덕트 오너/프로덕트 디자이너/개발자/데이터 분석가 등 6~8명의 직군으로 구성되며, 작은 스타트업처럼 자율성을 갖고 일하고 있어요. ... 작게는 코드리뷰부터, 크게는 엔지니어링데이와 서버 챕터 위클리에 이르기까지 서버 개발자들의 강력한 횡적 협업을 지탱하는 커뮤니티가 있어요."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L12",
+            "L13",
+            "L20",
+            "L57"
+          ],
+          "quote": "Direct Responsible Individual 모두가 맡은 바에 최종 의사결정할 수 있습니다. ... 맡은 일에 대한 DRI(Direct Responsible Individual, 최종의사결정권)를 바탕으로 모든 것을 스스로 결정하고 주도적으로 진행하며, 결과에 대한 책임을 집니다. ... Radical Transparency 정보는 모두에게 열려있습니다. ... Radical Candor 동료간에는 ‘완전한 솔직함’을 추구합니다."
+        }
+      ]
+    },
+    "ownership_expectation_signals": {
+      "summary": "각 팀원은 DRI(Direct Responsible Individual)로서 자신의 업무에 대한 최종 의사결정권을 가지며, 단순히 기술 구현을 넘어 제품 방향과 사용자 경험에 영향력을 발휘하고, 문제 정의부터 시스템 설계 및 운영까지 전 과정에 대한 높은 수준의 오너십과 책임을 기대합니다.",
+      "problem_definition_expected": "yes",
+      "decision_making_expected": "yes",
+      "role_positioning": "owner",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L36",
+            "L66",
+            "L74",
+            "L80"
+          ],
+          "quote": "단순 요청이 아닌 실제 영업 및 운영 환경의 문제를 파악하고 신규 기능을 빠르게 적용·검증하며 서비스를 발전시켜 나가고 있어요. ... 복잡한 은행 시스템을 빠르고 간결한 구조로 고객에게 제공할 수 있는 방법에 대해 고민하고 실행해요. ... Server Developer는 초기 멤버로 단순 기술 구현을 넘어, 새로운 기능의 설계 단계부터 참여하며 제품 방향과 사용자 경험에도 영향력을 발휘해요. ... 최고의 가치를 제공하기 위해 시스템 서비스 설계부터 운영까지 보이지 않는 모든 일을 하고 있어요."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L12",
+            "L13"
+          ],
+          "quote": "Direct Responsible Individual 모두가 맡은 바에 최종 의사결정할 수 있습니다. ... 맡은 일에 대한 DRI(Direct Responsible Individual, 최종의사결정권)를 바탕으로 모든 것을 스스로 결정하고 주도적으로 진행하며, 결과에 대한 책임을 집니다."
+        }
+      ]
+    },
+    "growth_learning_culture_signals": {
+      "summary": "주도적인 학습과 기술 토론, 스터디를 통해 개인의 성장을 적극 지원하며, 도서/워크샵/세미나 비용을 100% 지원합니다. 트렌디한 기술을 활용하고 합리적인 개발 방식을 탐구하며, 실패를 통한 학습과 솔직하고 건설적인 피드백 문화를 통해 지속적인 성장을 추구합니다.",
+      "learning_support": "mentioned",
+      "new_tech_adoption": "high",
+      "feedback_culture": "mentioned",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L75",
+            "L81",
+            "L99",
+            "L105"
+          ],
+          "quote": "분산 시스템, 이벤트 기반 아키텍처, 고가용성 설계 등의 경험을 통해 기술적인 성장을 경험할 수 있어요. ... 트렌디한 기술을 활용하여 서비스가 안정적으로 운영될 수 있도록 하며... 기술 토론을 좋아하고, 스터디도 많이 하고 있어요. ... 다양한 라이브러리와 개발 방식 중에서 합리적이고 효율적인 방식을 찾아 선택하고 공통화시키는 작업을 해요."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L24",
+            "L25",
+            "L53",
+            "L57",
+            "L75",
+            "L90",
+            "L165"
+          ],
+          "quote": "Courage to Fail Fast 용기 있는 빠른 실패를 통해 성장합니다. ... 더 빨리 실패를 선언하고, 그 실패에서 배운 러닝을 통해 다음을 향해 용기 있게 나아가는 것에 언제나 박수를 쳐줍니다. ... Learn Proactively 주도적으로 학습합니다. ... Radical Candor 동료간에는 ‘완전한 솔직함’을 추구합니다. ... 실패에서 배우고 더 성장하는 토스팀 만의 문화 덕분이라고 생각해요. ... 결과물에 대해 챌린지하는 용기를 적극 장려합니다. ... 도서, 워크샵, 세미나 등 업무 교육비 100% 지원"
+        }
+      ]
+    },
+    "work_environment_expectations": {
+      "summary": "업무에 깊이 몰입하는 것을 최우선 가치로 여기며, 자율 출퇴근 및 원격 근무가 가능한 유연한 근무 환경을 제공합니다. 높은 성과를 추구하는 고강도 문화이지만, 업계 최고 수준의 연봉, 성과급, 무이자 주택자금 대출, 사내 카페/편의점/헤어살롱 등 파격적이고 광범위한 복리후생으로 업무 집중과 생활 안정을 적극 지원합니다.",
+      "work_mode": "hybrid",
+      "wlb_vs_immersion": "immersion",
+      "pace_intensity": "high_intensity",
+      "oncall_or_shift": "not_mentioned",
+      "overtime_or_night_work": "mentioned",
+      "benefits_or_perks": [
+        "유연한 출퇴근 시간",
+        "원격 근무 가능",
+        "별도 승인 없는 자율 휴가",
+        "근속 3년마다 리프레시 유급 휴가 1개월",
+        "업계 최고 수준의 연봉",
+        "반기별 성과급 지급",
+        "개인 법인카드 지급 (식대, 야근교통비 등에 자율 사용)",
+        "도서, 워크샵, 세미나 등 업무 교육비 100% 지원",
+        "최고급 하드웨어 및 업무용 소프트웨어 제공",
+        "1억 무이자 주택자금 대출 (토스씨엑스 및 토스인슈어런스 제외)",
+        "전문 바리스타가 운영하는 사내 카페",
+        "전문 미용사가 상주하는 사내 헤어살롱",
+        "다양한 간식과 물품이 상시 구비되어 있는 사내 편의점",
+        "직장단체보험 (가족 포함) 및 각종 경조사비 지원",
+        "매월 체력단련비, 통신비 지원",
+        "업무 집중 공간 (방음 폰부스 등)"
+      ],
+      "evidence": [
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L3",
+            "L4",
+            "L5",
+            "L7",
+            "L61",
+            "L62",
+            "L127",
+            "L128",
+            "L163",
+            "L165",
+            "L167",
+            "L172",
+            "L176",
+            "L177"
+          ],
+          "quote": "당신도 깊게 몰입했던 무언가가 있나요? 시간 가는 줄 모르고 무엇에 빠져드는 경험. 함께 한 방향으로 달려가는 느낌. 해냈을 때의 쾌감과 기쁨. 이 몰입의 경험을 일에서 느낀다면 어떨까요? 일을 방해하는 요소가 없다면 어떨까요? ... 토스커뮤니티에 모인 사람들은 일에 몰입하는 즐거움과 성장의 기쁨을 느끼며, 새로운 역사를 만들고 있습니다. ... High Performance Culture 높은 퍼포먼스 문화를 추구합니다. ... 토스커뮤니티 문화의 목표는 지속적으로 승리하는 팀을 만드는 것입니다. 이를 위해서 높은 탁월함을 추구합니다. ... Go the Extra-mile 좋은 것을 넘어 위대한 것을 추구합니다. ... 토스커뮤니티는 적당한 수준에서 일을 마무리 짓지 않습니다. ... 유연한 출퇴근 시간 원격 근무 가능 별도 승인 없는 자율 휴가 근속 3년마다 리프레시 유급 휴가 1개월 ... 업계 최고 수준의 연봉 반기별 성과급 지급 개인 법인카드 지급 (식대, 야근교통비 등에 자율 사용) 도서, 워크샵, 세미나 등 업무 교육비 100% 지원 최고급 하드웨어 및 업무용 소프트웨어 제공 ... 1억 무이자 주택자금 대출(토스씨엑스 및 토스인슈어런스 제외) 전문 바리스타가 운영하는 사내 카페 전문 미용사가 상주하는 사내 헤어살롱 다양한 간식과 물품이 상시 구비되어 있는 사내 편의점 직장단체보험 (가족 포함) 및 각종 경조사비 지원 매월 체력단련비, 통신비 지원 ... 자율 휴가 토스에서 휴가의 핵심은 승인이 아닌 공유입니다. 자율과 신뢰를 기반으로 별도의 보고나 승인 없이 자유롭게 휴가를 사용할 수 있습니다. ... 자율 출퇴근제 당신의 업무 스타일에 따라 직접 근무 시간 및 장소(출근 또는 원격 등)를 자유롭게 조정할 수 있습니다. ... 업무 집중 공간 아무런 방해 없이 일에만 집중하고 싶을 때, 혼자 만의 공간을 활용할 수 있습니다. 사무실 곳곳에 오픈형이 아닌 벽으로 분리된 자리, 방음이 잘 되는 폰부스 등이 마련되어 있습니다."
+        }
+      ]
+    },
+    "verification_needed_areas": {
+      "missing_or_unmentioned": [
+        "회사의 물리적 위치 (도시)",
+        "구체적인 데이터베이스/데이터 처리 기술 스택",
+        "구체적인 DevOps/운영 도구",
+        "명시적인 문서화 문화"
+      ],
+      "needs_followup_questions": [
+        "원격 근무의 구체적인 정책 (전면 원격 가능 여부, 사무실 출근 빈도 등)에 대한 추가 확인 필요"
+      ]
+    }
+  },
+  "scoring_axes": {
+    "scoring_policy": {
+      "scale": "0-4",
+      "meaning": {
+        "0": "no explicit signal",
+        "1": "weak/indirect mention",
+        "2": "some evidence (limited scope)",
+        "3": "clear evidence (multiple instances or concrete practices)",
+        "4": "strong evidence (clear ownership + concrete policies/practices)"
+      },
+      "unknown_handling": "If evidence is missing, score must be 0 and confidence must be low."
+    },
+    "technical_fit_company": {
+      "score": "4",
+      "summary": "토스커뮤니티는 Java/Kotlin과 Spring Framework 기반의 마이크로서비스 아키텍처, 분산 시스템, 이벤트 기반 아키텍처를 활용하여 대용량 트래픽과 높은 확장성을 처리하는 시스템을 개발하고 운영하는 데 중점을 둡니다. 배포 및 운영의 용이성과 안정성, 성능 개선에 대한 지속적인 고민과 실행을 중요하게 여깁니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L40"
+          ],
+          "quote": "안정성과 확장성을 고려하여 마이크로서비스 아키텍처로 전환하고"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L47",
+            "L48",
+            "L49"
+          ],
+          "quote": "지속적으로 증가하는 결제 요청량과 다양한 요구사항을 쉽게 구현할 수 있도록 확장성과 유연성이 높은 시스템을 만들어요. ... 수십배의 트래픽이 순간적으로 발생해도 무너지지 않는 시스템을 만들어요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L68"
+          ],
+          "quote": "대용량 트래픽을 빠르고 안정적으로 처리할 수 있도록 튼튼하고 안전한 시스템을 개발해요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L75",
+            "L76"
+          ],
+          "quote": "분산 시스템, 이벤트 기반 아키텍처, 고가용성 설계 등의 경험을 통해 기술적인 성장을 경험할 수 있어요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L104"
+          ],
+          "quote": "토스 증권에서는 서버 개발 환경으로 Java/Kotlin, Spring Framework를 주로 사용하고 있어요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L106"
+          ],
+          "quote": "배포하기 쉬운 구조, 운영하기 쉬운 구조, 안정성을 위한 구조, 성능 개선을 위한 구조에 대해서 고민하고 실행에 옮겨요."
+        }
+      ],
+      "subsignals": {
+        "languages_frameworks_depth": "3",
+        "infra_cloud_exposure": "3",
+        "ops_deploy_monitoring_exposure": "3",
+        "scale_platform_exposure": "4"
+      }
+    },
+    "execution_style_company": {
+      "score": "4",
+      "summary": "토스커뮤니티는 신속한 속도로 시도하고 빠르게 실패하며 성장을 이끄는 것을 강조합니다. 비즈니스 임팩트 창출에 집중하되, 금융 서비스의 특성상 안정성, 확장성, 장기 유지보수성을 고려한 견고한 시스템 아키텍처를 구축하고 운영하는 것 또한 중요하게 다룹니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L24",
+            "L25"
+          ],
+          "quote": "Courage to Fail Fast 용기 있는 빠른 실패를 통해 성장합니다. ... 더 빨리 실패를 선언하고, 그 실패에서 배운 러닝을 통해 다음을 향해 용기 있게 나아가는 것에 언제나 박수를 쳐줍니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L119"
+          ],
+          "quote": "Focus on Impact 가장 큰 임팩트를 만들 수 있는 일에 집중합니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L123"
+          ],
+          "quote": "Move with Urgency 신속한 속도로 움직입니다. 느리게 움직여서 기회를 잃는 것보다 신속한 속도로 시도하고 실패하는 것이 언제나 나은 선택입니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L25"
+          ],
+          "quote": "기술을 통해 비즈니스의 빠른 성장을 이끄는 역할을 합니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L40"
+          ],
+          "quote": "안정성과 확장성을 고려하여 마이크로서비스 아키텍처로 전환하고..."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L76"
+          ],
+          "quote": "확장성과 장기 유지보수성을 전제로, 오랫동안 안정적으로 운영될 구조와 방식을 고민하고, 성장 가능한 구조를 함께 만들어가요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L106"
+          ],
+          "quote": "배포하기 쉬운 구조, 운영하기 쉬운 구조, 안정성을 위한 구조, 성능 개선을 위한 구조에 대해서 고민하고 실행에 옮겨요."
+        }
+      ],
+      "subsignals": {
+        "speed_vs_stability": "speed",
+        "prototype_vs_structure": "balanced",
+        "business_impact_vs_tech_quality": "business_impact"
+      }
+    },
+    "collaboration_style_company": {
+      "score": "3",
+      "summary": "토스커뮤니티는 제품을 중심으로 프로덕트 오너, 디자이너, 개발자 등 다양한 직군의 멤버들이 스쿼드/사일로를 구성하여 높은 자율성과 책임을 가지고 협업합니다. 코드 리뷰를 포함한 횡적 협업 커뮤니티가 존재하며, 모든 정보를 투명하게 공유하고 동료 간 '완전한 솔직함'을 추구합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L26",
+            "L27"
+          ],
+          "quote": "하나의 사일로는 6~8명의 구성원(프로덕트 오너, 디자이너, 개발자, 데이터 분석가 등)으로 이루어져 있고, 제품을 중심으로 의사결정이 이뤄져요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L61",
+            "L62"
+          ],
+          "quote": "Product Owner/Product Designer/Data Analyst 등 제품을 기획/개발하는데 몰두하는 서로 다른 직군의 멤버들이 직군이 하나의 스쿼드를 이루어 작은 스타트업처럼 자율성을 갖고 일하고 있어요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L101"
+          ],
+          "quote": "작게는 코드리뷰부터, 크게는 엔지니어링데이와 서버 챕터 위클리에 이르기까지 서버 개발자들의 강력한 횡적 협업을 지탱하는 커뮤니티가 있어요."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L20"
+          ],
+          "quote": "Radical Transparency 정보는 모두에게 열려있습니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L57"
+          ],
+          "quote": "Radical Candor 동료간에는 ‘완전한 솔직함’을 추구합니다."
+        }
+      ],
+      "subsignals": {
+        "code_review": "3",
+        "documentation": "0",
+        "cross_functional": "4"
+      }
+    },
+    "ownership_company": {
+      "score": "4",
+      "summary": "토스커뮤니티는 모든 팀원이 DRI(Direct Responsible Individual)로서 자신의 업무에 대한 최종 의사결정권을 가지고 주도적으로 일합니다. 단순히 기술 구현을 넘어 비즈니스 문제 정의, 제품 방향, 사용자 경험에 영향력을 발휘하며, 시스템 설계부터 운영까지 전 과정에 걸쳐 높은 수준의 오너십과 책임을 기대합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L12",
+            "L13"
+          ],
+          "quote": "Direct Responsible Individual 모두가 맡은 바에 최종 의사결정할 수 있습니다. ... 맡은 일에 대한 DRI(Direct Responsible Individual, 최종의사결정권)를 바탕으로 모든 것을 스스로 결정하고 주도적으로 진행하며, 결과에 대한 책임을 집니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L36"
+          ],
+          "quote": "단순 요청이 아닌 실제 영업 및 운영 환경의 문제를 파악하고 신규 기능을 빠르게 적용·검증하며 서비스를 발전시켜 나가고 있어요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L74"
+          ],
+          "quote": "Server Developer는 초기 멤버로 단순 기술 구현을 넘어, 새로운 기능의 설계 단계부터 참여하며 제품 방향과 사용자 경험에도 영향력을 발휘해요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L80"
+          ],
+          "quote": "최고의 가치를 제공하기 위해 시스템 서비스 설계부터 운영까지 보이지 않는 모든 일을 하고 있어요."
+        }
+      ],
+      "subsignals": {
+        "problem_definition_involvement": "4",
+        "decision_making": "4",
+        "role_self_positioning": "owner"
+      }
+    },
+    "growth_orientation_company": {
+      "score": "4",
+      "summary": "토스커뮤니티는 '주도적 학습(Learn Proactively)'을 핵심 가치로 삼아 개인의 성장을 적극 지원하며, 기술 토론, 스터디, 도서/워크샵/세미나 비용 100% 지원 등 다양한 학습 기회를 제공합니다. 트렌디한 기술 활용과 효율적인 개발 방식 탐구를 장려하고, '완전한 솔직함(Radical Candor)'을 기반으로 한 피드백 문화를 통해 지속적인 성장을 추구합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L53"
+          ],
+          "quote": "Learn Proactively 주도적으로 학습합니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L57"
+          ],
+          "quote": "Radical Candor 동료간에는 ‘완전한 솔직함’을 추구합니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L90"
+          ],
+          "quote": "결과물에 대해 챌린지하는 용기를 적극 장려합니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L165"
+          ],
+          "quote": "도서, 워크샵, 세미나 등 업무 교육비 100% 지원"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L81"
+          ],
+          "quote": "트렌디한 기술을 활용하여 서비스가 안정적으로 운영될 수 있도록 하며..."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L99"
+          ],
+          "quote": "기술 토론을 좋아하고, 스터디도 많이 하고 있어요."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "L105"
+          ],
+          "quote": "다양한 라이브러리와 개발 방식 중에서 합리적이고 효율적인 방식을 찾아 선택하고 공통화시키는 작업을 해요."
+        }
+      ],
+      "subsignals": {
+        "new_tech_adoption": "3",
+        "self_directed_learning": "4",
+        "feedback_loop": "4"
+      }
+    },
+    "work_expectation_company": {
+      "score": "4",
+      "summary": "토스커뮤니티는 '일에 깊이 몰입하는 즐거움'을 핵심 가치로 삼으며, '높은 퍼포먼스 문화'와 '위대한 성과'를 추구하는 고강도 업무 환경을 지향합니다. 유연한 출퇴근, 원격 근무, 자율 휴가 등 자율성을 최대한 보장하는 정책과 업계 최고 수준의 연봉 및 다양한 복지 혜택(주택자금 대출, 사내 편의시설, 업무 교육비 지원 등)은 이러한 몰입과 성과 창출을 적극적으로 뒷받침합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L3",
+            "L4",
+            "L5",
+            "L7"
+          ],
+          "quote": "당신도 깊게 몰입했던 무언가가 있나요? 시간 가는 줄 모르고 무엇에 빠져드는 경험. 함께 한 방향으로 달려가는 느낌. 해냈을 때의 쾌감과 기쁨. 이 몰입의 경험을 일에서 느낀다면 어떨까요? 일을 방해하는 요소가 없다면 어떨까요? ... 토스커뮤니티에 모인 사람들은 일에 몰입하는 즐거움과 성장의 기쁨을 느끼며, 새로운 역사를 만들고 있습니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L61",
+            "L62"
+          ],
+          "quote": "High Performance Culture 높은 퍼포먼스 문화를 추구합니다. ... 토스커뮤니티 문화의 목표는 지속적으로 승리하는 팀을 만드는 것입니다. 이를 위해서 높은 탁월함을 추구합니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L127",
+            "L128"
+          ],
+          "quote": "Go the Extra-mile 좋은 것을 넘어 위대한 것을 추구합니다. ... 토스커뮤니티는 적당한 수준에서 일을 마무리 짓지 않습니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L163",
+            "L176"
+          ],
+          "quote": "유연한 출퇴근 시간 원격 근무 가능 별도 승인 없는 자율 휴가 ... 자율 출퇴근제 당신의 업무 스타일에 따라 직접 근무 시간 및 장소(출근 또는 원격 등)를 자유롭게 조정할 수 있습니다."
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L167"
+          ],
+          "quote": "개인 법인카드 지급 (식대, 야근교통비 등에 자율 사용)"
+        },
+        {
+          "doc_id": "official_site_culture",
+          "line_refs": [
+            "L165",
+            "L172"
+          ],
+          "quote": "업계 최고 수준의 연봉 반기별 성과급 지급 ... 1억 무이자 주택자금 대출(토스씨엑스 및 토스인슈어런스 제외) 전문 바리스타가 운영하는 사내 카페 전문 미용사가 상주하는 사내 헤어살롱 다양한 간식과 물품이 상시 구비되어 있는 사내 편의점"
+        }
+      ],
+      "subsignals": {
+        "pace_intensity_preference": "4",
+        "wlb_vs_immersion_preference": "4",
+        "responsibility_density_signals": "4"
+      }
+    }
+  },
+  "extraction_quality": {
+    "unknown_policy_applied": "yes",
+    "notes": "일부 기술 스택 (데이터 레이어, 구체적인 운영 도구) 및 회사의 물리적 위치는 명시적으로 언급되지 않았습니다. 원격 근무 정책에 대한 더 상세한 정보는 추가 확인이 필요합니다."
+  },
+  "_meta": {
+    "company_name": "토스",
+    "job_posting_url": "https://toss.im/career/job-detail?job_id=4071141003",
+    "source_urls": [
+      "https://toss.im/career/job-detail?job_id=4071141003",
+      "https://toss.im/career/culture",
+      "https://toss.im/career/community/toss"
+    ]
+  }
+}

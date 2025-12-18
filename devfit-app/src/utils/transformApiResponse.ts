@@ -22,12 +22,12 @@ const AXIS_LABELS: Record<string, string> = {
 
 // 축 이름 -> 차트 라벨 매핑
 const CHART_LABELS: Record<string, string> = {
-  technical_fit: "Tech Fit",
-  execution_style: "Execution",
-  collaboration_style: "Collaboration",
-  growth_learning_orientation: "Growth",
-  product_user_impact_orientation: "Product Impact",
-  ops_quality_responsibility: "Ops Quality",
+  technical_fit: "기술 역량",
+  execution_style: "업무 방식",
+  collaboration_style: "협업 방식",
+  growth_learning_orientation: "성장 마인드",
+  product_user_impact_orientation: "사용자 중심",
+  ops_quality_responsibility: "책임감",
 };
 
 // score_band -> matchLevel 매핑
@@ -142,18 +142,11 @@ function transformGaps(
   });
 }
 
-// 기술 적합도 항목 생성
+// 기술 적합도 항목 생성 (모든 축의 axis_score 사용)
 function transformTechnicalFit(
   alignments: ApiAnalysisResponse["axis_alignments"]
 ): TechnicalFitItem[] {
-  const relevantAxes = [
-    "technical_fit",
-    "ops_quality_responsibility",
-    "execution_style",
-  ];
-
-  return relevantAxes.map((axisKey) => {
-    const axis = alignments[axisKey as keyof typeof alignments];
+  return Object.entries(alignments).map(([axisKey, axis]) => {
     const score = getAxisScore(axis.axis_score);
 
     return {
@@ -186,9 +179,8 @@ function extractAllStacks(stack: Record<string, string[]> | string[] | undefined
   ];
 }
 
-// 키워드 생성 (axis_alignments.status + 기술 스택 매칭)
+// 키워드 생성 (기술 스택 매칭)
 function transformKeywords(
-  alignments: ApiAnalysisResponse["axis_alignments"],
   companyStack?: Record<string, string[]> | string[],
   userStack?: Record<string, string[]> | string[]
 ): Keyword[] {
@@ -228,18 +220,6 @@ function transformKeywords(
         strikethrough: false,
       });
     }
-  });
-
-  // 2. axis_alignments 기반 역량 키워드 추가
-  Object.entries(alignments).forEach(([key, axis]) => {
-    const isMatched = axis.status === "aligned";
-    const isUnknown = axis.status === "unknown";
-
-    keywords.push({
-      tag: AXIS_LABELS[key] || key,
-      matched: isMatched,
-      strikethrough: !isMatched && !isUnknown,
-    });
   });
 
   return keywords;
@@ -376,12 +356,12 @@ const CHART_AXIS_KEYS = [
 ];
 
 const CHART_AXIS_LABELS: Record<string, string> = {
-  technical_fit: "Tech Fit",
-  execution_style: "Execution",
-  collaboration_style: "Collaboration",
-  ownership: "Ownership",
-  growth_orientation: "Growth",
-  work_expectation: "Work Style",
+  technical_fit: "기술 역량",
+  execution_style: "업무 방식",
+  collaboration_style: "협업 방식",
+  ownership: "오너십",
+  growth_orientation: "성장 마인드",
+  work_expectation: "업무 환경",
 };
 
 // 차트 데이터 생성 (새 방식 - company/candidate scoring_axes 기반)
@@ -495,7 +475,7 @@ export function transformApiResponse(
     synergies: transformSynergies(axis_alignments, overall.high_alignment_axes),
     gaps: transformGaps(axis_alignments, overall.risk_or_mismatch_axes),
     technicalFit: transformTechnicalFit(axis_alignments),
-    keywords: transformKeywords(axis_alignments),
+    keywords: transformKeywords(),
     careerTimeline: getDefaultCareerTimeline(),
     interviewStrategies: transformInterviewStrategies(axis_alignments),
   };
@@ -600,26 +580,8 @@ export function transformFullApiResponse(
     "Developer";
 
   // 경력 정보 추출
-  const yearsExperience = candidate_analysis.profile_meta.years_experience;
-  const targetRole = candidate_analysis.profile_meta.target_role;
-  const seniority = candidate_analysis.profile_meta.seniority;
-
-  let experience = "개발자";
-  if (yearsExperience) {
-    experience = `${yearsExperience}년차`;
-    if (seniority) {
-      const seniorityMap: Record<string, string> = {
-        lead: "리드",
-        senior: "시니어",
-        mid: "미드",
-        junior: "주니어",
-      };
-      experience += ` ${seniorityMap[seniority] || seniority}`;
-    }
-    experience += " 개발자";
-  } else if (targetRole) {
-    experience = targetRole;
-  }
+  const primaryRole = candidate_analysis.profile_meta.primary_role;
+  const experience = primaryRole || "개발자";
 
   // 핵심 역량: technical_capability.stack에서 추출
   let coreSkills: string[] = [];
@@ -742,7 +704,6 @@ export function transformFullApiResponse(
     ),
     technicalFit: transformTechnicalFit(axis_alignments),
     keywords: transformKeywords(
-      axis_alignments,
       company_analysis.company_info_fields.technical_environment?.stack as Record<string, string[]> | undefined,
       candidate_analysis.user_info_fields.technical_capability?.stack as Record<string, string[]> | undefined
     ),
