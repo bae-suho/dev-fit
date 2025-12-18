@@ -1,28 +1,32 @@
 import { useState, useRef } from 'react';
-import { Upload, CheckCircle } from 'lucide-react';
+import { Upload, CheckCircle, X } from 'lucide-react';
 
 interface FileUploadProps {
-  onFileSelect: (file: File | null) => void;
+  onFilesSelect: (files: File[]) => void;
 }
 
-export function FileUpload({ onFileSelect }: FileUploadProps) {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+export function FileUpload({ onFilesSelect }: FileUploadProps) {
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setSelectedFile(file);
-    onFileSelect(file);
+    const files = Array.from(e.target.files || []);
+    if (files.length > 0) {
+      const newFiles = [...selectedFiles, ...files];
+      setSelectedFiles(newFiles);
+      onFilesSelect(newFiles);
+    }
   };
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
-    const file = e.dataTransfer.files?.[0] || null;
-    if (file) {
-      setSelectedFile(file);
-      onFileSelect(file);
+    const files = Array.from(e.dataTransfer.files || []);
+    if (files.length > 0) {
+      const newFiles = [...selectedFiles, ...files];
+      setSelectedFiles(newFiles);
+      onFilesSelect(newFiles);
     }
   };
 
@@ -35,16 +39,23 @@ export function FileUpload({ onFileSelect }: FileUploadProps) {
     setIsDragging(false);
   };
 
+  const removeFile = (index: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const newFiles = selectedFiles.filter((_, i) => i !== index);
+    setSelectedFiles(newFiles);
+    onFilesSelect(newFiles);
+  };
+
   return (
     <div className="space-y-2">
       <label className="block text-sm font-semibold text-text-primary ml-1">
         이력서 & 포트폴리오
       </label>
       <div
-        className={`w-full h-40 border-2 border-dashed rounded-2xl flex flex-col items-center justify-center cursor-pointer transition-all relative overflow-hidden ${
+        className={`w-full min-h-40 border-2 border-dashed rounded-2xl flex flex-col items-center justify-center cursor-pointer transition-all relative overflow-hidden ${
           isDragging
             ? 'border-toss-blue bg-toss-blue-light'
-            : selectedFile
+            : selectedFiles.length > 0
             ? 'border-toss-green bg-toss-green-light'
             : 'border-border-default bg-bg-secondary hover:border-toss-blue hover:bg-toss-blue-light'
         }`}
@@ -58,10 +69,11 @@ export function FileUpload({ onFileSelect }: FileUploadProps) {
           type="file"
           className="hidden"
           accept=".pdf,.docx,.doc"
+          multiple
           onChange={handleFileChange}
         />
 
-        {!selectedFile ? (
+        {selectedFiles.length === 0 ? (
           <div className="text-center p-6 transition-transform">
             <div className="w-12 h-12 rounded-full bg-toss-blue-light flex items-center justify-center mx-auto mb-3">
               <Upload className="w-6 h-6 text-toss-blue" />
@@ -72,12 +84,31 @@ export function FileUpload({ onFileSelect }: FileUploadProps) {
             <p className="text-text-quaternary text-xs mt-1">PDF, Word (Max 10MB)</p>
           </div>
         ) : (
-          <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full bg-toss-green-light flex items-center justify-center mb-2">
-              <CheckCircle className="w-6 h-6 text-toss-green" />
+          <div className="w-full p-4 space-y-2">
+            <div className="flex items-center justify-center mb-2">
+              <div className="w-10 h-10 rounded-full bg-toss-green-light flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-toss-green" />
+              </div>
             </div>
-            <p className="text-text-primary font-medium text-sm">{selectedFile.name}</p>
-            <p className="text-toss-green text-xs mt-1 font-medium">파일이 준비되었습니다</p>
+            {selectedFiles.map((file, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-between bg-white rounded-lg px-3 py-2 shadow-sm"
+              >
+                <span className="text-text-primary text-sm truncate flex-1">
+                  {file.name}
+                </span>
+                <button
+                  onClick={(e) => removeFile(index, e)}
+                  className="ml-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <X className="w-4 h-4 text-text-quaternary" />
+                </button>
+              </div>
+            ))}
+            <p className="text-center text-toss-green text-xs mt-2 font-medium">
+              {selectedFiles.length}개 파일 준비됨 · 클릭하여 추가
+            </p>
           </div>
         )}
       </div>

@@ -1,6 +1,41 @@
 export interface AnalysisData {
   url: string;
-  file: File | null;
+  files: File[];
+}
+
+// Upload API Types
+export interface FileMetadata {
+  file_name: string;
+  content_type: string;
+}
+
+export interface UploadRequest {
+  jd_url: string;
+  files: FileMetadata[];
+}
+
+export interface PresignedUrlItem {
+  presigned_url: string;
+  s3_key: string;
+}
+
+export interface UploadResponse {
+  result_key: string;
+  presigned_urls: PresignedUrlItem[];
+}
+
+export interface StartAnalysisResponse {
+  result_key: string;
+  status: string;
+  message: string;
+}
+
+export interface AnalysisStatusResponse {
+  status: 'processing' | 'completed' | 'failed';
+  step: string;
+  progress: number;
+  message: string;
+  result?: FullApiResponse;
 }
 
 export interface CompanyProfile {

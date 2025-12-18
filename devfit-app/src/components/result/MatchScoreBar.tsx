@@ -26,7 +26,7 @@ export function MatchScoreBar({ score, isAnimating }: MatchScoreBarProps) {
         분석 결과 리포트
       </h2>
       <p className="text-text-tertiary text-sm mb-8">
-        AI가 분석한 당신과 기업의 적합도입니다
+        AI가 분석한 나와 기업의 컬쳐핏 매칭 점수입니다
       </p>
 
       {/* Gauge Bar */}
@@ -39,15 +39,16 @@ export function MatchScoreBar({ score, isAnimating }: MatchScoreBarProps) {
           className="absolute inset-1 rounded-lg overflow-hidden"
           style={{
             width: `calc(${currentWidth}% - 8px)`,
-            transition: 'width 1.2s ease-out',
+            transition: "width 1.2s ease-out",
           }}
         >
           <div
             className="h-full rounded-lg"
             style={{
               width: `calc((100vw - 2rem) * 0.98)`,
-              minWidth: '500px',
-              background: 'linear-gradient(to right, #1B64DA, #3182F6, #5BA0F8, #8BBFFA, #3CD4A0)',
+              minWidth: "500px",
+              background:
+                "linear-gradient(to right, #1B64DA, #3182F6, #5BA0F8, #8BBFFA, #3CD4A0)",
             }}
           />
         </div>
@@ -58,7 +59,7 @@ export function MatchScoreBar({ score, isAnimating }: MatchScoreBarProps) {
             <div
               key={i}
               className="w-1.5 h-full rounded-full"
-              style={{ background: '#F4F4F4' }}
+              style={{ background: "#F4F4F4" }}
             />
           ))}
         </div>
@@ -68,9 +69,9 @@ export function MatchScoreBar({ score, isAnimating }: MatchScoreBarProps) {
           className="absolute -top-7"
           style={{
             left: `calc(${currentWidth}% - 4px)`,
-            transform: 'translateX(-50%)',
+            transform: "translateX(-50%)",
             opacity: currentWidth > 0 ? 1 : 0,
-            transition: 'left 1.2s ease-out, opacity 0.3s ease',
+            transition: "left 1.2s ease-out, opacity 0.3s ease",
           }}
         >
           <ChevronDown
@@ -82,10 +83,27 @@ export function MatchScoreBar({ score, isAnimating }: MatchScoreBarProps) {
       </div>
 
       {/* Labels */}
-      <div className="flex justify-between mt-3 text-xs text-text-quaternary px-1">
-        {[1, 2, 3, 4, 5].map((step) => (
-          <span key={step} className="flex-1 text-center">{step}단계</span>
-        ))}
+      <div className="flex justify-between mt-3 text-xs px-1">
+        {[1, 2, 3, 4, 5].map((step) => {
+          // 점수에 따른 현재 단계 계산 (1-20: 1단계, 21-40: 2단계, ...)
+          // currentWidth가 0이면 아무 단계도 강조하지 않음
+          const currentStep =
+            currentWidth > 0 ? Math.min(5, Math.ceil(currentWidth / 20)) : 0;
+          const isCurrentStep = step === currentStep;
+
+          return (
+            <span
+              key={step}
+              className={`flex-1 text-center transition-all duration-300 ${
+                isCurrentStep
+                  ? "text-toss-blue font-bold scale-110"
+                  : "text-text-quaternary"
+              }`}
+            >
+              {step}단계
+            </span>
+          );
+        })}
       </div>
     </div>
   );

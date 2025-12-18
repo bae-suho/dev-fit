@@ -17,20 +17,18 @@ interface ProfileCardProps {
 
 const companyLogs = [
   "> 기업 페이지 크롤링 중...",
-  "> 기술 블로그 분석 중...",
-  "> 기술 스택 추출: Python, FastAPI...",
+  "> URL 공고 분석 중...",
+  "> 기술 스택 추출 중...",
   "> 기업 문화 키워드 감지 중...",
-  "> 발견: '애자일', '속도', '임팩트'",
-  "> 감성 분석: 매우 긍정적",
+  "> 감성 분석 중...",
   "> 프로필 생성 중...",
 ];
 
 const userLogs = [
   "> 이력서 분석 중...",
-  "> GitHub 저장소 분석 중...",
-  "> 기술 스택 추출: Django, Docker...",
+  "> 사용자 정보 추출 중...",
+  "> 기술 스택 추출 중...",
   "> 업무 스타일 파악 중...",
-  "> 발견: '안정성', 'TDD', '깊이 있는 분석'",
   "> 적합도 계산 중...",
   "> 프로필 완성 중...",
 ];
@@ -125,7 +123,9 @@ function CompanyContent({ profile }: { profile: CompanyProfile }) {
   return (
     <>
       <div>
-        <h3 className="text-xl font-bold text-text-primary mb-2">{profile.name}</h3>
+        <h3 className="text-xl font-bold text-text-primary mb-2">
+          {profile.name}
+        </h3>
         <p className="text-sm text-text-tertiary flex items-center gap-2">
           <span className="px-2 py-0.5 rounded-full bg-white text-text-secondary border border-toss-blue font-medium text-xs shadow-sm">
             {profile.industry}
@@ -185,7 +185,9 @@ function UserContent({ profile }: { profile: UserProfile }) {
   return (
     <>
       <div>
-        <h3 className="text-xl font-bold text-text-primary mb-2">{profile.title}</h3>
+        <h3 className="text-xl font-bold text-text-primary mb-2">
+          {profile.title}
+        </h3>
         <p className="text-sm">
           <span className="px-2 py-0.5 rounded-full bg-white text-text-secondary border border-toss-green font-medium text-xs shadow-sm">
             {profile.experience}
