@@ -213,7 +213,7 @@ function getDefaultCareerTimeline(): CareerStage[] {
   ];
 }
 
-// 차트 데이터 생성
+// 차트 데이터 생성 (기존 방식 - axis_alignments 기반)
 function transformChartData(
   alignments: ApiAnalysisResponse["axis_alignments"]
 ) {
@@ -238,6 +238,53 @@ function transformChartData(
     labels,
     companyData: companyData.map((v) => Math.round(v / 20)), // 0-5 스케일로 변환
     userData: userData.map((v) => Math.round(v / 20)),
+  };
+}
+
+// 차트용 축 매핑 (scoring_axes 키 -> 라벨)
+const CHART_AXIS_KEYS = [
+  "technical_fit",
+  "execution_style",
+  "collaboration_style",
+  "ownership",
+  "growth_orientation",
+  "work_expectation",
+];
+
+const CHART_AXIS_LABELS: Record<string, string> = {
+  technical_fit: "Tech Fit",
+  execution_style: "Execution",
+  collaboration_style: "Collaboration",
+  ownership: "Ownership",
+  growth_orientation: "Growth",
+  work_expectation: "Work Style",
+};
+
+// 차트 데이터 생성 (새 방식 - company/candidate scoring_axes 기반)
+function transformChartDataFromScores(
+  companyScoringAxes: Record<string, unknown>,
+  candidateScoringAxes: Record<string, unknown>
+) {
+  const labels = CHART_AXIS_KEYS.map((key) => CHART_AXIS_LABELS[key] || key);
+
+  // 회사 점수 추출 (0-4 스케일)
+  const companyData = CHART_AXIS_KEYS.map((key) => {
+    const companyKey = `${key}_company`;
+    const axisData = companyScoringAxes[companyKey] as { score?: number } | undefined;
+    return axisData?.score ?? 0;
+  });
+
+  // 사용자 점수 추출 (0-4 스케일)
+  const userData = CHART_AXIS_KEYS.map((key) => {
+    const userKey = `${key}_user`;
+    const axisData = candidateScoringAxes[userKey] as { score?: number } | undefined;
+    return axisData?.score ?? 0;
+  });
+
+  return {
+    labels,
+    companyData, // 0-4 스케일
+    userData,    // 0-4 스케일
   };
 }
 
@@ -267,7 +314,6 @@ export function transformApiResponse(
     company: {
       name: companyName || "Company",
       industry: "정보 없음", // API에서 제공하지 않음
-      stage: "정보 없음",
       techStack: axis_alignments.technical_fit.rationale.company_signals.slice(
         0,
         3
@@ -342,15 +388,11 @@ export function transformFullApiResponse(
   // === 회사 정보 추출 (company_analysis 매핑) ===
   const companyName = company_analysis.profile_meta.company_name || "Company";
 
-  // industry/stage: "unknown"이면 "정보 없음"으로 표시
+  // industry: "unknown"이면 "정보 없음"으로 표시
   const industry =
     company_analysis.profile_meta.industry === "unknown"
       ? "정보 없음"
       : company_analysis.profile_meta.industry || "정보 없음";
-  const stage =
-    company_analysis.profile_meta.stage === "unknown"
-      ? "정보 없음"
-      : company_analysis.profile_meta.stage || "스타트업";
 
   // 기술 스택: technical_environment.stack에서 모든 카테고리 합치기
   let companyTechStack: string[] = [];
@@ -552,7 +594,6 @@ export function transformFullApiResponse(
     company: {
       name: companyName,
       industry,
-      stage,
       techStack: companyTechStack.slice(0, 6),
       cultureDNA: companyCultureDNA.slice(0, 2),
       summary: companySummary,
@@ -564,7 +605,10 @@ export function transformFullApiResponse(
       workStyle: userWorkStyle.slice(0, 2),
       summary: userSummary,
     },
-    chartData: transformChartData(axis_alignments),
+    chartData: transformChartDataFromScores(
+      company_analysis.scoring_axes || {},
+      candidate_analysis.scoring_axes || {}
+    ),
     synergies: transformSynergies(axis_alignments, overall.high_alignment_axes),
     gaps: transformGaps(axis_alignments, overall.risk_or_mismatch_axes),
     technicalFit: transformTechnicalFit(axis_alignments),

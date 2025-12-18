@@ -1,0 +1,591 @@
+{
+  "schema_version": "1.1",
+  "profile_keywords": {
+    "work_style_keywords": [
+      "problem solving",
+      "structural thinking",
+      "user interaction focus",
+      "performance improvement",
+      "clean data flow",
+      "responsible implementation",
+      "iterative refinement",
+      "design-oriented",
+      "maintainability focus"
+    ],
+    "collaboration_keywords": [
+      "PR-based code review",
+      "API specification discussion",
+      "error handling discussion",
+      "shared understanding",
+      "feedback incorporation",
+      "constructive feedback",
+      "cross-functional communication",
+      "intent explanation"
+    ],
+    "execution_keywords": [
+      "component responsibility",
+      "state management",
+      "UI design",
+      "code explanation",
+      "refactoring",
+      "memoization",
+      "API call structure improvement",
+      "predictable data flow",
+      "performance optimization"
+    ],
+    "growth_keywords": [
+      "feedback-driven growth",
+      "continuous learning",
+      "self-directed improvement",
+      "problem-driven tech adoption",
+      "non-major background",
+      "skill gap reduction",
+      "embraces trial and error",
+      "structural re-evaluation",
+      "fast learner"
+    ],
+    "ownership_keywords": [
+      "end-to-end feature responsibility",
+      "design participation",
+      "problem definition",
+      "technical decision making",
+      "structure design",
+      "solution explanation",
+      "proactive problem identification",
+      "responsibility for outcomes"
+    ],
+    "work_expectation_keywords": [
+      "hands-on experience",
+      "growth environment",
+      "practical experience",
+      "non-formal code review",
+      "learning from mistakes",
+      "high practical work",
+      "challenge-seeking",
+      "ownership opportunities"
+    ],
+    "summary_keywords": [
+      "entry-level frontend",
+      "growth-oriented",
+      "problem-solver",
+      "structural designer",
+      "collaborative",
+      "feedback-driven",
+      "non-major background",
+      "React developer",
+      "state management"
+    ]
+  },
+  "profile_meta": {
+    "profile_id": "unknown",
+    "candidate_name": "이다은 (Lee Da-eun)",
+    "primary_role": "frontend",
+    "target_role": "Front-end Engineer",
+    "seniority": "entry",
+    "years_experience": "unknown",
+    "source_docs": [
+      {
+        "doc_id": "portfolio",
+        "filename": "Portfolio – P2 이다은 (Lee Da-eun).pdf",
+        "provided_at": "unknown"
+      },
+      {
+        "doc_id": "resume",
+        "filename": "이력서 – P2 이다은 (Lee Da-eun).pdf",
+        "provided_at": "unknown"
+      },
+      {
+        "doc_id": "essay",
+        "filename": "자기소개서 – P2 이다은.pdf",
+        "provided_at": "unknown"
+      }
+    ]
+  },
+  "user_info_fields": {
+    "basic_profile": {
+      "summary": "Entry-level frontend engineer from a non-CS background, focused on understanding user problems and designing robust solutions rather than just implementing UIs. Values hands-on experience and continuous growth through feedback. Seeks to be a developer who can explain the 'why' behind architectural choices.",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L5-6"],
+          "quote": "프론트엔드 개발자를 준비하며 가장 중요하게 생각한 것은 \"얼마나 많은 기술을 아는가\"보다 실제 사용자 화면에서 어떤 문제를 인식하고, 그것을 어떤 구조로 해결했는가였습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L15-16"],
+          "quote": "이 경험을 계기로 저는 편한 환경보다 실제 손을 많이 써보고, 피드백을 통해 수정할 수 있는 환경을 선호하게 되었습니다."
+        },
+        {
+          "doc_id": "resume",
+          "line_refs": ["P1, L4-5"],
+          "quote": "비전공 문과 출신으로 프론트엔드 국비지원 부트캠프를 수료한 신입 프론트엔드 엔지니어입니다."
+        }
+      ]
+    },
+    "technical_capability": {
+      "stack": {
+        "languages": ["JavaScript (ES6+)", "TypeScript (기초~중급)"],
+        "frameworks": ["React", "Redux Toolkit", "React Query"],
+        "data": [],
+        "infra_cloud": [],
+        "ops_tools": ["Git/GitHub", "Vite", "ESLint", "Prettier"]
+      },
+      "ops_deploy_experience": "no",
+      "scale_traffic_platform_mentioned": "no",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L21-23"],
+          "quote": "JavaScript(ES6+) / TypeScript: 기본 문법 숙지에 그치지 않고, 컴포넌트 props 설계와 타입 안정성을 높이기 위한 용도로 TypeScript를 점진적으로 적용했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L25-26"],
+          "quote": "React: 함수형 컴포넌트 기반 개발에 익숙하며, 상태 흐름과 컴포넌트 책임 분리에 집중해 구조를 설계합니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L28-30"],
+          "quote": "Redux Toolkit / React Query: 전역 상태와 서버 상태의 성격이 다르다는 점을 프로젝트를 통해 체감했고, 각각의 목적에 맞게 도입·비교해 사용해 보았습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L35-36"],
+          "quote": "협업 도구: Git/GitHub 기반 PR 협업, 간단한 코드리뷰 경험"
+        }
+      ]
+    },
+    "project_behavior_data": {
+      "projects": [
+        {
+          "name": "커뮤니티형 웹 서비스 (팀 프로젝트)",
+          "timeframe": "2024.03 ~ 2024.05",
+          "context_problem": "Initial focus on quick UI implementation led to high component dependency, difficult-to-track state flow, unnecessary re-renders, and duplicate API calls between list and detail pages.",
+          "responsibility_scope": "Frontend development in a 4-person team. Implemented posts, comments, and likes. Focused on understanding the frontend's role beyond simple CRUD.",
+          "technical_decisions": [
+            "Redefined global vs. local state management.",
+            "Separated component responsibilities.",
+            "Used Redux Toolkit for global post data and user state.",
+            "Separated UI state to local state.",
+            "Split common UI components for reusability.",
+            "Used React.memo to reduce unnecessary re-renders.",
+            "Clarified API call timing for predictable data flow."
+          ],
+          "outcomes_metrics": [
+            {
+              "metric": "Reusability",
+              "before": "unknown",
+              "after": "Increased",
+              "notes": "Through common UI component separation."
+            },
+            {
+              "metric": "Unnecessary re-renders",
+              "before": "unknown",
+              "after": "Reduced",
+              "notes": "With React.memo."
+            },
+            {
+              "metric": "Data flow predictability",
+              "before": "unknown",
+              "after": "Improved",
+              "notes": "By clarifying API call timing."
+            },
+            {
+              "metric": "Understanding of frontend role",
+              "before": "Viewed as drawing screens",
+              "after": "Viewed as designing user experience through structure",
+              "notes": "Learned point."
+            }
+          ],
+          "evidence": [
+            {
+              "doc_id": "portfolio",
+              "line_refs": ["P2, L4-20"],
+              "quote": "초기 개발 단계에서는 화면 단위로 빠르게 기능을 구현하는 데 집중하다 보니, • 컴포넌트 간 의존성이 높아지고 • 상태 흐름을 한눈에 파악하기 어려운 구조가 되었습니다. 특히 게시글 목록과 상세 페이지 간 상태 공유 과정에서 불필요한 렌더링과 중복 API 호출 문제가 발생했습니다. 이 문제를 해결하기 위해 • \"어떤 상태가 전역으로 관리되어야 하는지\" • \"컴포넌트가 책임져야 할 범위는 어디까지인지\"를 다시 정의했습니다. Redux Toolkit을 활용해 게시글 데이터와 사용자 상태를 전역으로 관리하고, UI 상태는 로컬 상태로 분리하는 구조를 선택했습니다. 공통 UI 컴포넌트를 분리하여 재사용성을 높였고 • React.memo를 활용해 불필요한 리렌더링을 줄였습니다. • API 호출 시점을 명확히 정리하여, 사용자 행동에 따른 데이터 흐름이 예측 가능하도록 개선했습니다."
+            }
+          ]
+        },
+        {
+          "name": "사용자 대시보드 웹 애플리케이션 (개인 프로젝트)",
+          "timeframe": "2024.06",
+          "context_problem": "Desire to clearly distinguish between server state and UI state after the team project.",
+          "responsibility_scope": "Planning, design, and sole frontend development.",
+          "technical_decisions": [
+            "Introduced React Query for server state management.",
+            "Clearly separated loading, error, and success states from a user perspective.",
+            "Optimized data fetching by separating data refresh cycles based on user interaction flow, instead of fetching all data at once."
+          ],
+          "outcomes_metrics": [
+            {
+              "metric": "Perceived performance",
+              "before": "unknown",
+              "after": "Improved",
+              "notes": "By adjusting data refresh cycles based on user interaction."
+            },
+            {
+              "metric": "Readability",
+              "before": "unknown",
+              "after": "Improved",
+              "notes": "By adjusting data refresh cycles based on user interaction."
+            },
+            {
+              "metric": "Understanding of technical choices",
+              "before": "Could only state 'React was used'",
+              "after": "Could explain 'why' a state management approach was chosen and 'what' problem it solved",
+              "notes": "Gained experience in explaining reasoning."
+            }
+          ],
+          "evidence": [
+            {
+              "doc_id": "portfolio",
+              "line_refs": ["P3, L12-25"],
+              "quote": "프로젝트 2. 사용자 대시보드 웹 애플리케이션 (개인 프로젝트) 기간: 2024.06 역할: 기획·디자인·프론트엔드 단독 진행 1) 프로젝트 배경 팀 프로젝트 이후, 서버 상태와 UI 상태를 보다 명확히 구분해보고 싶다는 문제의식에서 시작한 개인 프로젝트입니다. 2) 기술적 시도 React Query를 도입해 서버 상태를 관리하고, • 로딩 • 에러 • 성공 상태를 명확히 분리하여 사용자 관점에서 화면을 설계했습니다. 3) 고민과 개선 초기에는 모든 데이터를 한 번에 불러오는 구조였으나, 사용자 인터랙션 흐름을 고려해 데이터 갱신 주기를 분리하면서 체감 성능과 가독성을 함께 개선했습니다. 4) 결과 이 프로젝트를 통해 \"React를 사용했다\"가 아니라 왜 이런 상태 관리 방식을 선택했는지 설명할 수 있는 경험을 얻었습니다."
+            }
+          ]
+        }
+      ]
+    },
+    "collaboration_experience": {
+      "summary": "Experienced in PR-based code reviews, viewing them as a growth opportunity. Collaborates with backend developers on API specifications and error handling. Values clear communication of code structure and intent, and proactively discusses constraints and alternatives with product managers and designers.",
+      "code_review_participation": "yes",
+      "documentation_communication": "high",
+      "cross_functional_collaboration": "occasional",
+      "conflict_coordination_experience": "mentioned",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P3, L4-6"],
+          "quote": "백엔드 개발자와 API 명세를 기준으로 협업하며, 에러 코드에 따른 UI 처리 방식을 함께 논의했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P3, L7-8"],
+          "quote": "PR 기반 코드리뷰를 통해 구조와 의도에 대한 질문을 받았고, 이를 반영하며 코드 설명 능력의 중요성을 체감했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P4, L4-7"],
+          "quote": "팀 프로젝트에서 코드리뷰를 \"평가\"가 아닌 성장을 위한 피드백 과정으로 인식하게 되었으며, 지적받은 부분을 그대로 수정하는 데서 끝나지 않고, 구조 자체를 다시 고민하려 노력했습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P2, L14-17"],
+          "quote": "팀 프로젝트에서 기획자와 디자이너의 요구사항을 그대로 구현하는 데서 그치지 않고, 구현 과정에서 발생할 수 있는 제약이나 대안을 함께 이야기하려 노력했습니다."
+        }
+      ]
+    },
+    "growth_tendency": {
+      "summary": "Highly growth-oriented, driven by a non-CS background to rapidly catch up. Actively seeks hands-on experience and embraces feedback as a primary growth mechanism, leading to re-evaluation of fundamental structures. Prioritizes problem-driven technology adoption over following trends, aiming to explain the 'why' behind technical choices.",
+      "learning_mode": "self_directed",
+      "new_tech_adoption": "medium",
+      "feedback_receptiveness": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L11-14"],
+          "quote": "특히 부트캠프 후반 팀 프로젝트를 통해, 단순히 주어진 작업을 빠르게 처리하는 사람보다 설계 단계부터 참여하고, 시행착오를 겪으며 구조를 개선한 사람이 훨씬 빠르게 성장한다는 점을 체감했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L15-16"],
+          "quote": "이 경험을 계기로 저는 편한 환경보다 실제 손을 많이 써보고, 피드백을 통해 수정할 수 있는 환경을 선호하게 되었습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P4, L4-7"],
+          "quote": "팀 프로젝트에서 코드리뷰를 \"평가\"가 아닌 성장을 위한 피드백 과정으로 인식하게 되었으며, 지적받은 부분을 그대로 수정하는 데서 끝나지 않고, 구조 자체를 다시 고민하려 노력했습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P1, L4-6"],
+          "quote": "하지만 그 부담은 곧 \"어떻게 하면 실무에서 빠르게 따라잡을 수 있을까\"라는 질문으로 바뀌었고, 저를 계속해서 움직이게 만드는 동력이 되었습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P2, L10-12"],
+          "quote": "이후 기술을 학습할 때도 \"트렌드이기 때문\"이 아니라, 실제로 해결하고 싶은 문제가 있는지를 먼저 고민하게 되었습니다."
+        }
+      ]
+    },
+    "work_environment_signals": {
+      "summary": "Seeks an environment that fosters rapid and genuine growth through high practical work, non-formal code reviews, and tolerance for trial-and-error. Prioritizes hands-on experience and a learning-intensive environment over compensation or benefits, demonstrating a willingness to endure challenges for professional development. Aims for end-to-end feature ownership.",
+      "work_mode_preference": "unknown",
+      "work_life_balance_vs_immersion": "immersion",
+      "pace_intensity_preference": "high_intensity",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L15-16"],
+          "quote": "이 경험을 계기로 저는 편한 환경보다 실제 손을 많이 써보고, 피드백을 통해 수정할 수 있는 환경을 선호하게 되었습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P4, L17-18"],
+          "quote": "혼자서도 프론트엔드 기능 하나를 처음부터 끝까지 책임지고"
+        },
+        {
+          "doc_id": "resume",
+          "line_refs": ["P1, L6-8"],
+          "quote": "연봉이나 복지보다 입사 후 1~2년 안에 실무 역량이 확실히 성장할 수 있는 환경을 중요하게 생각합니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P2, L28-32"],
+          "quote": "연봉이나 복지보다, 실제 프론트엔드 실무 비중이 높고, 코드리뷰와 피드백이 형식적으로 이루어지지 않으며, 성장 과정에서의 시행착오를 감내할 수 있는 환경을 선호합니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P2, L33-34"],
+          "quote": "힘들 수는 있어도, 이 회사에서 분명히 성장하고 있다는 확신을 가질 수 있다면 기꺼이 도전하고 싶습니다."
+        }
+      ]
+    },
+    "verification_needed_areas": {
+      "missing_or_unmentioned": [
+        "Deployment experience",
+        "Cloud/infra experience",
+        "Specific metrics for performance improvements (e.g., quantifiable reductions in re-renders or API calls)",
+        "Experience with testing (unit, integration, E2E)"
+      ],
+      "needs_followup_questions": [
+        "How do you approach handling technical debt in your projects?",
+        "Can you provide more specific examples of conflicts or disagreements in team projects and how you resolved them?",
+        "What specific steps did you take to optimize data refresh cycles in your personal project, and what was the impact?",
+        "What is your ideal team size and structure for collaboration?"
+      ]
+    }
+  },
+  "scoring_axes": {
+    "scoring_policy": {
+      "scale": "0-4",
+      "meaning": {
+        "0": "no explicit signal",
+        "1": "weak/indirect mention",
+        "2": "some evidence (limited scope)",
+        "3": "clear evidence (multiple instances or concrete responsibilities)",
+        "4": "strong evidence (clear ownership + concrete outcomes/metrics where applicable)"
+      },
+      "unknown_handling": "If evidence is missing, score must be 0 and confidence must be low."
+    },
+    "technical_fit_user": {
+      "score": 3,
+      "summary": "Demonstrates a solid understanding of core frontend technologies (React, Redux Toolkit, React Query, TypeScript basics). Applied these tools to address common frontend challenges like state management, component reusability, unnecessary re-renders, and predictable data flow. Explicitly mentioned progressive adoption of TypeScript for stability.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L21-23"],
+          "quote": "JavaScript(ES6+) / TypeScript: 기본 문법 숙지에 그치지 않고, 컴포넌트 props 설계와 타입 안정성을 높이기 위한 용도로 TypeScript를 점진적으로 적용했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L25-26"],
+          "quote": "React: 함수형 컴포넌트 기반 개발에 익숙하며, 상태 흐름과 컴포넌트 책임 분리에 집중해 구조를 설계합니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L28-30"],
+          "quote": "Redux Toolkit / React Query: 전역 상태와 서버 상태의 성격이 다르다는 점을 프로젝트를 통해 체감했고, 각각의 목적에 맞게 도입·비교해 사용해 보았습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P2, L16-20"],
+          "quote": "Redux Toolkit을 활용해 게시글 데이터와 사용자 상태를 전역으로 관리하고, UI 상태는 로컬 상태로 분리하는 구조를 선택했습니다. 공통 UI 컴포넌트를 분리하여 재사용성을 높였고 • React.memo를 활용해 불필요한 리렌더링을 줄였습니다. • API 호출 시점을 명확히 정리하여, 사용자 행동에 따른 데이터 흐름이 예측 가능하도록 개선했습니다."
+        }
+      ],
+      "subsignals": {
+        "languages_frameworks_depth": 3,
+        "infra_cloud_exposure": 0,
+        "ops_deploy_monitoring_exposure": 0,
+        "scale_platform_exposure": 0
+      }
+    },
+    "execution_style_user": {
+      "score": 3,
+      "summary": "Prioritizes structural integrity, clear component responsibilities, and predictable data flow over quick, haphazard implementation. Demonstrates an ability to identify and resolve performance issues (unnecessary re-renders, duplicate API calls) and improve perceived performance through iterative refinement of data fetching strategies.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L5-6"],
+          "quote": "\"얼마나 많은 기술을 아는가\"보다 실제 사용자 화면에서 어떤 문제를 인식하고, 그것을 어떤 구조로 해결했는가였습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P2, L13-14"],
+          "quote": "이 문제를 해결하기 위해 • \"어떤 상태가 전역으로 관리되어야 하는지\" • \"컴포넌트가 책임져야 할 범위는 어디까지인지\"를 다시 정의했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P2, L18-20"],
+          "quote": "React.memo를 활용해 불필요한 리렌더링을 줄였습니다. API 호출 시점을 명확히 정리하여, 사용자 행동에 따른 데이터 흐름이 예측 가능하도록 개선했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P3, L20-22"],
+          "quote": "초기에는 모든 데이터를 한 번에 불러오는 구조였으나, 사용자 인터랙션 흐름을 고려해 데이터 갱신 주기를 분리하면서 체감 성능과 가독성을 함께 개선했습니다."
+        }
+      ],
+      "subsignals": {
+        "speed_vs_stability": "balanced",
+        "prototype_vs_structure": "structure",
+        "business_impact_vs_tech_quality": "tech_quality"
+      }
+    },
+    "collaboration_style_user": {
+      "score": 3,
+      "summary": "Actively engages in PR-based code reviews, viewing them as a growth opportunity rather than just evaluation. Collaborates with backend developers on API specifications and error handling. Demonstrates an understanding of communicating technical intent and engaging cross-functionally with PMs/designers to discuss constraints and alternatives.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P3, L4-6"],
+          "quote": "백엔드 개발자와 API 명세를 기준으로 협업하며, 에러 코드에 따른 UI 처리 방식을 함께 논의했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P3, L7-8"],
+          "quote": "PR 기반 코드리뷰를 통해 구조와 의도에 대한 질문을 받았고, 이를 반영하며 코드 설명 능력의 중요성을 체감했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P4, L4-7"],
+          "quote": "팀 프로젝트에서 코드리뷰를 \"평가\"가 아닌 성장을 위한 피드백 과정으로 인식하게 되었으며, 지적받은 부분을 그대로 수정하는 데서 끝나지 않고, 구조 자체를 다시 고민하려 노력했습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P2, L14-17"],
+          "quote": "팀 프로젝트에서 기획자와 디자이너의 요구사항을 그대로 구현하는 데서 그치지 않고, 구현 과정에서 발생할 수 있는 제약이나 대안을 함께 이야기하려 노력했습니다."
+        }
+      ],
+      "subsignals": {
+        "code_review": 3,
+        "documentation": 2,
+        "cross_functional": 2
+      }
+    },
+    "ownership_user": {
+      "score": 3,
+      "summary": "Demonstrates a strong sense of ownership by actively participating in the design phase, defining problem scope, and taking responsibility for the entire lifecycle of a feature (planning, design, frontend implementation in personal project). Aims to be a developer who can explain *why* certain architectural decisions were made, not just *what* technologies were used.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L12-14"],
+          "quote": "설계 단계부터 참여하고, 시행착오를 겪으며 구조를 개선한 사람이 훨씬 빠르게 성장한다는 점을 체감했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P2, L13-14"],
+          "quote": "\"어떤 상태가 전역으로 관리되어야 하는지\" \"컴포넌트가 책임져야 할 범위는 어디까지인지\"를 다시 정의했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P3, L13-14"],
+          "quote": "역할: 기획·디자인·프론트엔드 단독 진행"
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P3, L24-25"],
+          "quote": "이 프로젝트를 통해 \"React를 사용했다\"가 아니라 왜 이런 상태 관리 방식을 선택했는지 설명할 수 있는 경험을 얻었습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P4, L17-18"],
+          "quote": "혼자서도 프론트엔드 기능 하나를 처음부터 끝까지 책임지고"
+        }
+      ],
+      "subsignals": {
+        "problem_definition_involvement": 3,
+        "decision_making": 3,
+        "role_self_positioning": "owner"
+      }
+    },
+    "growth_orientation_user": {
+      "score": 4,
+      "summary": "Exceptionally high growth orientation, driven by a non-CS background to rapidly catch up. Actively seeks challenging environments with hands-on experience and embraces feedback as a primary growth mechanism, leading to re-evaluation of fundamental structures. Prioritizes problem-driven technology adoption over following trends.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L11-14"],
+          "quote": "특히 부트캠프 후반 팀 프로젝트를 통해, 단순히 주어진 작업을 빠르게 처리하는 사람보다 설계 단계부터 참여하고, 시행착오를 겪으며 구조를 개선한 사람이 훨씬 빠르게 성장한다는 점을 체감했습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L15-16"],
+          "quote": "이 경험을 계기로 저는 편한 환경보다 실제 손을 많이 써보고, 피드백을 통해 수정할 수 있는 환경을 선호하게 되었습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P4, L4-7"],
+          "quote": "팀 프로젝트에서 코드리뷰를 \"평가\"가 아닌 성장을 위한 피드백 과정으로 인식하게 되었으며, 지적받은 부분을 그대로 수정하는 데서 끝나지 않고, 구조 자체를 다시 고민하려 노력했습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P1, L4-6"],
+          "quote": "하지만 그 부담은 곧 \"어떻게 하면 실무에서 빠르게 따라잡을 수 있을까\"라는 질문으로 바뀌었고, 저를 계속해서 움직이게 만드는 동력이 되었습니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P2, L10-12"],
+          "quote": "이후 기술을 학습할 때도 \"트렌드이기 때문\"이 아니라, 실제로 해결하고 싶은 문제가 있는지를 먼저 고민하게 되었습니다."
+        }
+      ],
+      "subsignals": {
+        "new_tech_adoption": 3,
+        "self_directed_learning": 4,
+        "feedback_loop": 4
+      }
+    },
+    "work_expectation_user": {
+      "score": 4,
+      "summary": "Seeks an environment that fosters rapid and genuine growth through high practical work, non-formal code reviews, and tolerance for trial-and-error. Prioritizes hands-on experience and a learning-intensive environment over compensation or benefits, demonstrating a willingness to endure challenges for professional development. Aims for end-to-end feature ownership.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P1, L15-16"],
+          "quote": "이 경험을 계기로 저는 편한 환경보다 실제 손을 많이 써보고, 피드백을 통해 수정할 수 있는 환경을 선호하게 되었습니다."
+        },
+        {
+          "doc_id": "portfolio",
+          "line_refs": ["P4, L17-18"],
+          "quote": "혼자서도 프론트엔드 기능 하나를 처음부터 끝까지 책임지고"
+        },
+        {
+          "doc_id": "resume",
+          "line_refs": ["P1, L6-8"],
+          "quote": "연봉이나 복지보다 입사 후 1~2년 안에 실무 역량이 확실히 성장할 수 있는 환경을 중요하게 생각합니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P2, L28-32"],
+          "quote": "연봉이나 복지보다, 실제 프론트엔드 실무 비중이 높고, 코드리뷰와 피드백이 형식적으로 이루어지지 않으며, 성장 과정에서의 시행착오를 감내할 수 있는 환경을 선호합니다."
+        },
+        {
+          "doc_id": "essay",
+          "line_refs": ["P2, L33-34"],
+          "quote": "힘들 수는 있어도, 이 회사에서 분명히 성장하고 있다는 확신을 가질 수 있다면 기꺼이 도전하고 싶습니다."
+        }
+      ],
+      "subsignals": {
+        "pace_intensity_preference": 3,
+        "wlb_vs_immersion_preference": 4,
+        "responsibility_density_signals": 3
+      }
+    }
+  },
+  "extraction_quality": {
+    "unknown_policy_applied": "yes",
+    "notes": "unknown"
+  },
+  "_source": {
+    "type": "local_pdfs",
+    "files": [
+      "Portfolio – P2 이다은 (Lee Da-eun).pdf",
+      "이력서 – P2 이다은 (Lee Da-eun).pdf",
+      "자기소개서 – P2 이다은.pdf"
+    ]
+  }
+}

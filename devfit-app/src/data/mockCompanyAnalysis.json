@@ -1,0 +1,657 @@
+{
+  "schema_version": "1.1",
+  "profile_meta": {
+    "company_name": "현대오토에버",
+    "industry_domain_label": "Enterprise IT",
+    "company_stage_label": "unknown",
+    "industry": "Automotive Software / IT Services",
+    "primary_domain": "Automotive Connectivity / OTA Systems",
+    "analyzed_scope": "company",
+    "analyzed_date": "2024-07-29",
+    "source_docs": [
+      {
+        "doc_id": "job_posting",
+        "filename": "채용공고: [M&C] Backend Developer - OTA 차량 관제 시스템 개발 및 운영",
+        "url": "https://career.hyundai-autoever.com/ko/o/188578"
+      },
+      {
+        "doc_id": "official_site_people",
+        "filename": "People",
+        "url": "https://career.hyundai-autoever.com/ko/people"
+      },
+      {
+        "doc_id": "official_site_life",
+        "filename": "Life",
+        "url": "https://career.hyundai-autoever.com/ko/life"
+      },
+      {
+        "doc_id": "official_site_embeddedsw",
+        "filename": "Embedded SW",
+        "url": "https://career.hyundai-autoever.com/ko/embeddedsw"
+      }
+    ]
+  },
+  "company_info_fields": {
+    "basic_profile": {
+      "summary": "현대오토에버는 자동차 커넥티비티 서비스 중 차량 편의 기능과 관련하여 다양한 서비스를 제공하는 조직입니다. 특히 OTA(Over-The-Air) 차량 관제 시스템을 개발 및 운영하며, 차량 내 제어기나 AVN(Audio, Video, Navigation)의 펌웨어/SW를 무선 통신을 이용하여 차량 내 설치하고 이를 관제하는 서비스를 국내뿐 아니라 글로벌로 제공하고 있습니다. 안정적이고 효율적인 서비스 제공을 위해 클라우드 네이티브 기술 도입 및 서비스 구축/운영 프로세스를 지속적으로 개발 및 개선하고 있습니다.",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하실 팀을 소개해요"
+          ],
+          "quote": "OTA플랫폼개발팀은 자동차 커넥티비티 서비스 중 차량 편의 기능과 관련하여 다양한 서비스를 제공하는 조직입니다. 주 서비스 영역은 차량 내 설치되어 있는 제어기나 AVN(Audio, Video, Navigation)의 펌웨어/SW를 무선 통신을 이용하여 차량 내 설치하고 이를 관제하는 서비스를 제공하고 있습니다. 해당 서비스들은 국내뿐 아니라 글로벌로 서비스 중이고, 우리 조직은 이러한 서비스를 안정적이고 효율적으로 제공하기 위해 클라우드 네이티브 기술 도입 및 서비스 구축/운영을 위한 각종 프로세스를 지속적으로 개발 및 개선하고 있습니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "top section"
+          ],
+          "quote": "✅ OTA 차량 관제 시스템 개발 및 운영"
+        }
+      ]
+    },
+    "culture_keywords_overview": {
+      "culture_keywords": [
+        "활발한 커뮤니케이션",
+        "지식 공유 문화",
+        "스스로&함께 학습",
+        "새로운 기법 도입",
+        "개발 문화",
+        "개개인의 역량 중시",
+        "커리어 개발 장려",
+        "수평적인 조직문화",
+        "자유롭고 책임감",
+        "꾸준한 성장"
+      ],
+      "culture_summary_keywords": [
+        "communication",
+        "knowledge sharing",
+        "continuous learning",
+        "new tech adoption",
+        "meritocracy",
+        "career development",
+        "horizontal structure",
+        "autonomy",
+        "responsibility",
+        "growth"
+      ],
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "동료의 한 마디"
+          ],
+          "quote": "우리 팀은 활발한 커뮤니케이션 및 지식 공유 문화가 특징이에요. ... 스스로&함께 학습하고 새로운 기법을 도입하는 개발 문화가 정말 잘 마련되어 있는데"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "팀 리더"
+          ],
+          "quote": "OTA플랫폼개발팀은 개개인의 역량을 중시하는 조직입니다. 개인별로 경력 목표 달성을 위한 커리어 개발을 장려하여 역량을 향상하고 이를 통해 서비스 품질을 올릴 수 있도록 시너지를 내고 있습니다. ... 같이 성장할 수 있는 발판을 마련하고 있습니다."
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WherEVER"
+          ],
+          "quote": "자유롭고 책임감있게 일해요. ... 수평적인 조직문화"
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WhatEVER"
+          ],
+          "quote": "다양한 방식으로 꾸준하게 성장해요"
+        }
+      ]
+    },
+    "technical_environment": {
+      "stack": {
+        "languages": [
+          "Java",
+          "Go Language"
+        ],
+        "frameworks": [
+          "Spring Boot"
+        ],
+        "data": [
+          "RDB (PostgreSQL)",
+          "NoSQL (MongoDB)",
+          "Redis"
+        ],
+        "infra_cloud": [
+          "Cloud Native",
+          "Docker",
+          "Kubernetes"
+        ],
+        "ops_tools": [
+          "Git",
+          "Jenkins",
+          "ArgoCD"
+        ]
+      },
+      "ops_deploy_experience_required_or_mentioned": "yes",
+      "scale_traffic_platform_mentioned": "yes",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하실 팀을 소개해요"
+          ],
+          "quote": "클라우드 네이티브 기술 도입 및 서비스 구축/운영을 위한 각종 프로세스를 지속적으로 개발 및 개선하고 있습니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하시면 함께 할 업무예요"
+          ],
+          "quote": "시스템 운영 및 관리"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "이런 분과 함께 하고 싶어요"
+          ],
+          "quote": "Java, Spring Boot 기반 백엔드 개발 7년 이상 경험. RDB(PostgreSQL), NoSQL(MongoDB), Redis 활용 개발 경험. Git, Jenkins, ArgoCD 등 CI/CD Tool 사용 역량"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "이런 분이라면 더욱 좋아요"
+          ],
+          "quote": "GO Language 개발 경험. Docker 및 Kubernetes를 활용한 컨테이너 기반 서비스 운영 경험. 대용량 데이터 연계 및 처리 개발/운영 경험"
+        }
+      ]
+    },
+    "role_and_hiring_signals": {
+      "hiring_summary": "OTA 차량 관제 시스템의 백엔드 개발자 (경력 7년 이상)를 채용합니다. 주요 업무는 OTA 관제 시스템 백엔드 개발 (차량 통신, 내/외부 IF 연계), 신규 연동 시스템 API 설계 및 연동 테스트, 시스템 운영 및 관리입니다. Java/Spring Boot 기반의 개발 경험과 RESTful API, 마이크로서비스, 성능 최적화 경험이 요구됩니다.",
+      "open_roles_mentioned": [
+        "[M&C] Backend Developer - OTA 차량 관제 시스템 개발 및 운영"
+      ],
+      "employment_type": "full_time",
+      "location": "서울특별시 강남구 대치동",
+      "remote_hybrid_onsite": "onsite",
+      "required_experience": "경력 7년 이상",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "top section"
+          ],
+          "quote": "구분 Enterprise IT, 직군 Backend 개발, 경력사항 경력 7년 이상, 고용형태 정규직, 근무지 서울/경기서울특별시 강남구 대치동"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하시면 함께 할 업무예요"
+          ],
+          "quote": "OTA 관제 시스템 백엔드 개발 (차량 통신, 내/외부 IF 연계 개발 등). 신규 연동 시스템 API 설계 및 연동 테스트. 시스템 운영 및 관리"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "이런 분과 함께 하고 싶어요"
+          ],
+          "quote": "Java, Spring Boot 기반 백엔드 개발 7년 이상 경험"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "동료의 한 마디"
+          ],
+          "quote": "전 이상하게 재택보다 사무실로 출근하고 싶더라구요.."
+        }
+      ]
+    },
+    "execution_culture_signals": {
+      "summary": "안정성과 효율성을 중시하며, 클라우드 네이티브 기술 도입과 프로세스 개선을 통해 구조적인 접근을 지향합니다. 서비스 품질 향상과 성능 최적화에 대한 명확한 기대를 보여 기술적 완성도와 비즈니스 임팩트의 균형을 추구하는 것으로 보입니다.",
+      "speed_vs_stability": "stability",
+      "prototype_vs_structure": "structure",
+      "business_impact_vs_tech_quality": "balanced",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하실 팀을 소개해요"
+          ],
+          "quote": "우리 조직은 이러한 서비스를 안정적이고 효율적으로 제공하기 위해 클라우드 네이티브 기술 도입 및 서비스 구축/운영을 위한 각종 프로세스를 지속적으로 개발 및 개선하고 있습니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "이런 분과 함께 하고 싶어요"
+          ],
+          "quote": "멀티스레드, 비동기 처리, 캐싱 등 성능 최적화 경험"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "팀 리더"
+          ],
+          "quote": "개인별로 경력 목표 달성을 위한 커리어 개발을 장려하여 역량을 향상하고 이를 통해 서비스 품질을 올릴 수 있도록 시너지를 내고 있습니다."
+        }
+      ]
+    },
+    "collaboration_culture_signals": {
+      "summary": "활발한 커뮤니케이션과 지식 공유를 강조하며, 격주 팀 공유회를 통해 업무 이슈 해결 방안, 신기술 적용 이점 등을 공유합니다. '수평적인 조직문화'를 지향하며, '책임님' 호칭을 사용합니다.",
+      "code_review_culture": "not_mentioned",
+      "documentation_culture": "not_mentioned",
+      "cross_functional_collaboration": "mentioned",
+      "decision_making_process": "unknown",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "동료의 한 마디"
+          ],
+          "quote": "우리 팀은 활발한 커뮤니케이션 및 지식 공유 문화가 특징이에요. 격주로 팀 공유회를 통해 팀 공지 사항 및 다양한 정보들을 공유하고 있습니다. 각 work그룹에서 일어난 이슈 사항을 어떻게 해결했는지, 혹은 신기술을 적용했더니 어떤 이점과 성과 등을 보였는지 다양하고 유익한 정보들을 공유하고 있어요!"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하시면 함께 할 업무예요"
+          ],
+          "quote": "OTA 관제 시스템 백엔드 개발 (차량 통신, 내/외부 IF 연계 개발 등). 신규 연동 시스템 API 설계 및 연동 테스트"
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WherEVER"
+          ],
+          "quote": "수평적인 조직문화. 우리는 서로를 책임님이라고 부릅니다. 같은 호칭으로 함께 이야기를 나누고, 서로 도와가며 성장하는 환경을 만들어나가요."
+        }
+      ]
+    },
+    "ownership_expectation_signals": {
+      "summary": "개개인의 역량과 자기주도적인 커리어 개발을 중시하며, 시스템 개발, 설계, 운영 및 관리 전반에 걸친 주도적인 참여와 책임을 기대합니다. 새로운 기술과 기법을 스스로 학습하고 도입하는 문화를 장려합니다.",
+      "problem_definition_expected": "yes",
+      "decision_making_expected": "yes",
+      "role_positioning": "owner",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하시면 함께 할 업무예요"
+          ],
+          "quote": "OTA 관제 시스템 백엔드 개발 (차량 통신, 내/외부 IF 연계 개발 등). 신규 연동 시스템 API 설계 및 연동 테스트. 시스템 운영 및 관리"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "동료의 한 마디"
+          ],
+          "quote": "스스로&함께 학습하고 새로운 기법을 도입하는 개발 문화가 정말 잘 마련되어 있는데"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "팀 리더"
+          ],
+          "quote": "OTA플랫폼개발팀은 개개인의 역량을 중시하는 조직입니다. 개인별로 경력 목표 달성을 위한 커리어 개발을 장려하여 역량을 향상하고 이를 통해 서비스 품질을 올릴 수 있도록 시너지를 내고 있습니다."
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WhatEVER",
+            "커리어 챌린지 (사내공모제도)"
+          ],
+          "quote": "자기주도적인 커리어 개발을 위한 사내공모제를 통해 여러분이 원하는 방향으로 도전할 수 있는 기회를 제공합니다."
+        }
+      ]
+    },
+    "growth_learning_culture_signals": {
+      "summary": "다양한 방식으로 꾸준한 성장을 적극 지원합니다. 온보딩 프로그램, 맞춤형 직무 교육, 자기주도 학습 지원 (도서, 온라인 강의, 구독 서비스), 자격증 취득/갱신, 어학 교육비 지원 등이 마련되어 있습니다. 팀 내에서는 새로운 기법 도입과 지식 공유를 통해 개발 실력 향상을 독려합니다.",
+      "learning_support": "mentioned",
+      "new_tech_adoption": "high",
+      "feedback_culture": "mentioned",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하실 팀을 소개해요"
+          ],
+          "quote": "클라우드 네이티브 기술 도입 및 서비스 구축/운영을 위한 각종 프로세스를 지속적으로 개발 및 개선하고 있습니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "동료의 한 마디"
+          ],
+          "quote": "스스로&함께 학습하고 새로운 기법을 도입하는 개발 문화가 정말 잘 마련되어 있는데... 격주로 팀 공유회를 통해 팀 공지 사항 및 다양한 정보들을 공유하고 있습니다. 각 work그룹에서 일어난 이슈 사항을 어떻게 해결했는지, 혹은 신기술을 적용했더니 어떤 이점과 성과 등을 보였는지 다양하고 유익한 정보들을 공유하고 있어요!"
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WhatEVER"
+          ],
+          "quote": "다양한 방식으로 꾸준하게 성장해요. 온보딩 프로그램, 맞춤형 직무교육, 자기주도 학습 지원, 자격증 취득/갱신 지원, 어학 교육비 지원, 이러닝/전화화상 교육, 전자책 구독 서비스 지원, 성장 Lab, 커리어 챌린지 (사내공모제도)"
+        }
+      ]
+    },
+    "work_environment_expectations": {
+      "summary": "서울 강남의 고층 건물에서 근무하는 온사이트 환경입니다. 선택적 근로시간제를 통해 유연한 근무를 지원하며, '어쩌다 하얗게 불태운 책임님'을 위한 심야 귀가 지원도 제공됩니다. 가족, 건강, 휴식, 주거, 교육 등 다방면에서 풍부한 복리후생 제도를 운영하여 워라밸과 안정적인 생활을 적극 지원합니다.",
+      "work_mode": "onsite",
+      "wlb_vs_immersion": "wlb",
+      "pace_intensity": "stable",
+      "oncall_or_shift": "not_mentioned",
+      "overtime_or_night_work": "mentioned",
+      "benefits_or_perks": [
+        "선택적 근로시간제",
+        "중식 제공 (사내식당 또는 중식비 지원)",
+        "심야 비즈니스 택시 지원",
+        "자율 좌석제",
+        "온보딩 프로그램 (6개월간 집중케어)",
+        "맞춤형 직무교육 (사내외 교육)",
+        "자기주도 학습 지원 (도서, 온라인 강의, 구독 서비스)",
+        "자격증 취득/갱신 지원",
+        "어학 교육비 지원 (이러닝/전화화상 교육 포함)",
+        "전자책 구독 서비스 지원",
+        "성장 Lab (소규모 자율 학습 조직)",
+        "커리어 챌린지 (사내공모제도)",
+        "현대오토에버 어린이집 (총 2개소 운영)",
+        "경조사 지원 (휴가, 경조비)",
+        "명절 귀향비",
+        "출산 전/후 휴가제도 (산전후, 배우자 출산, 태아검진, 난임치료휴가)",
+        "자녀 학자금 지원 (유치원~대학교)",
+        "자녀 초등학교 입학선물",
+        "종합검진 지원 (본인 및 가족)",
+        "의료비 지원 (본인 및 가족)",
+        "독감 예방접종 (본인 및 가족)",
+        "단체 상해보험 (본인 및 가족)",
+        "EAP (외부 전문가 상담 서비스)",
+        "복지포인트",
+        "하계 휴가 (연차 외 추가 5일)",
+        "하계 휴가비",
+        "휴양소 이용 지원 (전국 40여개 리조트)",
+        "사내 동호회 운영 지원",
+        "통신비 지원 (월 최대 6만원)",
+        "주거 지원금 (사내 대출)",
+        "학자금 대출 이자 지원 (본인)",
+        "차량구입지원금 (현대자동차그룹 차량 최대 30% 할인)"
+      ],
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "근무지",
+            "📍 만나게 될 근무지는 여기예요",
+            "동료의 한 마디"
+          ],
+          "quote": "근무지 서울/경기서울특별시 강남구 대치동. 서울 강남. 삼성역 인근 고층 건물에서 근무하고 있다는 점이에요! 이게 바로 대기업이구나 라는 생각이 들면서 자랑스러움이 뿜뿜하는 사무실 환경이 정말 최고예요. 제 MBTI가 E여서 그런 것일 수도 있지만, 전 이상하게 재택보다 사무실로 출근하고 싶더라구요.."
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WhenEVER"
+          ],
+          "quote": "선택적 근로시간제. 새벽형 인간, 오후형 인간 모두의 취향을 존중합니다. 필요한 시간에 출근해서 코어시간에 같이 일해요. ... 안전한 심야귀가 지원. 어쩌다 하얗게 불태운 책임님, 집까지 편히 심야 비즈니스 택시로 에스코트 해드립니다."
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WhenEVER",
+            "WherEVER",
+            "WhatEVER"
+          ],
+          "quote": "맛있고 든든한 중식 제공 (사내식당 운영 또는 중식비 지원, 사업장 별 상이). 자율 좌석제. 온보딩 프로그램. 맞춤형 직무교육. 자기주도 학습 지원. 자격증 취득/갱신 지원. 어학 교육비 지원. 이러닝/전화화상 교육. 전자책 구독 서비스 지원. 성장 Lab. 커리어 챌린지 (사내공모제도)."
+        },
+        {
+          "doc_id": "official_site_life",
+          "line_refs": [
+            "Life"
+          ],
+          "quote": "오롯이 집중할 수 있도록, 탄탄하고 안정적인 생활을 지원합니다. 언제나 든든한 내 편이자 하루의 원동력, 가족의 행복까지 함께합니다. 몸과 마음 모두 건강하게 세심한 케어로 웰니스 라이프를 실현합니다. 열심히 달려온 당신을 위해 편안한 휴식과 재충전의 시간을 선물합니다. 주거, 이동, 교육까지 삶의 다양한 영역에서 안정적인 생활을 지원합니다."
+        }
+      ]
+    },
+    "verification_needed_areas": {
+      "missing_or_unmentioned": [
+        "code review culture details",
+        "explicit documentation culture beyond knowledge sharing",
+        "detailed decision-making process"
+      ],
+      "needs_followup_questions": [
+        "specifics on how cross-functional collaboration occurs",
+        "how new tech adoption is measured/encouraged at an organizational level",
+        "specifics on the balance between work-life balance and immersion, especially regarding '어쩌다 하얗게 불태운 책임님' scenario"
+      ]
+    }
+  },
+  "scoring_axes": {
+    "scoring_policy": {
+      "scale": "0-4",
+      "meaning": {
+        "0": "no explicit signal",
+        "1": "weak/indirect mention",
+        "2": "some evidence (limited scope)",
+        "3": "clear evidence (multiple instances or concrete practices)",
+        "4": "strong evidence (clear ownership + concrete policies/practices)"
+      },
+      "unknown_handling": "If evidence is missing, score must be 0 and confidence must be low."
+    },
+    "technical_fit_company": {
+      "score": 3,
+      "summary": "회사는 클라우드 네이티브 기술 도입, 프로세스 개선을 통해 안정적이고 효율적인 서비스 제공을 목표로 합니다. Java, Spring Boot, Go 언어, RDB, NoSQL, Redis, Docker, Kubernetes, CI/CD 툴 등 폭넓은 기술 스택을 활용하며 대용량 데이터 처리 및 운영 경험을 요구합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하실 팀을 소개해요"
+          ],
+          "quote": "우리 조직은 이러한 서비스를 안정적이고 효율적으로 제공하기 위해 클라우드 네이티브 기술 도입 및 서비스 구축/운영을 위한 각종 프로세스를 지속적으로 개발 및 개선하고 있습니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "이런 분과 함께 하고 싶어요"
+          ],
+          "quote": "Java, Spring Boot 기반 백엔드 개발 7년 이상 경험. RDB(PostgreSQL), NoSQL(MongoDB), Redis 활용 개발 경험. Git, Jenkins, ArgoCD 등 CI/CD Tool 사용 역량"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "이런 분이라면 더욱 좋아요"
+          ],
+          "quote": "GO Language 개발 경험. Docker 및 Kubernetes를 활용한 컨테이너 기반 서비스 운영 경험. 대용량 데이터 연계 및 처리 개발/운영 경험"
+        }
+      ],
+      "subsignals": {
+        "languages_frameworks_depth": 3,
+        "infra_cloud_exposure": 3,
+        "ops_deploy_monitoring_exposure": 3,
+        "scale_platform_exposure": 3
+      }
+    },
+    "execution_style_company": {
+      "score": 3,
+      "summary": "회사는 안정성과 효율성을 최우선으로 하며, 클라우드 네이티브 기술 도입과 프로세스 개선을 통해 구조적이고 체계적인 접근을 지향합니다. 서비스 품질 향상과 성능 최적화를 강조하며, 기술적 완성도와 비즈니스 성과를 균형 있게 추구합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하실 팀을 소개해요"
+          ],
+          "quote": "우리 조직은 이러한 서비스를 안정적이고 효율적으로 제공하기 위해 클라우드 네이티브 기술 도입 및 서비스 구축/운영을 위한 각종 프로세스를 지속적으로 개발 및 개선하고 있습니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "이런 분과 함께 하고 싶어요"
+          ],
+          "quote": "멀티스레드, 비동기 처리, 캐싱 등 성능 최적화 경험"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "팀 리더"
+          ],
+          "quote": "개인별로 경력 목표 달성을 위한 커리어 개발을 장려하여 역량을 향상하고 이를 통해 서비스 품질을 올릴 수 있도록 시너지를 내고 있습니다."
+        }
+      ],
+      "subsignals": {
+        "speed_vs_stability": "stability",
+        "prototype_vs_structure": "structure",
+        "business_impact_vs_tech_quality": "balanced"
+      }
+    },
+    "collaboration_style_company": {
+      "score": 3,
+      "summary": "회사는 활발한 커뮤니케이션과 지식 공유 문화를 특징으로 하며, 격주 팀 공유회를 통해 업무 이슈 해결 방안 및 신기술 적용 사례 등을 공유합니다. 수평적인 조직문화를 지향하며 '책임님'이라는 호칭을 사용하여 상호 협력을 장려합니다. 내/외부 시스템 연동 업무를 통해 교차 기능 협업도 이루어집니다.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "동료의 한 마디"
+          ],
+          "quote": "우리 팀은 활발한 커뮤니케이션 및 지식 공유 문화가 특징이에요. 격주로 팀 공유회를 통해 팀 공지 사항 및 다양한 정보들을 공유하고 있습니다. 각 work그룹에서 일어난 이슈 사항을 어떻게 해결했는지, 혹은 신기술을 적용했더니 어떤 이점과 성과 등을 보였는지 다양하고 유익한 정보들을 공유하고 있어요!"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하시면 함께 할 업무예요"
+          ],
+          "quote": "OTA 관제 시스템 백엔드 개발 (차량 통신, 내/외부 IF 연계 개발 등). 신규 연동 시스템 API 설계 및 연동 테스트"
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WherEVER"
+          ],
+          "quote": "수평적인 조직문화. 우리는 서로를 책임님이라고 부릅니다. 같은 호칭으로 함께 이야기를 나누고, 서로 도와가며 성장하는 환경을 만들어나가요."
+        }
+      ],
+      "subsignals": {
+        "code_review": 0,
+        "documentation": 1,
+        "cross_functional": 3
+      }
+    },
+    "ownership_company": {
+      "score": 3,
+      "summary": "회사는 개개인의 역량과 자기주도적인 커리어 개발을 중시하며, 사내 공모제를 통해 원하는 방향으로 도전할 기회를 제공합니다. 시스템 개발, 설계, 운영 및 관리 전반에 걸친 주도적인 참여와 책임을 기대하며, 스스로 학습하고 새로운 기법을 도입하는 문화를 장려합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하시면 함께 할 업무예요"
+          ],
+          "quote": "OTA 관제 시스템 백엔드 개발 (차량 통신, 내/외부 IF 연계 개발 등). 신규 연동 시스템 API 설계 및 연동 테스트. 시스템 운영 및 관리"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "동료의 한 마디"
+          ],
+          "quote": "스스로&함께 학습하고 새로운 기법을 도입하는 개발 문화가 정말 잘 마련되어 있는데"
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "팀 리더"
+          ],
+          "quote": "OTA플랫폼개발팀은 개개인의 역량을 중시하는 조직입니다. 개인별로 경력 목표 달성을 위한 커리어 개발을 장려하여 역량을 향상하고 이를 통해 서비스 품질을 올릴 수 있도록 시너지를 내고 있습니다."
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WhatEVER",
+            "커리어 챌린지 (사내공모제도)"
+          ],
+          "quote": "자기주도적인 커리어 개발을 위한 사내공모제를 통해 여러분이 원하는 방향으로 도전할 수 있는 기회를 제공합니다."
+        }
+      ],
+      "subsignals": {
+        "problem_definition_involvement": 3,
+        "decision_making": 3,
+        "role_self_positioning": "owner"
+      }
+    },
+    "growth_orientation_company": {
+      "score": 4,
+      "summary": "회사는 온보딩 프로그램, 맞춤형 직무 교육, 자기주도 학습 지원(도서, 온라인 강의, 구독 서비스), 자격증 취득/갱신, 어학 교육비 지원, 성장 Lab, 사내 공모제도 등 다양한 프로그램을 통해 꾸준한 성장을 적극 지원합니다. 클라우드 네이티브 및 새로운 기법 도입을 장려하며, 격주 팀 공유회를 통해 지식 공유와 상호 학습을 독려합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "합류하실 팀을 소개해요"
+          ],
+          "quote": "클라우드 네이티브 기술 도입 및 서비스 구축/운영을 위한 각종 프로세스를 지속적으로 개발 및 개선하고 있습니다."
+        },
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "동료의 한 마디"
+          ],
+          "quote": "스스로&함께 학습하고 새로운 기법을 도입하는 개발 문화가 정말 잘 마련되어 있는데... 격주로 팀 공유회를 통해 팀 공지 사항 및 다양한 정보들을 공유하고 있습니다. 각 work그룹에서 일어난 이슈 사항을 어떻게 해결했는지, 혹은 신기술을 적용했더니 어떤 이점과 성과 등을 보였는지 다양하고 유익한 정보들을 공유하고 있어요!"
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WhatEVER"
+          ],
+          "quote": "다양한 방식으로 꾸준하게 성장해요. 온보딩 프로그램, 맞춤형 직무교육, 자기주도 학습 지원, 자격증 취득/갱신 지원, 어학 교육비 지원, 이러닝/전화화상 교육, 전자책 구독 서비스 지원, 성장 Lab, 커리어 챌린지 (사내공모제도)"
+        }
+      ],
+      "subsignals": {
+        "new_tech_adoption": 4,
+        "self_directed_learning": 4,
+        "feedback_loop": 2
+      }
+    },
+    "work_expectation_company": {
+      "score": 3,
+      "summary": "회사는 서울 강남의 오피스에서 온사이트 근무 환경을 제공합니다. 선택적 근로시간제를 통해 유연한 근무를 지원하며, 가족, 건강, 휴식, 주거, 교육 등 다방면에서 풍부한 복리후생 제도를 운영하여 워라밸과 안정적인 생활을 적극 지원합니다. 다만, '어쩌다 하얗게 불태운 책임님'을 위한 심야 귀가 지원을 언급하여, 필요 시 업무 강도가 높아질 수 있음을 시사합니다.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "doc_id": "job_posting",
+          "line_refs": [
+            "근무지",
+            "📍 만나게 될 근무지는 여기예요"
+          ],
+          "quote": "근무지 서울/경기서울특별시 강남구 대치동. 서울 강남. 삼성역 인근 고층 건물에서 근무하고 있다는 점이에요!"
+        },
+        {
+          "doc_id": "official_site_people",
+          "line_refs": [
+            "WhenEVER"
+          ],
+          "quote": "선택적 근로시간제. 새벽형 인간, 오후형 인간 모두의 취향을 존중합니다. 필요한 시간에 출근해서 코어시간에 같이 일해요. ... 안전한 심야귀가 지원. 어쩌다 하얗게 불태운 책임님, 집까지 편히 심야 비즈니스 택시로 에스코트 해드립니다."
+        },
+        {
+          "doc_id": "official_site_life",
+          "line_refs": [
+            "Life"
+          ],
+          "quote": "오롯이 집중할 수 있도록, 탄탄하고 안정적인 생활을 지원합니다. 언제나 든든한 내 편이자 하루의 원동력, 가족의 행복까지 함께합니다. 몸과 마음 모두 건강하게 세심한 케어로 웰니스 라이프를 실현합니다. 열심히 달려온 당신을 위해 편안한 휴식과 재충전의 시간을 선물합니다. 주거, 이동, 교육까지 삶의 다양한 영역에서 안정적인 생활을 지원합니다."
+        }
+      ],
+      "subsignals": {
+        "pace_intensity_preference": 2,
+        "wlb_vs_immersion_preference": 4,
+        "responsibility_density_signals": 3
+      }
+    }
+  },
+  "extraction_quality": {
+    "unknown_policy_applied": "yes",
+    "notes": "All requested fields were processed and scoring axes were filled based on the provided company data. 'line_refs' for job posting refer to logical sections; for official site pages, they refer to general sections as specific line numbers are not provided in the input text."
+  },
+  "_meta": {
+    "company_name": "현대오토에버",
+    "job_posting_url": "https://career.hyundai-autoever.com/ko/o/188578",
+    "source_urls": [
+      "https://career.hyundai-autoever.com/ko/o/188578",
+      "https://career.hyundai-autoever.com/ko/people",
+      "https://career.hyundai-autoever.com/ko/life",
+      "https://career.hyundai-autoever.com/ko/embeddedsw"
+    ]
+  }
+}

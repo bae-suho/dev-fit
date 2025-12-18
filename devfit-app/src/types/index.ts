@@ -6,7 +6,6 @@ export interface AnalysisData {
 export interface CompanyProfile {
   name: string;
   industry: string;
-  stage: string;
   techStack: string[];
   cultureDNA: { icon: string; label: string }[];
   summary: string;
@@ -177,7 +176,6 @@ export interface CompanyAnalysis {
     profile_id?: string;
     company_name: string;
     industry?: string;
-    stage?: string;
     primary_domain?: string;
     analyzed_scope?: string;
     analyzed_date?: string;

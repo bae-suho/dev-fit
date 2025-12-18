@@ -130,9 +130,6 @@ function CompanyContent({ profile }: { profile: CompanyProfile }) {
           <span className="px-2 py-0.5 rounded-full bg-white text-text-secondary border border-toss-blue font-medium text-xs shadow-sm">
             {profile.industry}
           </span>
-          <span className="px-2 py-0.5 rounded-full bg-white text-text-secondary border border-toss-blue font-medium text-xs shadow-sm">
-            {profile.stage}
-          </span>
         </p>
       </div>
 
