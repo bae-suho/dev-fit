@@ -1,31 +1,38 @@
-import { useEffect, useState, useRef } from 'react';
-import { Building, UserCircle, Zap, TrendingUp, Shield, Microscope } from 'lucide-react';
-import type { CompanyProfile, UserProfile } from '@/types';
+import { useEffect, useState, useRef } from "react";
+import {
+  Building,
+  UserCircle,
+  Zap,
+  TrendingUp,
+  Shield,
+  Microscope,
+} from "lucide-react";
+import type { CompanyProfile, UserProfile } from "@/types";
 
 interface ProfileCardProps {
-  type: 'company' | 'user';
+  type: "company" | "user";
   profile: CompanyProfile | UserProfile;
   isAnalyzing: boolean;
 }
 
 const companyLogs = [
-  '> 기업 페이지 크롤링 중...',
-  '> 기술 블로그 분석 중...',
-  '> 기술 스택 추출: Python, FastAPI...',
-  '> 기업 문화 키워드 감지 중...',
+  "> 기업 페이지 크롤링 중...",
+  "> 기술 블로그 분석 중...",
+  "> 기술 스택 추출: Python, FastAPI...",
+  "> 기업 문화 키워드 감지 중...",
   "> 발견: '애자일', '속도', '임팩트'",
-  '> 감성 분석: 매우 긍정적',
-  '> 프로필 생성 중...',
+  "> 감성 분석: 매우 긍정적",
+  "> 프로필 생성 중...",
 ];
 
 const userLogs = [
-  '> 이력서 분석 중...',
-  '> GitHub 저장소 분석 중...',
-  '> 기술 스택 추출: Django, Docker...',
-  '> 업무 스타일 파악 중...',
+  "> 이력서 분석 중...",
+  "> GitHub 저장소 분석 중...",
+  "> 기술 스택 추출: Django, Docker...",
+  "> 업무 스타일 파악 중...",
   "> 발견: '안정성', 'TDD', '깊이 있는 분석'",
-  '> 적합도 계산 중...',
-  '> 프로필 완성 중...',
+  "> 적합도 계산 중...",
+  "> 프로필 완성 중...",
 ];
 
 const iconMap: Record<string, React.ElementType> = {
@@ -41,12 +48,12 @@ export function ProfileCard({ type, profile, isAnalyzing }: ProfileCardProps) {
   const [progressWidth, setProgressWidth] = useState(0);
   const logContainerRef = useRef<HTMLDivElement>(null);
 
-  const isCompany = type === 'company';
+  const isCompany = type === "company";
   const logSource = isCompany ? companyLogs : userLogs;
 
   const colors = isCompany
-    ? { main: '#3182F6', light: '#EBF4FF' }
-    : { main: '#3CD4A0', light: '#E8FAF3' };
+    ? { main: "#3182F6", light: "#EBF4FF" }
+    : { main: "#3CD4A0", light: "#E8FAF3" };
 
   useEffect(() => {
     if (isAnalyzing) {
@@ -84,8 +91,12 @@ export function ProfileCard({ type, profile, isAnalyzing }: ProfileCardProps) {
         className="flex items-center gap-2.5 mb-4 font-semibold text-base"
         style={{ color: colors.main }}
       >
-        {isCompany ? <Building className="w-5 h-5" /> : <UserCircle className="w-5 h-5" />}
-        {isCompany ? '대상 기업' : '내 프로필'}
+        {isCompany ? (
+          <Building className="w-5 h-5" />
+        ) : (
+          <UserCircle className="w-5 h-5" />
+        )}
+        {isCompany ? "대상 기업" : "내 프로필"}
       </div>
 
       {!showResult ? (
@@ -115,8 +126,13 @@ function CompanyContent({ profile }: { profile: CompanyProfile }) {
     <>
       <div>
         <h3 className="text-xl font-bold text-text-primary">{profile.name}</h3>
-        <p className="text-sm text-text-tertiary">
-          {profile.industry} · {profile.stage}
+        <p className="text-sm text-text-tertiary flex items-center gap-2">
+          <span className="px-2.5 py-1 rounded-full bg-toss-blue-light text-toss-blue font-medium">
+            {profile.industry}
+          </span>
+          <span className="px-2.5 py-1 rounded-full bg-toss-blue-light text-toss-blue font-medium">
+            {profile.stage}
+          </span>
         </p>
       </div>
 
@@ -145,7 +161,10 @@ function CompanyContent({ profile }: { profile: CompanyProfile }) {
             {profile.cultureDNA.map((item) => {
               const IconComponent = iconMap[item.icon] || Zap;
               return (
-                <li key={item.label} className="flex items-center gap-2 text-sm text-text-secondary">
+                <li
+                  key={item.label}
+                  className="flex items-center gap-2 text-sm text-text-secondary"
+                >
                   <IconComponent className="w-3.5 h-3.5 text-toss-blue" />
                   {item.label}
                 </li>
@@ -157,9 +176,8 @@ function CompanyContent({ profile }: { profile: CompanyProfile }) {
 
       <div className="mt-auto pt-3 border-t border-border-light">
         <p className="text-xs leading-relaxed text-text-tertiary">
-          "{profile.summary.split('비즈니스 임팩트')[0]}
-          <span className="font-semibold text-toss-blue">비즈니스 임팩트</span>
-          {profile.summary.split('비즈니스 임팩트')[1]}"
+          "{profile.summary.split("비즈니스 임팩트")[0]}
+          {profile.summary.split("비즈니스 임팩트")[1]}"
         </p>
       </div>
     </>
@@ -171,7 +189,11 @@ function UserContent({ profile }: { profile: UserProfile }) {
     <>
       <div>
         <h3 className="text-xl font-bold text-text-primary">{profile.title}</h3>
-        <p className="text-sm text-text-tertiary">{profile.experience}</p>
+        <p className="text-sm">
+          <span className="px-2.5 py-1 rounded-full bg-toss-green-light text-toss-green font-medium">
+            {profile.experience}
+          </span>
+        </p>
       </div>
 
       <div className="space-y-3">
@@ -199,7 +221,10 @@ function UserContent({ profile }: { profile: UserProfile }) {
             {profile.workStyle.map((item) => {
               const IconComponent = iconMap[item.icon] || Shield;
               return (
-                <li key={item.label} className="flex items-center gap-2 text-sm text-text-secondary">
+                <li
+                  key={item.label}
+                  className="flex items-center gap-2 text-sm text-text-secondary"
+                >
                   <IconComponent className="w-3.5 h-3.5 text-toss-green" />
                   {item.label}
                 </li>
@@ -211,9 +236,8 @@ function UserContent({ profile }: { profile: UserProfile }) {
 
       <div className="mt-auto pt-3 border-t border-border-light">
         <p className="text-xs leading-relaxed text-text-tertiary">
-          "{profile.summary.split('견고한 아키텍처')[0]}
-          <span className="font-semibold text-toss-green">견고한 아키텍처</span>
-          {profile.summary.split('견고한 아키텍처')[1]}"
+          "{profile.summary.split("견고한 아키텍처")[0]}
+          {profile.summary.split("견고한 아키텍처")[1]}"
         </p>
       </div>
     </>
