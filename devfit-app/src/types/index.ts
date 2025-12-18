@@ -77,9 +77,10 @@ export interface AnalysisResult {
 export interface Synergy {
   title: string;
   matchPercent: number;
-  companyRequires: string;
-  myCapabilities: string;
+  companyRequires: string[];
+  myCapabilities: string[];
   insight: string;
+  detail: string;
 }
 
 export interface Gap {
@@ -87,7 +88,12 @@ export interface Gap {
   level: 'Moderate' | 'Significant';
   companyPosition: number;
   myPosition: number;
+  companyRequires: string[];
+  myCapabilities: string[];
   strategy: string;
+  detail: string;
+  leftLabel: string;
+  rightLabel: string;
 }
 
 export interface TechnicalFitItem {

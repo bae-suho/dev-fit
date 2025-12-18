@@ -59,36 +59,85 @@ function transformSynergies(
     return {
       title: AXIS_LABELS[axisKey] || axisKey,
       matchPercent: score,
-      companyRequires: axis.rationale.company_signals.join(", ") || "정보 없음",
-      myCapabilities:
-        axis.rationale.developer_signals.join(", ") || "정보 없음",
+      companyRequires: axis.rationale.company_signals.length > 0
+        ? axis.rationale.company_signals
+        : ["정보 없음"],
+      myCapabilities: axis.rationale.developer_signals.length > 0
+        ? axis.rationale.developer_signals
+        : ["정보 없음"],
       insight: axis.summary,
+      detail: axis.rationale.comparison_notes || "상세 분석 정보가 없습니다.",
     };
   });
 }
 
+// axis_alignments 키 -> scoring_axes 키 매핑
+const AXIS_TO_SCORING_KEY: Record<string, string> = {
+  technical_fit: "technical_fit",
+  execution_style: "execution_style",
+  collaboration_style: "collaboration_style",
+  growth_learning_orientation: "growth_orientation",
+  product_user_impact_orientation: "ownership",
+  ops_quality_responsibility: "work_expectation",
+};
+
+// 축별 그래프 라벨
+const AXIS_GRAPH_LABELS: Record<string, { left: string; right: string }> = {
+  technical_fit: { left: "부족", right: "충분" },
+  execution_style: { left: "빠른 실행", right: "높은 안정성" },
+  collaboration_style: { left: "개인 중심", right: "팀 중심" },
+  growth_learning_orientation: { left: "현상 유지", right: "적극 성장" },
+  product_user_impact_orientation: { left: "기술 중심", right: "사용자 중심" },
+  ops_quality_responsibility: { left: "개발 집중", right: "운영 책임" },
+};
+
 // risk/mismatch 축들을 Gap으로 변환
 function transformGaps(
   alignments: ApiAnalysisResponse["axis_alignments"],
-  riskAxes: string[]
+  riskAxes: string[],
+  companyScoringAxes?: Record<string, unknown>,
+  candidateScoringAxes?: Record<string, unknown>
 ): Gap[] {
   return riskAxes.map((axisKey) => {
     const axis = alignments[axisKey as keyof typeof alignments];
-    const score = getAxisScore(axis.axis_score);
+    const alignmentScore = getAxisScore(axis.axis_score);
 
     // 점수에 따라 Level 결정
-    const level: Gap["level"] = score < 50 ? "Significant" : "Moderate";
+    const level: Gap["level"] = alignmentScore < 50 ? "Significant" : "Moderate";
 
-    // 회사와 개발자 포지션 계산 (점수 기반으로 추정)
-    const companyPosition = 80; // 회사는 보통 높은 기대치
-    const myPosition = score;
+    // scoring_axes에서 실제 점수 가져오기 (0-4 스케일 → 0-100% 변환)
+    const scoringKey = AXIS_TO_SCORING_KEY[axisKey] || axisKey;
+    const companyKey = `${scoringKey}_company`;
+    const userKey = `${scoringKey}_user`;
+
+    const companyScoreData = companyScoringAxes?.[companyKey] as { score?: number } | undefined;
+    const userScoreData = candidateScoringAxes?.[userKey] as { score?: number } | undefined;
+
+    // 0-4 점수를 0-100%로 변환
+    const companyPosition = companyScoreData?.score !== undefined
+      ? companyScoreData.score * 25
+      : 80; // fallback
+    const myPosition = userScoreData?.score !== undefined
+      ? userScoreData.score * 25
+      : alignmentScore; // fallback to alignment score
+
+    const graphLabels = AXIS_GRAPH_LABELS[axisKey] || { left: "낮음", right: "높음" };
 
     return {
       title: AXIS_LABELS[axisKey] || axisKey,
       level,
       companyPosition,
       myPosition,
-      strategy: axis.rationale.comparison_notes || axis.summary,
+      companyRequires: axis.rationale.company_signals.length > 0
+        ? axis.rationale.company_signals
+        : ["정보 없음"],
+      myCapabilities: axis.rationale.developer_signals.length > 0
+        ? axis.rationale.developer_signals
+        : ["해당 역량에 대한 경험이 명시되어 있지 않습니다."],
+      strategy: axis.summary,
+      detail: axis.rationale.comparison_notes || "상세 분석 정보가 없습니다.",
+      leftLabel: graphLabels.left,
+      rightLabel: graphLabels.right,
     };
   });
 }
@@ -610,7 +659,12 @@ export function transformFullApiResponse(
       candidate_analysis.scoring_axes || {}
     ),
     synergies: transformSynergies(axis_alignments, overall.high_alignment_axes),
-    gaps: transformGaps(axis_alignments, overall.risk_or_mismatch_axes),
+    gaps: transformGaps(
+      axis_alignments,
+      overall.risk_or_mismatch_axes,
+      company_analysis.scoring_axes || {},
+      candidate_analysis.scoring_axes || {}
+    ),
     technicalFit: transformTechnicalFit(axis_alignments),
     keywords: transformKeywords(axis_alignments),
     careerTimeline: getDefaultCareerTimeline(),

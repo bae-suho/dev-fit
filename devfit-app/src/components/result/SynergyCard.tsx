@@ -41,32 +41,33 @@ export function SynergyCard({ synergies }: SynergyCardProps) {
               <h4 className="text-text-primary font-bold text-sm mb-3">{synergy.title}</h4>
               <div className="rounded-xl p-3 grid grid-cols-2 gap-4 text-xs mb-3 bg-bg-secondary">
                 <div>
-                  <span className="block mb-1 text-text-quaternary">기업 요구사항</span>
-                  <span className="text-text-secondary">{synergy.companyRequires}</span>
+                  <span className="block mb-2 text-text-quaternary font-medium">기업 요구사항</span>
+                  <ul className="space-y-1.5">
+                    {synergy.companyRequires.map((item, i) => (
+                      <li key={i} className="text-text-secondary leading-relaxed">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <div className="pl-4 border-l border-border-light">
-                  <span className="block mb-1 text-text-quaternary">나의 역량</span>
-                  <span className="text-toss-blue font-medium">{synergy.myCapabilities}</span>
+                  <span className="block mb-2 text-text-quaternary font-medium">나의 역량</span>
+                  <ul className="space-y-1.5">
+                    {synergy.myCapabilities.map((item, i) => (
+                      <li key={i} className="text-toss-blue leading-relaxed">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              <p className="text-xs leading-relaxed text-text-tertiary mb-3">
-                <span className="font-bold text-toss-green">인사이트:</span> {synergy.insight}
-              </p>
 
               {isExpanded && (
                 <div className="mt-4 pt-4 border-t border-border-light">
                   <p className="text-xs font-bold text-text-secondary mb-2">상세 분석</p>
-                  <p className="text-xs text-text-tertiary mb-3">
-                    이 역량은 해당 기업의 핵심 비즈니스 목표와 직접적으로 연결됩니다.
-                    특히 최근 업계 트렌드를 고려했을 때, 이러한 강점은 입사 후 빠른 적응과
-                    성과 창출에 큰 도움이 될 것으로 예상됩니다.
+                  <p className="text-xs text-text-tertiary leading-relaxed">
+                    {synergy.detail}
                   </p>
-                  <p className="text-xs font-bold text-text-secondary mb-2">추천 어필 포인트</p>
-                  <ul className="text-xs text-text-tertiary list-disc list-inside space-y-1">
-                    <li>관련 프로젝트 경험을 구체적인 수치와 함께 설명</li>
-                    <li>문제 해결 과정에서의 본인 역할 강조</li>
-                    <li>해당 역량을 활용한 성공 사례 준비</li>
-                  </ul>
                 </div>
               )}
 

@@ -42,10 +42,10 @@ export function GapCard({ gaps }: GapCardProps) {
 
               <div className="relative h-2 rounded-full mb-6 mt-6 w-full max-w-md mx-auto bg-bg-secondary">
                 <div className="absolute text-[10px] -top-5 left-0 text-text-quaternary">
-                  빠른 실행
+                  {gap.leftLabel}
                 </div>
                 <div className="absolute text-[10px] -top-5 right-0 text-text-quaternary">
-                  높은 안정성
+                  {gap.rightLabel}
                 </div>
 
                 <div
@@ -100,17 +100,9 @@ export function GapCard({ gaps }: GapCardProps) {
               {isExpanded && (
                 <div className="mt-4 pt-4 border-t border-border-light">
                   <p className="text-xs font-bold text-text-secondary mb-2">상세 분석</p>
-                  <p className="text-xs text-text-tertiary mb-3">
-                    이 부분은 기업이 중요하게 생각하는 역량이지만, 현재 경험이나 스킬에서
-                    다소 부족한 부분입니다. 하지만 충분히 보완 가능한 영역이며,
-                    적극적인 학습과 경험을 통해 극복할 수 있습니다.
+                  <p className="text-xs text-text-tertiary leading-relaxed">
+                    {gap.detail}
                   </p>
-                  <p className="text-xs font-bold text-text-secondary mb-2">추천 보완 방법</p>
-                  <ul className="text-xs text-text-tertiary list-disc list-inside space-y-1">
-                    <li>관련 온라인 강의나 자격증 취득 고려</li>
-                    <li>사이드 프로젝트를 통한 실무 경험 쌓기</li>
-                    <li>면접에서 학습 의지와 성장 가능성 어필</li>
-                  </ul>
                 </div>
               )}
 
