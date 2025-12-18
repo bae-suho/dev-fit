@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { ChevronDown, Layers, ExternalLink, Download } from "lucide-react";
-import { Background, Header } from "@/components/common";
+import { Background, Header, ProfileCardSkeleton, ChartSkeleton, MatchScoreBarSkeleton } from "@/components/common";
 import {
   StatusBadge,
   MatchScoreBar,
@@ -42,6 +42,9 @@ export function ResultPage() {
     ? historyItem.result
     : (analysisResult ?? mockResult);
   const jobPostingUrl = isFromHistory ? historyItem.url : analysisData?.url;
+
+  // API 폴링 중인지 (스켈레톤 표시 여부 결정)
+  const isPolling = !!(API_BASE_URL && resultKey && isAnalyzing && !analysisResult && !isComplete);
 
   // Long Polling으로 분석 상태 확인
   const pollStatus = useCallback(async () => {
@@ -168,35 +171,60 @@ export function ResultPage() {
 
             {/* 분석 중 상태 메시지 */}
             {!isComplete && !error && API_BASE_URL && resultKey && (
-              <p className="mt-2 text-sm text-text-tertiary">{statusMessage}</p>
+              <div className="mt-6 mb-2">
+                <p className="text-lg font-semibold text-text-primary animate-pulse">
+                  {statusMessage}
+                </p>
+                <div className="mt-3 flex items-center justify-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-toss-blue animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <div className="w-2 h-2 rounded-full bg-toss-blue animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <div className="w-2 h-2 rounded-full bg-toss-blue animate-bounce" style={{ animationDelay: '300ms' }} />
+                </div>
+              </div>
             )}
 
-            <MatchScoreBar
-              score={result.matchScore}
-              matchLevel={result.matchLevel}
-              isAnimating={isComplete}
-            />
+            {isPolling ? (
+              <MatchScoreBarSkeleton />
+            ) : (
+              <MatchScoreBar
+                score={result.matchScore}
+                matchLevel={result.matchLevel}
+                isAnimating={isComplete}
+              />
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full items-stretch">
             <div className="h-full">
-              <ProfileCard
-                type="company"
-                profile={result.company}
-                isAnalyzing={!isFromHistory}
-              />
+              {isPolling ? (
+                <ProfileCardSkeleton type="company" />
+              ) : (
+                <ProfileCard
+                  type="company"
+                  profile={result.company}
+                  isAnalyzing={!isFromHistory && !isPolling}
+                />
+              )}
             </div>
 
             <div className="h-full">
-              <CultureChart data={result.chartData} isAnimating={isComplete} />
+              {isPolling ? (
+                <ChartSkeleton />
+              ) : (
+                <CultureChart data={result.chartData} isAnimating={isComplete} />
+              )}
             </div>
 
             <div className="h-full">
-              <ProfileCard
-                type="user"
-                profile={result.user}
-                isAnalyzing={!isFromHistory}
-              />
+              {isPolling ? (
+                <ProfileCardSkeleton type="user" />
+              ) : (
+                <ProfileCard
+                  type="user"
+                  profile={result.user}
+                  isAnalyzing={!isFromHistory && !isPolling}
+                />
+              )}
             </div>
           </div>
 

@@ -115,6 +115,96 @@
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* 게이지 바 왔다갔다 애니메이션 */
+@keyframes gaugeMove {
+  0%, 100% {
+    width: 20%;
+  }
+  50% {
+    width: 70%;
+  }
+}
+
+.animate-gauge {
+  animation: gaugeMove 2.5s ease-in-out infinite;
+}
+
+/* 레이더 차트 회전 애니메이션 */
+@keyframes radarSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-spin {
+  animation: radarSpin 8s linear infinite;
+}
+
+/* 레이더 차트 펄스 애니메이션 */
+@keyframes radarPulse {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.animate-radar-pulse {
+  animation: radarPulse 2s ease-in-out infinite;
+}
+
+/* 프로그레스 바 이동 애니메이션 */
+@keyframes progressMove {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+.animate-progress {
+  animation: progressMove 2s ease-in-out infinite;
+}
+
+/* 데이터 포인트 깜빡임 */
+@keyframes dataPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-data-pulse {
+  animation: dataPulse 1.5s ease-in-out infinite;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
