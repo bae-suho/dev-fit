@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { ChevronDown, Layers } from 'lucide-react';
-import { Background, Header } from '@/components/common';
+import { useEffect, useState } from "react";
+import { ChevronDown, Layers, ExternalLink } from "lucide-react";
+import { Background, Header } from "@/components/common";
 import {
   StatusBadge,
   MatchScoreBar,
@@ -11,15 +11,18 @@ import {
   TechnicalFitCard,
   KeywordCard,
   InterviewStrategy,
-} from '@/components/result';
-import { mockResult } from '@/data/mockResult';
+} from "@/components/result";
+import { useAnalysis } from "@/context/AnalysisContext";
+import { mockResult } from "@/data/mockResult";
 
 export function ResultPage() {
+  const { analysisData } = useAnalysis();
   const [analysisPercent, setAnalysisPercent] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [showDetail, setShowDetail] = useState(false);
 
   const result = mockResult;
+  const jobPostingUrl = analysisData?.url;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,16 +44,16 @@ export function ResultPage() {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden selection:bg-purple-500 selection:text-white">
+    <div className="min-h-screen bg-bg-secondary relative overflow-x-hidden">
       <Background />
       <Header />
 
-      <main className="max-w-6xl mx-auto p-6 z-10 relative">
+      <main className="max-w-5xl mx-auto p-6 pt-20 z-10 relative">
         {/* Summary Section */}
-        <section className="min-h-screen flex flex-col justify-center items-center w-full">
+        <section className="min-h-[calc(100vh-8rem)] flex flex-col items-center w-full pt-6 pb-10">
           <div className="text-center mb-10 w-full max-w-3xl mx-auto">
             <StatusBadge
-              status={isComplete ? 'complete' : 'analyzing'}
+              status={isComplete ? "complete" : "analyzing"}
               percent={analysisPercent}
             />
 
@@ -61,75 +64,66 @@ export function ResultPage() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 w-full">
-            <div className="md:col-span-4">
-              <ProfileCard type="company" profile={result.company} isAnalyzing={true} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full items-stretch">
+            <div className="h-full">
+              <ProfileCard
+                type="company"
+                profile={result.company}
+                isAnalyzing={true}
+              />
             </div>
 
-            <div className="md:col-span-4 flex flex-col items-center justify-center p-2 relative">
+            <div className="h-full">
               <CultureChart data={result.chartData} isAnimating={isComplete} />
             </div>
 
-            <div className="md:col-span-4">
-              <ProfileCard type="user" profile={result.user} isAnalyzing={true} />
+            <div className="h-full">
+              <ProfileCard
+                type="user"
+                profile={result.user}
+                isAnalyzing={true}
+              />
             </div>
           </div>
 
           {isComplete && (
-            <div className="mt-12 text-center animate-bounce transition-opacity duration-1000">
-              <p className="text-sm mb-2" style={{ color: '#9CA3AF' }}>
+            <div className="mt-auto pt-16 text-center animate-bounce transition-opacity duration-1000">
+              <p className="text-sm mb-2 text-text-quaternary">
                 상세 리포트 확인
               </p>
-              <ChevronDown className="w-5 h-5 mx-auto" style={{ color: 'rgba(255, 255, 255, 0.5)' }} />
+              <ChevronDown className="w-5 h-5 mx-auto text-text-disabled" />
             </div>
           )}
         </section>
 
         {/* Detail Section */}
         {showDetail && (
-          <section
-            className="pt-10 pb-20 fade-in-up"
-            style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}
-          >
+          <section className="pt-10 pb-20 fade-in-up border-t border-border-light">
             <div className="mb-10 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div
-                  className="p-2 rounded-lg"
-                  style={{ backgroundColor: 'rgba(108, 92, 231, 0.1)', color: '#a29bfe' }}
-                >
-                  <Layers className="w-5 h-5" />
+                <div className="p-2.5 rounded-xl bg-toss-blue-light">
+                  <Layers className="w-5 h-5 text-toss-blue" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-white">심층 분석</h2>
-                  <p className="text-sm" style={{ color: '#9CA3AF' }}>
+                  <h2 className="text-xl font-bold text-text-primary">
+                    심층 분석
+                  </h2>
+                  <p className="text-sm text-text-tertiary">
                     항목별 상세 매칭 분석 및 갭(Gap) 리포트
                   </p>
                 </div>
               </div>
-              <div
-                className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full"
-                style={{
-                  backgroundColor: '#151b2e',
-                  border: '1px solid rgba(108, 92, 231, 0.5)',
-                  boxShadow: '0 0 10px rgba(108, 92, 231, 0.2)',
-                }}
-              >
-                <span
-                  className="text-xs font-bold uppercase"
-                  style={{ color: '#9CA3AF' }}
-                >
+              <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-white toss-shadow">
+                <span className="text-xs font-semibold text-text-quaternary">
                   총 적합도 점수
                 </span>
-                <span
-                  className="font-bold font-mono text-lg"
-                  style={{ color: '#6C5CE7' }}
-                >
+                <span className="font-bold text-lg text-toss-blue">
                   {result.matchScore}/100
                 </span>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
               <div className="lg:col-span-8 space-y-6">
                 <SynergyCard synergies={result.synergies} />
                 <GapCard gaps={result.gaps} />
@@ -141,14 +135,28 @@ export function ResultPage() {
               </div>
             </div>
 
-            {/* <CareerTimeline stages={result.careerTimeline} /> */}
             <InterviewStrategy strategies={result.interviewStrategies} />
 
             <div className="mt-12 text-center">
-              <p className="text-xs" style={{ color: '#9CA3AF' }}>
+              <p className="text-xs text-text-quaternary">
                 AI 분석 결과는 참고용이며 실제와 다를 수 있습니다.
               </p>
             </div>
+
+            {/* 공고 이동 버튼 */}
+            {jobPostingUrl && (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={jobPostingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-toss-blue text-white font-semibold rounded-xl hover:bg-toss-blue-dark transition-colors active:scale-[0.98]"
+                >
+                  <span>채용 공고로 이동</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            )}
           </section>
         )}
       </main>

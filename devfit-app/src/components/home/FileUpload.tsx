@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Cloud, CheckCircle } from 'lucide-react';
+import { Upload, CheckCircle } from 'lucide-react';
 
 interface FileUploadProps {
   onFileSelect: (file: File | null) => void;
@@ -7,6 +7,7 @@ interface FileUploadProps {
 
 export function FileUpload({ onFileSelect }: FileUploadProps) {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,6 +18,7 @@ export function FileUpload({ onFileSelect }: FileUploadProps) {
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
+    setIsDragging(false);
     const file = e.dataTransfer.files?.[0] || null;
     if (file) {
       setSelectedFile(file);
@@ -26,18 +28,30 @@ export function FileUpload({ onFileSelect }: FileUploadProps) {
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
   };
 
   return (
-    <div className="space-y-3">
-      <label className="block text-sm font-medium text-slate-300 ml-1">
-        2. 내 이력서 & 포트폴리오
+    <div className="space-y-2">
+      <label className="block text-sm font-semibold text-text-primary ml-1">
+        이력서 & 포트폴리오
       </label>
       <div
-        className="drop-zone w-full h-48 border-2 border-dashed border-slate-600 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-all bg-slate-900/50 relative overflow-hidden group"
+        className={`w-full h-40 border-2 border-dashed rounded-2xl flex flex-col items-center justify-center cursor-pointer transition-all relative overflow-hidden ${
+          isDragging
+            ? 'border-toss-blue bg-toss-blue-light'
+            : selectedFile
+            ? 'border-toss-green bg-toss-green-light'
+            : 'border-border-default bg-bg-secondary hover:border-toss-blue hover:bg-toss-blue-light'
+        }`}
         onClick={() => inputRef.current?.click()}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
       >
         <input
           ref={inputRef}
@@ -48,20 +62,22 @@ export function FileUpload({ onFileSelect }: FileUploadProps) {
         />
 
         {!selectedFile ? (
-          <div className="text-center p-6 transition-transform group-hover:scale-105">
-            <Cloud className="mx-auto h-12 w-12 text-slate-500 mb-3 group-hover:text-indigo-400 transition-colors" />
-            <p className="text-slate-300 font-medium">
+          <div className="text-center p-6 transition-transform">
+            <div className="w-12 h-12 rounded-full bg-toss-blue-light flex items-center justify-center mx-auto mb-3">
+              <Upload className="w-6 h-6 text-toss-blue" />
+            </div>
+            <p className="text-text-secondary font-medium text-sm">
               클릭하거나 파일을 드래그하세요
             </p>
-            <p className="text-slate-500 text-xs mt-1">PDF, Word (Max 10MB)</p>
+            <p className="text-text-quaternary text-xs mt-1">PDF, Word (Max 10MB)</p>
           </div>
         ) : (
           <div className="flex flex-col items-center">
-            <div className="bg-indigo-500/20 text-indigo-300 p-3 rounded-full mb-2">
-              <CheckCircle className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-full bg-toss-green-light flex items-center justify-center mb-2">
+              <CheckCircle className="w-6 h-6 text-toss-green" />
             </div>
-            <p className="text-white font-medium text-sm">{selectedFile.name}</p>
-            <p className="text-indigo-400 text-xs mt-1">파일이 준비되었습니다</p>
+            <p className="text-text-primary font-medium text-sm">{selectedFile.name}</p>
+            <p className="text-toss-green text-xs mt-1 font-medium">파일이 준비되었습니다</p>
           </div>
         )}
       </div>

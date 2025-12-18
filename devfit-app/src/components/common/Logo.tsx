@@ -5,23 +5,18 @@ interface LogoProps {
 export function Logo({ size = 'sm' }: LogoProps) {
   if (size === 'lg') {
     return (
-      <h1 className="text-5xl font-extrabold tracking-tight">
+      <h1 className="text-4xl font-bold tracking-tight text-text-primary">
         Dev
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
-          Fit
-        </span>
+        <span className="text-toss-blue">Fit</span>
       </h1>
     );
   }
 
   return (
-    <div className="text-xl font-extrabold tracking-tight flex items-center gap-2">
-      <div
-        className="w-3 h-3 rounded-full"
-        style={{ backgroundColor: '#6C5CE7' }}
-      />
+    <div className="text-xl font-bold tracking-tight flex items-center gap-2 text-text-primary">
+      <div className="w-2.5 h-2.5 rounded-full bg-toss-blue" />
       <span>
-        Dev<span style={{ color: '#6C5CE7' }}>Fit</span>
+        Dev<span className="text-toss-blue">Fit</span>
       </span>
     </div>
   );

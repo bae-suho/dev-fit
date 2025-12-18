@@ -23,22 +23,24 @@ export function CultureChart({ data, isAnimating }: CultureChartProps) {
     labels: data.labels,
     datasets: [
       {
-        label: 'A Corp',
+        label: '기업',
         data: [0, 0, 0, 0, 0],
-        backgroundColor: 'rgba(108, 92, 231, 0.2)',
-        borderColor: '#6C5CE7',
+        backgroundColor: 'rgba(49, 130, 246, 0.15)',
+        borderColor: '#3182F6',
         borderWidth: 2,
-        pointBackgroundColor: '#6C5CE7',
+        pointBackgroundColor: '#3182F6',
         pointBorderColor: '#fff',
+        pointBorderWidth: 2,
       },
       {
-        label: 'Me',
+        label: '나',
         data: [0, 0, 0, 0, 0],
-        backgroundColor: 'rgba(6, 182, 212, 0.2)',
-        borderColor: '#06B6D4',
+        backgroundColor: 'rgba(60, 212, 160, 0.15)',
+        borderColor: '#3CD4A0',
         borderWidth: 2,
-        pointBackgroundColor: '#06B6D4',
+        pointBackgroundColor: '#3CD4A0',
         pointBorderColor: '#fff',
+        pointBorderWidth: 2,
       },
     ],
   });
@@ -58,13 +60,15 @@ export function CultureChart({ data, isAnimating }: CultureChartProps) {
   }, [isAnimating, data]);
 
   const options = {
+    responsive: true,
+    maintainAspectRatio: true,
     scales: {
       r: {
-        angleLines: { color: '#1f2937' },
-        grid: { color: '#1f2937' },
+        angleLines: { color: '#E5E8EB' },
+        grid: { color: '#E5E8EB' },
         pointLabels: {
-          color: '#9CA3AF',
-          font: { size: 11, family: "'Inter', sans-serif" },
+          color: '#6B7684',
+          font: { size: 10, weight: 500 as const },
         },
         suggestedMin: 0,
         suggestedMax: 10,
@@ -73,18 +77,25 @@ export function CultureChart({ data, isAnimating }: CultureChartProps) {
     },
     plugins: {
       legend: {
+        position: 'bottom' as const,
         labels: {
-          color: '#E5E7EB',
-          font: { family: "'Inter', sans-serif" },
+          color: '#333D4B',
+          font: { size: 11, weight: 500 as const },
+          usePointStyle: true,
+          pointStyle: 'circle',
+          padding: 12,
         },
       },
     },
-    animation: { duration: 2000 },
+    animation: { duration: 1500 },
   };
 
   return (
-    <div className="w-full aspect-square relative z-10 p-4">
-      <Radar data={chartData} options={options} />
+    <div className="w-full h-full relative z-10 p-4 bg-white rounded-2xl toss-shadow flex flex-col">
+      <h4 className="text-text-primary font-semibold text-sm mb-2 text-center">문화 적합도 비교</h4>
+      <div className="flex-1 flex items-center justify-center min-h-0">
+        <Radar data={chartData} options={options} />
+      </div>
     </div>
   );
 }

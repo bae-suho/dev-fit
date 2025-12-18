@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 interface MatchScoreBarProps {
   score: number;
@@ -20,87 +20,79 @@ export function MatchScoreBar({ score, isAnimating }: MatchScoreBarProps) {
     }
   }, [isAnimating, targetWidth]);
 
-  const filledSteps = Math.ceil(score / 20);
+  const getScoreLabel = (score: number) => {
+    if (score >= 80) return '최고 적합';
+    if (score >= 60) return '높은 적합';
+    if (score >= 40) return '보통';
+    return '낮은 적합';
+  };
 
   return (
     <div className="relative py-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-white mb-12 px-1">
+      <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-3">
         분석 결과 리포트
       </h2>
+      <p className="text-text-tertiary text-sm mb-8">
+        AI가 분석한 당신과 기업의 적합도입니다
+      </p>
 
-      <div
-        className="relative h-8 md:h-10 w-full p-1 rounded-lg backdrop-blur-sm"
-        style={{
-          backgroundColor: 'rgba(21, 27, 46, 0.5)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-        }}
-      >
+      {/* Gauge Bar */}
+      <div className="relative h-10 w-full p-1 rounded-xl bg-white toss-shadow">
         {/* 배경 바 */}
-        <div
-          className="absolute inset-1 rounded-md"
-          style={{ background: 'rgba(255, 255, 255, 0.05)' }}
-        />
+        <div className="absolute inset-1 rounded-lg bg-border-light" />
 
         {/* 채워지는 게이지 */}
         <div
-          className="absolute inset-1 rounded-md overflow-hidden"
+          className="absolute inset-1 rounded-lg overflow-hidden"
           style={{
             width: `calc(${currentWidth}% - 8px)`,
             transition: 'width 1.2s ease-out',
           }}
         >
           <div
-            className="h-full rounded-md"
+            className="h-full rounded-lg"
             style={{
               width: `calc((100vw - 2rem) * 0.98)`,
               minWidth: '500px',
-              background: 'linear-gradient(to right, #4834d4, #5649D6, #6C5CE7, #a29bfe, #7DD3E8, #06B6D4)',
+              background: 'linear-gradient(to right, #1B64DA, #3182F6, #5BA0F8, #8BBFFA, #3CD4A0)',
             }}
           />
         </div>
 
         {/* 칸 구분선 */}
-        <div className="absolute inset-1 flex gap-2 pointer-events-none">
-          {[1, 2, 3, 4].map((step) => (
-            <div key={step} className="flex-1" />
-          ))}
-          <div className="flex-1" />
-        </div>
         <div className="absolute inset-0 flex justify-evenly pointer-events-none p-1">
           {[1, 2, 3, 4].map((i) => (
             <div
               key={i}
-              className="w-2 h-full"
-              style={{ background: 'rgba(21, 27, 46, 0.9)' }}
+              className="w-1.5 h-full rounded-full"
+              style={{ background: '#F4F4F4' }}
             />
           ))}
         </div>
 
         {/* 화살표 표시 */}
         <div
-          className="absolute -top-8"
+          className="absolute -top-7"
           style={{
             left: `calc(${currentWidth}% - 4px)`,
             transform: 'translateX(-50%)',
-            filter: 'drop-shadow(0 0 8px rgba(6, 182, 212, 0.8))',
             opacity: currentWidth > 0 ? 1 : 0,
             transition: 'left 1.2s ease-out, opacity 0.3s ease',
           }}
         >
           <ChevronDown
-            size={28}
+            size={24}
             strokeWidth={3}
-            className="text-cyan-300 animate-bounce"
+            className="text-toss-blue animate-bounce"
           />
         </div>
       </div>
 
-      <div
-        className="flex justify-between mt-2 text-xs font-mono"
-        style={{ color: '#9CA3AF' }}
-      >
-        <span>낮은 적합도</span>
-        <span>최고 적합도</span>
+      {/* Labels */}
+      <div className="flex justify-between mt-3 text-xs text-text-quaternary px-1">
+        {[1, 2, 3, 4, 5].map((step) => (
+          <span key={step} className="flex-1 text-center">{step}단계</span>
+        ))}
       </div>
     </div>
   );
