@@ -5,15 +5,21 @@ interface SynergyCardProps {
   synergies: Synergy[];
 }
 
+function getMatchLabel(percent: number): string {
+  if (percent >= 90) return '매우 적합';
+  if (percent >= 70) return '적합';
+  return '보통';
+}
+
 export function SynergyCard({ synergies }: SynergyCardProps) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden toss-shadow">
       <div className="p-4 flex justify-between items-center bg-toss-green-light border-b border-toss-green/10">
         <h3 className="font-bold flex items-center gap-2 text-toss-green">
-          <CheckCircle className="w-4 h-4" /> 핵심 시너지 (강점)
+          <CheckCircle className="w-4 h-4" /> 주요 시너지
         </h3>
         <span className="text-[10px] px-2.5 py-1 rounded-full bg-toss-green/10 text-toss-green font-semibold">
-          높은 영향력
+          강점
         </span>
       </div>
 
@@ -26,7 +32,7 @@ export function SynergyCard({ synergies }: SynergyCardProps) {
             <div className="flex justify-between mb-2">
               <h4 className="text-text-primary font-bold text-sm">{synergy.title}</h4>
               <span className="text-xs font-bold text-toss-green">
-                {synergy.matchPercent}% 일치
+                {getMatchLabel(synergy.matchPercent)}
               </span>
             </div>
             <div className="rounded-xl p-3 grid grid-cols-2 gap-4 text-xs mb-2 bg-bg-secondary">

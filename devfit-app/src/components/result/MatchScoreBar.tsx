@@ -20,13 +20,6 @@ export function MatchScoreBar({ score, isAnimating }: MatchScoreBarProps) {
     }
   }, [isAnimating, targetWidth]);
 
-  const getScoreLabel = (score: number) => {
-    if (score >= 80) return '최고 적합';
-    if (score >= 60) return '높은 적합';
-    if (score >= 40) return '보통';
-    return '낮은 적합';
-  };
-
   return (
     <div className="relative py-4">
       <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-3">

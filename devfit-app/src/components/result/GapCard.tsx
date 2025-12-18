@@ -5,12 +5,17 @@ interface GapCardProps {
   gaps: Gap[];
 }
 
+const GAP_LEVEL_LABEL: Record<Gap['level'], { text: string; color: string }> = {
+  Moderate: { text: '보완 필요', color: 'text-toss-yellow' },
+  Significant: { text: '차이 큼', color: 'text-toss-red' },
+};
+
 export function GapCard({ gaps }: GapCardProps) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden toss-shadow">
       <div className="p-4 flex justify-between items-center bg-toss-yellow-light border-b border-toss-yellow/10">
         <h3 className="font-bold flex items-center gap-2 text-toss-yellow">
-          <AlertTriangle className="w-4 h-4" /> 문화 갭 (고려사항)
+          <AlertTriangle className="w-4 h-4" /> 보완 포인트
         </h3>
         <span className="text-[10px] px-2.5 py-1 rounded-full bg-toss-yellow/10 text-toss-yellow font-semibold">
           주의
@@ -18,15 +23,19 @@ export function GapCard({ gaps }: GapCardProps) {
       </div>
 
       <div className="p-5 grid gap-6">
-        {gaps.map((gap, index) => (
-          <div
-            key={index}
-            className="relative pl-4 border-l-2 border-border-light"
-          >
-            <div className="flex justify-between mb-2">
-              <h4 className="text-text-primary font-bold text-sm">{gap.title}</h4>
-              <span className="text-xs font-bold text-toss-yellow">{gap.level} 갭</span>
-            </div>
+        {gaps.map((gap, index) => {
+          const levelInfo = GAP_LEVEL_LABEL[gap.level];
+          return (
+            <div
+              key={index}
+              className="relative pl-4 border-l-2 border-border-light"
+            >
+              <div className="flex justify-between mb-2">
+                <h4 className="text-text-primary font-bold text-sm">{gap.title}</h4>
+                <span className={`text-xs font-bold ${levelInfo.color}`}>
+                  {levelInfo.text}
+                </span>
+              </div>
 
             <div className="relative h-2 rounded-full mb-6 mt-6 w-full max-w-md mx-auto bg-bg-secondary">
               <div className="absolute text-[10px] -top-5 left-0 text-text-quaternary">
@@ -85,7 +94,8 @@ export function GapCard({ gaps }: GapCardProps) {
               <p className="text-xs text-text-tertiary">{gap.strategy}</p>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

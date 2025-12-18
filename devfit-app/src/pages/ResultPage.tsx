@@ -18,9 +18,13 @@ import { saveToHistory } from "@/utils/history";
 import { mockResult } from "@/data/mockResult";
 import type { HistoryItem, AnalysisResult } from "@/types";
 
+// 백엔드 API 연동 시 사용
+// import { transformApiResponse } from "@/utils/transformApiResponse";
+// import type { ApiAnalysisResponse } from "@/types";
+
 export function ResultPage() {
   const location = useLocation();
-  const { analysisData } = useAnalysis();
+  const { analysisData, analysisResult } = useAnalysis();
   const savedRef = useRef(false);
 
   // 히스토리에서 온 경우 확인
@@ -31,8 +35,10 @@ export function ResultPage() {
   const [isComplete, setIsComplete] = useState(isFromHistory);
   const [showDetail, setShowDetail] = useState(isFromHistory);
 
-  // 결과 데이터 결정
-  const result: AnalysisResult = isFromHistory ? historyItem.result : mockResult;
+  // 결과 데이터 결정: 히스토리 > context > mockResult (fallback)
+  const result: AnalysisResult = isFromHistory
+    ? historyItem.result
+    : (analysisResult ?? mockResult);
   const jobPostingUrl = isFromHistory ? historyItem.url : analysisData?.url;
 
   useEffect(() => {
@@ -174,7 +180,7 @@ export function ResultPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-toss-blue text-white font-semibold rounded-xl hover:bg-toss-blue-dark transition-colors active:scale-[0.98]"
                 >
-                  <span>채용 공고로 이동</span>
+                  <span> 공고로 이동</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>

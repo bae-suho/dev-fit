@@ -9,6 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
+import { GitCompare } from 'lucide-react';
 import type { ChartData } from '@/types';
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
@@ -19,12 +20,13 @@ interface CultureChartProps {
 }
 
 export function CultureChart({ data, isAnimating }: CultureChartProps) {
+  const [progressWidth, setProgressWidth] = useState(0);
   const [chartData, setChartData] = useState({
     labels: data.labels,
     datasets: [
       {
         label: '기업',
-        data: [0, 0, 0, 0, 0],
+        data: [0, 0, 0, 0, 0, 0],
         backgroundColor: 'rgba(49, 130, 246, 0.15)',
         borderColor: '#3182F6',
         borderWidth: 2,
@@ -34,7 +36,7 @@ export function CultureChart({ data, isAnimating }: CultureChartProps) {
       },
       {
         label: '나',
-        data: [0, 0, 0, 0, 0],
+        data: [0, 0, 0, 0, 0, 0],
         backgroundColor: 'rgba(60, 212, 160, 0.15)',
         borderColor: '#3CD4A0',
         borderWidth: 2,
@@ -47,6 +49,7 @@ export function CultureChart({ data, isAnimating }: CultureChartProps) {
 
   useEffect(() => {
     if (isAnimating) {
+      setProgressWidth(100);
       setTimeout(() => {
         setChartData((prev) => ({
           ...prev,
@@ -91,8 +94,23 @@ export function CultureChart({ data, isAnimating }: CultureChartProps) {
   };
 
   return (
-    <div className="w-full h-full relative z-10 p-4 bg-white rounded-2xl toss-shadow flex flex-col">
-      <h4 className="text-text-primary font-semibold text-sm mb-2 text-center">문화 적합도 비교</h4>
+    <div className="w-full h-full relative z-10 p-5 bg-white rounded-2xl toss-shadow flex flex-col overflow-hidden">
+      {/* 상단 프로그레스 바 */}
+      <div
+        className="absolute top-0 left-0 h-1 transition-all duration-[2500ms] ease-out rounded-t-2xl"
+        style={{
+          width: `${progressWidth}%`,
+          background: 'linear-gradient(to right, #3182F6, #3CD4A0)',
+        }}
+      />
+
+      {/* 헤더 */}
+      <div className="flex items-center gap-2.5 mb-3 font-semibold text-base text-text-primary">
+        <GitCompare className="w-5 h-5 text-toss-blue" />
+        컬쳐핏 비교
+      </div>
+
+      {/* 차트 */}
       <div className="flex-1 flex items-center justify-center min-h-0">
         <Radar data={chartData} options={options} />
       </div>

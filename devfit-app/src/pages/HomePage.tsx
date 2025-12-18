@@ -4,10 +4,15 @@ import { Lock } from 'lucide-react';
 import { HomeBackground, Logo } from '@/components/common';
 import { UrlInput, FileUpload, SubmitButton } from '@/components/home';
 import { useAnalysis } from '@/context/AnalysisContext';
+import { transformApiResponse } from '@/utils/transformApiResponse';
+import type { ApiAnalysisResponse } from '@/types';
+
+// TODO: 환경 변수로 관리
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
 export function HomePage() {
   const navigate = useNavigate();
-  const { setAnalysisData, setIsAnalyzing } = useAnalysis();
+  const { setAnalysisData, setIsAnalyzing, setAnalysisResult } = useAnalysis();
   const [url, setUrl] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -18,9 +23,41 @@ export function HomePage() {
     setIsAnalyzing(true);
     setAnalysisData({ url, file });
 
-    setTimeout(() => {
-      navigate('/result');
-    }, 1500);
+    // 백엔드 API가 설정된 경우 실제 호출
+    if (API_BASE_URL) {
+      try {
+        const formData = new FormData();
+        formData.append('url', url);
+        if (file) {
+          formData.append('file', file);
+        }
+
+        const response = await fetch(`${API_BASE_URL}/api/analyze`, {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error('분석 요청 실패');
+        }
+
+        const apiResponse: ApiAnalysisResponse = await response.json();
+        const analysisResult = transformApiResponse(apiResponse);
+        setAnalysisResult(analysisResult);
+        navigate('/result');
+      } catch (error) {
+        console.error('API 호출 오류:', error);
+        // 오류 시 mockResult로 fallback (개발 편의)
+        navigate('/result');
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      // 백엔드 미연동 시 mockResult 사용 (기존 동작)
+      setTimeout(() => {
+        navigate('/result');
+      }, 1500);
+    }
   };
 
   return (
