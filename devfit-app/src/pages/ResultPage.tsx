@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { ChevronDown, Layers, ExternalLink } from "lucide-react";
 import { Background, Header } from "@/components/common";
 import {
@@ -13,18 +14,31 @@ import {
   InterviewStrategy,
 } from "@/components/result";
 import { useAnalysis } from "@/context/AnalysisContext";
+import { saveToHistory } from "@/utils/history";
 import { mockResult } from "@/data/mockResult";
+import type { HistoryItem, AnalysisResult } from "@/types";
 
 export function ResultPage() {
+  const location = useLocation();
   const { analysisData } = useAnalysis();
-  const [analysisPercent, setAnalysisPercent] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
-  const [showDetail, setShowDetail] = useState(false);
+  const savedRef = useRef(false);
 
-  const result = mockResult;
-  const jobPostingUrl = analysisData?.url;
+  // 히스토리에서 온 경우 확인
+  const historyItem = (location.state as { historyItem?: HistoryItem })?.historyItem;
+  const isFromHistory = !!historyItem;
+
+  const [analysisPercent, setAnalysisPercent] = useState(isFromHistory ? 100 : 0);
+  const [isComplete, setIsComplete] = useState(isFromHistory);
+  const [showDetail, setShowDetail] = useState(isFromHistory);
+
+  // 결과 데이터 결정
+  const result: AnalysisResult = isFromHistory ? historyItem.result : mockResult;
+  const jobPostingUrl = isFromHistory ? historyItem.url : analysisData?.url;
 
   useEffect(() => {
+    // 히스토리에서 온 경우 이미 초기값으로 설정됨
+    if (isFromHistory) return;
+
     const interval = setInterval(() => {
       setAnalysisPercent((prev) => {
         const next = prev + Math.floor(Math.random() * 5) + 1;
@@ -41,7 +55,15 @@ export function ResultPage() {
     }, 120);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isFromHistory]);
+
+  // 분석 완료 시 히스토리에 저장
+  useEffect(() => {
+    if (isComplete && !isFromHistory && analysisData?.url && !savedRef.current) {
+      savedRef.current = true;
+      saveToHistory(analysisData.url, result);
+    }
+  }, [isComplete, isFromHistory, analysisData?.url, result]);
 
   return (
     <div className="min-h-screen bg-bg-secondary relative overflow-x-hidden">
@@ -69,7 +91,7 @@ export function ResultPage() {
               <ProfileCard
                 type="company"
                 profile={result.company}
-                isAnalyzing={true}
+                isAnalyzing={!isFromHistory}
               />
             </div>
 
@@ -81,7 +103,7 @@ export function ResultPage() {
               <ProfileCard
                 type="user"
                 profile={result.user}
-                isAnalyzing={true}
+                isAnalyzing={!isFromHistory}
               />
             </div>
           </div>

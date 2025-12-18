@@ -81,3 +81,13 @@ export interface InterviewStrategy {
   title: string;
   description: string;
 }
+
+export interface HistoryItem {
+  id: string;
+  url: string;
+  companyName: string;
+  matchScore: number;
+  matchLevel: string;
+  createdAt: string;
+  result: AnalysisResult;
+}
