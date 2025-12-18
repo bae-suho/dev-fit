@@ -74,7 +74,7 @@ export function CultureChart({ data, isAnimating }: CultureChartProps) {
           font: { size: 10, weight: 500 as const },
         },
         suggestedMin: 0,
-        suggestedMax: 10,
+        suggestedMax: 5,
         ticks: { display: false, backdropColor: 'transparent' },
       },
     },

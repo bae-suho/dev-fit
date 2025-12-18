@@ -236,8 +236,8 @@ function transformChartData(
 
   return {
     labels,
-    companyData: companyData.map((v) => Math.round(v / 10)), // 0-10 스케일로 변환
-    userData: userData.map((v) => Math.round(v / 10)),
+    companyData: companyData.map((v) => Math.round(v / 20)), // 0-5 스케일로 변환
+    userData: userData.map((v) => Math.round(v / 20)),
   };
 }
 

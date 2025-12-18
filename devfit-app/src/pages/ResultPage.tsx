@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { ChevronDown, Layers, ExternalLink } from "lucide-react";
+import { ChevronDown, Layers, ExternalLink, Download } from "lucide-react";
 import { Background, Header } from "@/components/common";
 import {
   StatusBadge,
@@ -70,6 +70,11 @@ export function ResultPage() {
       saveToHistory(analysisData.url, result);
     }
   }, [isComplete, isFromHistory, analysisData?.url, result]);
+
+  // PDF 다운로드 함수 (브라우저 인쇄 기능 사용)
+  const handleDownloadPdf = () => {
+    window.print();
+  };
 
   return (
     <div className="min-h-screen bg-bg-secondary relative overflow-x-hidden">
@@ -171,20 +176,27 @@ export function ResultPage() {
               </p>
             </div>
 
-            {/* 공고 이동 버튼 */}
-            {jobPostingUrl && (
-              <div className="mt-10 flex justify-center">
+            {/* 공고 이동 & PDF 다운로드 버튼 */}
+            <div className="mt-10 flex justify-center gap-3 no-print">
+              {jobPostingUrl && (
                 <a
                   href={jobPostingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-toss-blue text-white font-semibold rounded-xl hover:bg-toss-blue-dark transition-colors active:scale-[0.98]"
                 >
-                  <span> 공고로 이동</span>
+                  <span>공고로 이동</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
-              </div>
-            )}
+              )}
+              <button
+                onClick={handleDownloadPdf}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-text-primary font-semibold rounded-xl border border-border-light hover:bg-bg-secondary transition-colors active:scale-[0.98] shadow-sm"
+              >
+                <Download className="w-4 h-4" />
+                <span>PDF 다운로드</span>
+              </button>
+            </div>
           </section>
         )}
       </main>

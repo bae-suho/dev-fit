@@ -1,6 +1,6 @@
 export function Background() {
   return (
-    <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+    <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 no-print">
       <div
         className="absolute rounded-full blur-3xl opacity-40"
         style={{

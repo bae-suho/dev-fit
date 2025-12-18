@@ -125,12 +125,12 @@ function CompanyContent({ profile }: { profile: CompanyProfile }) {
   return (
     <>
       <div>
-        <h3 className="text-xl font-bold text-text-primary">{profile.name}</h3>
+        <h3 className="text-xl font-bold text-text-primary mb-2">{profile.name}</h3>
         <p className="text-sm text-text-tertiary flex items-center gap-2">
-          <span className="px-2.5 py-1 rounded-full bg-toss-blue-light text-toss-blue font-medium">
+          <span className="px-2 py-0.5 rounded-full bg-white text-text-secondary border border-toss-blue font-medium text-xs shadow-sm">
             {profile.industry}
           </span>
-          <span className="px-2.5 py-1 rounded-full bg-toss-blue-light text-toss-blue font-medium">
+          <span className="px-2 py-0.5 rounded-full bg-white text-text-secondary border border-toss-blue font-medium text-xs shadow-sm">
             {profile.stage}
           </span>
         </p>
@@ -188,9 +188,9 @@ function UserContent({ profile }: { profile: UserProfile }) {
   return (
     <>
       <div>
-        <h3 className="text-xl font-bold text-text-primary">{profile.title}</h3>
+        <h3 className="text-xl font-bold text-text-primary mb-2">{profile.title}</h3>
         <p className="text-sm">
-          <span className="px-2.5 py-1 rounded-full bg-toss-green-light text-toss-green font-medium">
+          <span className="px-2 py-0.5 rounded-full bg-white text-text-secondary border border-toss-green font-medium text-xs shadow-sm">
             {profile.experience}
           </span>
         </p>

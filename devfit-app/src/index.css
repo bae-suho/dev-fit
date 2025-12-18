@@ -137,3 +137,100 @@
 .slide-up {
   animation: slideUp 0.3s ease-out forwards;
 }
+
+/* Print Styles */
+@media print {
+  /* 기본 설정 */
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: white !important;
+  }
+
+  /* 헤더, 배경 애니메이션, 버튼 숨기기 */
+  header,
+  .no-print,
+  button,
+  a[href] {
+    display: none !important;
+  }
+
+  /* 결과 영역만 보이기 */
+  main {
+    padding-top: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* 카드 스타일 유지 */
+  .toss-shadow,
+  .toss-shadow-sm,
+  .toss-shadow-lg {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* 배경색 유지 */
+  .bg-white {
+    background-color: white !important;
+  }
+
+  .bg-bg-secondary {
+    background-color: #F4F4F4 !important;
+  }
+
+  .bg-toss-blue-light {
+    background-color: #EBF4FF !important;
+  }
+
+  .bg-toss-green-light {
+    background-color: #E8FAF3 !important;
+  }
+
+  .bg-toss-yellow-light {
+    background-color: #FFF5E6 !important;
+  }
+
+  /* 텍스트 색상 유지 */
+  .text-toss-blue {
+    color: #3182F6 !important;
+  }
+
+  .text-toss-green {
+    color: #3CD4A0 !important;
+  }
+
+  .text-toss-yellow {
+    color: #FF9500 !important;
+  }
+
+  .text-text-primary {
+    color: #191F28 !important;
+  }
+
+  .text-text-secondary {
+    color: #333D4B !important;
+  }
+
+  .text-text-tertiary {
+    color: #6B7684 !important;
+  }
+
+  /* 페이지 나눔 방지 */
+  .rounded-2xl {
+    break-inside: avoid;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+
+  /* 최소 높이 제거 */
+  .min-h-screen,
+  .min-h-\\[calc\\(100vh-8rem\\)\\] {
+    min-height: auto !important;
+  }
+}
