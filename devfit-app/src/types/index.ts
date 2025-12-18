@@ -439,6 +439,10 @@ export interface CultureFitResult {
     risk_or_mismatch_axes: string[];
     unknown_axes: string[];
     overall_notes: string;
+    interview_strategies?: {
+      question_type: string;
+      question: string;
+    }[];
   };
   created_at?: string;
   updated_at?: string;

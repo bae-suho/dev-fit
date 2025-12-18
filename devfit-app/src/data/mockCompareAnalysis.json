@@ -327,6 +327,20 @@
       "ops_quality_responsibility"
     ],
     "unknown_axes": [],
-    "overall_notes": "기업은 경력 7년 이상의 백엔드 개발자를 채용하며 OTA 시스템 개발 및 운영, 클라우드 네이티브 기술과 대용량 데이터 처리를 중요하게 생각합니다. 반면 개발자는 신입 프론트엔드 개발자로, 기술 스택과 역할 측면에서 기업의 채용 요건과 큰 불일치를 보입니다. 특히 'technical_fit'과 'ops_quality_responsibility' 축에서 이 차이가 명확합니다. 그럼에도 불구하고, 'execution_style'에서는 구조적 사고와 성능/품질 지향성에서 부분적인 공통점을, 'collaboration_style'과 'growth_learning_orientation'에서는 개방적인 소통, 지식 공유, 피드백을 통한 성장 의지 등 문화적/태도적 측면에서 강한 일치를 보여주었습니다. 'product_user_impact_orientation'은 사용자 경험을 중시한다는 점은 같지만, 그 범위(시스템 안정성 vs 직접적인 UI/UX)에서 차이가 있습니다. 전반적으로 핵심 기술/경력 요건의 불일치가 크지만, 개발자의 성장 지향적이고 협력적인 태도는 기업 문화의 일부 측면과 잘 부합하는 경향을 보입니다."
+    "overall_notes": "기업은 경력 7년 이상의 백엔드 개발자를 채용하며 OTA 시스템 개발 및 운영, 클라우드 네이티브 기술과 대용량 데이터 처리를 중요하게 생각합니다. 반면 개발자는 신입 프론트엔드 개발자로, 기술 스택과 역할 측면에서 기업의 채용 요건과 큰 불일치를 보입니다. 특히 'technical_fit'과 'ops_quality_responsibility' 축에서 이 차이가 명확합니다. 그럼에도 불구하고, 'execution_style'에서는 구조적 사고와 성능/품질 지향성에서 부분적인 공통점을, 'collaboration_style'과 'growth_learning_orientation'에서는 개방적인 소통, 지식 공유, 피드백을 통한 성장 의지 등 문화적/태도적 측면에서 강한 일치를 보여주었습니다. 'product_user_impact_orientation'은 사용자 경험을 중시한다는 점은 같지만, 그 범위(시스템 안정성 vs 직접적인 UI/UX)에서 차이가 있습니다. 전반적으로 핵심 기술/경력 요건의 불일치가 크지만, 개발자의 성장 지향적이고 협력적인 태도는 기업 문화의 일부 측면과 잘 부합하는 경향을 보입니다.",
+    "interview_strategies": [
+      {
+        "question_type": "협업 방식",
+        "question": "PR 기반 코드리뷰 경험과 피드백을 통해 성장한 구체적인 사례를 설명해주세요."
+      },
+      {
+        "question_type": "성장 마인드",
+        "question": "비전공자로서 프론트엔드 개발을 시작하며 겪었던 어려움과 극복 방법은 무엇인가요?"
+      },
+      {
+        "question_type": "기술 역량",
+        "question": "React 상태 관리에서 전역 상태와 로컬 상태를 분리한 경험과 그 이유를 설명해주세요."
+      }
+    ]
   }
 }

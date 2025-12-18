@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AlertTriangle, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
+import { AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
 import type { Gap } from '@/types';
 
 interface GapCardProps {
@@ -38,63 +38,29 @@ export function GapCard({ gaps }: GapCardProps) {
             </div>
 
             <div className="p-5">
-              <h4 className="text-text-primary font-bold text-sm mb-4">{gap.title}</h4>
+              <h4 className="text-text-primary font-bold text-sm mb-3">{gap.title}</h4>
 
-              <div className="relative h-2 rounded-full mb-6 mt-6 w-full max-w-md mx-auto bg-bg-secondary">
-                <div className="absolute text-[10px] -top-5 left-0 text-text-quaternary">
-                  {gap.leftLabel}
+              <div className="rounded-xl p-3 grid grid-cols-2 gap-4 text-xs mb-3 bg-bg-secondary">
+                <div>
+                  <span className="block mb-2 text-text-quaternary font-medium">기업 요구사항</span>
+                  <ul className="space-y-1.5">
+                    {gap.companyRequires.map((item, i) => (
+                      <li key={i} className="text-text-secondary leading-relaxed">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="absolute text-[10px] -top-5 right-0 text-text-quaternary">
-                  {gap.rightLabel}
+                <div className="pl-4 border-l border-border-light">
+                  <span className="block mb-2 text-text-quaternary font-medium">나의 역량</span>
+                  <ul className="space-y-1.5">
+                    {gap.myCapabilities.map((item, i) => (
+                      <li key={i} className="text-toss-yellow leading-relaxed">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <div
-                  className="absolute w-4 h-4 rounded-full z-10 bg-toss-blue border-2 border-white"
-                  style={{
-                    top: '-4px',
-                    left: `${gap.companyPosition}%`,
-                    boxShadow: '0 2px 4px rgba(49, 130, 246, 0.3)',
-                  }}
-                  title="Company"
-                />
-                <div
-                  className="absolute -translate-x-1/2 text-[10px] font-bold text-toss-blue"
-                  style={{ top: '14px', left: `${gap.companyPosition}%` }}
-                >
-                  기업
-                </div>
-
-                <div
-                  className="absolute w-4 h-4 rounded-full z-10 bg-toss-green border-2 border-white"
-                  style={{
-                    top: '-4px',
-                    left: `${gap.myPosition}%`,
-                    boxShadow: '0 2px 4px rgba(60, 212, 160, 0.3)',
-                  }}
-                  title="Me"
-                />
-                <div
-                  className="absolute -translate-x-1/2 text-[10px] font-bold text-toss-green"
-                  style={{ top: '14px', left: `${gap.myPosition}%` }}
-                >
-                  나
-                </div>
-
-                <div
-                  className="absolute top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r from-toss-blue/50 to-toss-green/50"
-                  style={{
-                    left: `${gap.companyPosition}%`,
-                    right: `${100 - gap.myPosition}%`,
-                  }}
-                />
-              </div>
-
-              <div className="mt-8 p-3 rounded-xl bg-bg-secondary">
-                <p className="text-text-secondary text-xs font-bold mb-1">
-                  <Lightbulb className="w-3 h-3 inline mr-1 text-toss-yellow" />
-                  전략
-                </p>
-                <p className="text-xs text-text-tertiary">{gap.strategy}</p>
               </div>
 
               {isExpanded && (

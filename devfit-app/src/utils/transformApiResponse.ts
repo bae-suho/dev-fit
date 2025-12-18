@@ -164,33 +164,108 @@ function transformTechnicalFit(
   });
 }
 
-// 키워드 생성
+// 스택 문자열 정규화 (비교용)
+function normalizeStackName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9가-힣]/g, "")  // 특수문자 제거
+    .trim();
+}
+
+// 스택 배열에서 모든 항목 추출
+function extractAllStacks(stack: Record<string, string[]> | string[] | undefined): string[] {
+  if (!stack) return [];
+  if (Array.isArray(stack)) return stack;
+
+  return [
+    ...(stack.languages || []),
+    ...(stack.frameworks || []),
+    ...(stack.data || []),
+    ...(stack.infra_cloud || []),
+    ...(stack.ops_tools || []),
+  ];
+}
+
+// 키워드 생성 (axis_alignments.status + 기술 스택 매칭)
 function transformKeywords(
-  alignments: ApiAnalysisResponse["axis_alignments"]
+  alignments: ApiAnalysisResponse["axis_alignments"],
+  companyStack?: Record<string, string[]> | string[],
+  userStack?: Record<string, string[]> | string[]
 ): Keyword[] {
-  return Object.entries(alignments).map(([key, axis]) => {
+  const keywords: Keyword[] = [];
+
+  // 1. 기술 스택 매칭 키워드 추가
+  const companyStacks = extractAllStacks(companyStack);
+  const userStacks = extractAllStacks(userStack);
+
+  const normalizedUserStacks = userStacks.map(normalizeStackName);
+  const normalizedCompanyStacks = companyStacks.map(normalizeStackName);
+
+  // 회사 요구 스택 중 사용자가 가진 것 → matched
+  // 회사 요구 스택 중 사용자가 없는 것 → strikethrough
+  companyStacks.forEach((stack) => {
+    const normalized = normalizeStackName(stack);
+    const hasMatch = normalizedUserStacks.some(
+      (userNorm) => userNorm.includes(normalized) || normalized.includes(userNorm)
+    );
+    keywords.push({
+      tag: stack,
+      matched: hasMatch,
+      strikethrough: !hasMatch,
+    });
+  });
+
+  // 사용자만 가진 스택 (회사가 요구하지 않는 것) → matched로 표시
+  userStacks.forEach((stack) => {
+    const normalized = normalizeStackName(stack);
+    const alreadyIncluded = normalizedCompanyStacks.some(
+      (compNorm) => compNorm.includes(normalized) || normalized.includes(compNorm)
+    );
+    if (!alreadyIncluded) {
+      keywords.push({
+        tag: stack,
+        matched: true,
+        strikethrough: false,
+      });
+    }
+  });
+
+  // 2. axis_alignments 기반 역량 키워드 추가
+  Object.entries(alignments).forEach(([key, axis]) => {
     const isMatched = axis.status === "aligned";
     const isUnknown = axis.status === "unknown";
 
-    return {
-      tag: `#${CHART_LABELS[key] || key}`,
+    keywords.push({
+      tag: AXIS_LABELS[key] || key,
       matched: isMatched,
       strikethrough: !isMatched && !isUnknown,
-    };
+    });
   });
+
+  return keywords;
 }
 
-// 면접 전략 생성 (followup_questions 기반)
+// 면접 전략 생성 (interview_strategies 또는 followup_questions 기반)
 function transformInterviewStrategies(
-  alignments: ApiAnalysisResponse["axis_alignments"]
+  alignments: ApiAnalysisResponse["axis_alignments"],
+  interviewStrategiesFromJson?: { question_type: string; question: string }[]
 ): InterviewStrategy[] {
+  // JSON에서 직접 가져온 interview_strategies가 있으면 사용
+  if (interviewStrategiesFromJson && interviewStrategiesFromJson.length > 0) {
+    return interviewStrategiesFromJson.map((strategy, index) => ({
+      number: index + 1,
+      title: strategy.question_type,
+      description: strategy.question,
+    }));
+  }
+
+  // fallback: followup_questions에서 생성
   const strategies: InterviewStrategy[] = [];
   let number = 1;
 
   Object.entries(alignments).forEach(([key, axis]) => {
     axis.followup_questions.forEach((question) => {
       if (number <= 5) {
-        // 최대 5개까지
         strategies.push({
           number,
           title: `${AXIS_LABELS[key]} 관련 질문`,
@@ -666,8 +741,15 @@ export function transformFullApiResponse(
       candidate_analysis.scoring_axes || {}
     ),
     technicalFit: transformTechnicalFit(axis_alignments),
-    keywords: transformKeywords(axis_alignments),
+    keywords: transformKeywords(
+      axis_alignments,
+      company_analysis.company_info_fields.technical_environment?.stack as Record<string, string[]> | undefined,
+      candidate_analysis.user_info_fields.technical_capability?.stack as Record<string, string[]> | undefined
+    ),
     careerTimeline: getDefaultCareerTimeline(),
-    interviewStrategies: transformInterviewStrategies(axis_alignments),
+    interviewStrategies: transformInterviewStrategies(
+      axis_alignments,
+      overall.interview_strategies
+    ),
   };
 }
